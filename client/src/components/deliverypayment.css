@@ -1,9 +1,8 @@
 /*General*/
 body {
-
   color: var(--text-color);
   text-align: right;
-  font-size:1.1em
+  font-size: 1.1em;
 }
 
 h2 {
@@ -13,10 +12,11 @@ h2 {
   text-align: center;
 }
 h3 {
- 
-    text-align: center;
+  text-align: center;
 }
-p{text-align: center;}
+p {
+  text-align: center;
+}
 
 /*Delivery*/
 .deliveryDate {
@@ -36,25 +36,30 @@ p{text-align: center;}
   width: 8em;
 }
 
-.buttonFakeCards {background-color: transparent;
-border:none;}
+.buttonFakeCards {
+  background-color: transparent;
+  border: none;
+}
 .confirmationMessagePayment {
-    font-size: 1.1em;
-    padding: 1em 0 1em 0;
-  }
-  .infosClient {
-    font-weight: bold;
-  }
+  font-size: 1.1em;
+  padding: 1em 0 1em 0;
+}
+.infosClient {
+  font-weight: bold;
+}
 
 /*Both*/
 
-.numberInput {width:5em;}
-.containerInputNumber {display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-padding-top: 1em;}
-
+.numberInput {
+  width: 5em;
+}
+.containerInputNumber {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 1em;
+}
 
 .deliverySection,
 .paymentSection {
@@ -77,7 +82,9 @@ padding-top: 1em;}
   text-align: left;
 }
 
-.paymentForm{align-items: flex-start;}
+.paymentForm {
+  align-items: flex-start;
+}
 
 input {
   width: 70vw;
@@ -89,28 +96,24 @@ input {
   text-align: center;
 }
 
-
 .deliveryButton,
 .paymentButton {
-margin-top:1em;
-background-color: var(--third-color);
+  margin-top: 1em;
+  background-color: var(--third-color);
   border-radius: 0.5rem;
 
-text-align: center;
+  text-align: center;
   color: var(--background-color);
   cursor: pointer;
   font-family: var(--primaryfont);
   font-size: 1.1em;
   font-weight: bolder;
-  width:60vw;
- 
-
+  width: 60vw;
 }
 
 .deliveryButton:hover,
 .paymentButton:hover {
   background-color: var(--third-color-hover);
-
 }
 
 .deliveryButton:focus,
@@ -127,10 +130,7 @@ text-align: center;
   box-sizing: border-box;
   color: var(--third-color);
   cursor: pointer;
-  
 }
-
-
 
 @media screen and (min-width: 992px) {
   .deliveryForm,
