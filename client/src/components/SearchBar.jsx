@@ -2,14 +2,14 @@ import './SearchBar.css'
 
 function SearchBar() {
   return (
-    <div className="SearchBar">
+    <div className="search-bar">
       <input type="text" placeholder="Rechercher..." />
-      <div className="btn-search">
+      <button type='button' className="btn-search">
         <img
           src="../assets/images/icons/loupe-black.svg"
           alt="Bouton de recherche"
         />
-      </div>
+      </button>
     </div>
   );
 }

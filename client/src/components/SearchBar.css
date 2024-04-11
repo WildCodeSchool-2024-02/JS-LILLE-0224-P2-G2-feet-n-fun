@@ -1,4 +1,4 @@
-.SearchBar {
+.search-bar {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,24 +6,24 @@
   border-radius: 15px;
   padding: 0.3rem 1rem;
 }
-.SearchBar input {
+.search-bar input {
   width: 100%;
   border: none;
   text-align: left;
   margin: 0 1rem;
   outline: none;
 }
-.SearchBar .btn-search {
+.search-bar .btn-search {
   padding-left: 1rem;
   border-left: solid 1px #000000;
 }
 
-.SearchBar .btn-search img:hover,
-.SearchBar .btn-search img:active {
+.search-bar .btn-search img:hover,
+.search-bar .btn-search img:active {
   transform: scale(1.15);
 }
 
-.SearchBar .btn-search img {
+.search-bar .btn-search img {
   width: 25px;
   height: 25px;
 }
