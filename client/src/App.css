@@ -1,4 +1,5 @@
 :root {
+
   /* Couleur*/ 
 --background-color:#FFFDF9;
 --card-background: #FFF7CE;
@@ -15,15 +16,24 @@
 --primaryfont: "Jura";
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 
-* {box-sizing: border-box;
-margin:0;}
 
 body{background-color: var(--background-color);
   font-size:16px;
+  font-family: var(--primaryfont);
 }
 
-h1 {font-family: var(--h1font);
+h1 {
+  font-family: var(--h1font);
   font-size: 4em;
-  color: var(--text-color)
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
