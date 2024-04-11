@@ -1,6 +1,13 @@
 import PropTypes from "prop-types";
 import "./Buttons.css";
 
+/* pour appeler les boutons : 
+- les import dans le composants
+    <Buttons buttonIndex={3} />
+    <Buttons buttonIndex={2} />
+    <Buttons buttonIndex={1} />
+    <Buttons buttonIndex={0} /> */
+
 function Buttons({ buttonIndex }) {
   const buttonsArray = [
     { id: 0, src: "./public/assets/images/icons/cart4.svg", name: "cart" },
