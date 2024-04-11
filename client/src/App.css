@@ -6,19 +6,22 @@
 --secondary-color:#B79DEC; 
 --third-color:#E87172;
 --text-color:#4C4B48;
+--third-color-hover:#ce6263;
+
 
 /*Police*/ 
 --h1font : "Yomogi";
---titlesfont: "Nanum Pen";
+--titlesfont: "Nanum Pen Script";
 --primaryfont: "Jura";
 }
 
 
 * {box-sizing: border-box;
-margin:0;
-background-color: var(--background-color);
-font-size:16px;}
+margin:0;}
 
+body{background-color: var(--background-color);
+  font-size:16px;
+}
 
 h1 {font-family: var(--h1font);
   font-size: 4em;

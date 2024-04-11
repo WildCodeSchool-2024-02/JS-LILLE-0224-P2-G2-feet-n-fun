@@ -1,9 +1,11 @@
 import "./App.css";
+import Delivery from "./components/Delivery";
 
 function App() {
   return (
+    
+   <Delivery/>
    
-  <h1>Feet & fun</h1>
    
   );
 }
