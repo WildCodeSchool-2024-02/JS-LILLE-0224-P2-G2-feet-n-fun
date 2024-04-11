@@ -1,4 +1,5 @@
 :root {
+<<<<<<< HEAD
   /* Couleur*/
   --background-color: #fffdf9;
   --card-background: #fff7ce;
@@ -7,6 +8,17 @@
   --third-color: #e87172;
   --text-color: #4c4b48;
   --third-color-hover: #ce6263;
+=======
+
+  /* Couleur*/ 
+--background-color:#FFFDF9;
+--card-background: #FFF7CE;
+--primary-color:#FEC532;
+--secondary-color:#B79DEC; 
+--third-color:#E87172;
+--text-color:#4C4B48;
+--third-color-hover:#ce6263;
+>>>>>>> c96be4336cd486387d7b6abbd14ab62f02811050
 
   /*Police*/
   --h1font: "Yomogi";
@@ -17,6 +29,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+<<<<<<< HEAD
 }
 
 body {
@@ -24,8 +37,26 @@ body {
   font-size: 16px;
 }
 
+=======
+}
+
+
+body{background-color: var(--background-color);
+  font-size:16px;
+  font-family: var(--primaryfont);
+}
+
+>>>>>>> c96be4336cd486387d7b6abbd14ab62f02811050
 h1 {
   font-family: var(--h1font);
   font-size: 4em;
   color: var(--text-color);
 }
+<<<<<<< HEAD
+=======
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+>>>>>>> c96be4336cd486387d7b6abbd14ab62f02811050
