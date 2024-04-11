@@ -1,0 +1,39 @@
+nav {
+  width: 100%;
+  height: 10em;
+  background-color: var(--card-background);
+  position: relative;
+}
+
+.image_logo {
+  width: 20%;
+  border-radius: 50%;
+  padding: 0.2em;
+  background-color: white;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.h1FeetAndFun {
+  font-size: 2em;
+  color: black;
+  padding: 0.5em;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+}
+
+.logo_menu_burger {
+  font-size: 3em;
+  font-weight: 900;
+  padding: 0.1em;
+}
+
+.and {
+  color: var(--secondary-color);
+  font-size: 1em;
+}
