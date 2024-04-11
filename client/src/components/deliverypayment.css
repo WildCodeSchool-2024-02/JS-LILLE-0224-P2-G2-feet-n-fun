@@ -99,7 +99,7 @@ input {
 .deliveryButton,
 .paymentButton {
   margin-top: 1em;
-  background-color: var(--third-color);
+  background-color: var(--secondary-color);
   border-radius: 0.5rem;
   text-align: center;
   color: var(--background-color);
