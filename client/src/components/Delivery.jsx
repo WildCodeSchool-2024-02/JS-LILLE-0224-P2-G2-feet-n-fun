@@ -36,13 +36,13 @@ function Delivery() {
       </button>
 
       <h2>Livraison</h2>
-      <p className="deliveryDate">Délais de livraison : 3 à 5 jours ouvrés</p>
+      <p className="deliveryDate">Délais de livraison :   3 à 5 jours ouvrés</p>
 
       <section className="deliverySection">
         <form className="deliveryForm">
           <h3>TOTAL : €</h3>
-          <div>
-            <h3>Contact</h3>
+          <div className='deliveryFormContainer'>
+            <div ><h3>Contact</h3>
 
             <label>
               Prénom{" "}
@@ -83,7 +83,8 @@ function Delivery() {
                 <input type="tel" name="phone" required />
               </div>
             </label>
-            <br />
+            <br /> </div>
+            <div>
             <h3>Adresse de livraison</h3>
             <label>
               N°{" "}
@@ -121,12 +122,13 @@ function Delivery() {
                 <input type="text" name="postalcode" required />
               </div>
             </label>
+            </div>
           </div>
-          <input
+          <button
             onClick={displayPayment}
-            className="deliveryButton"
-            value="Passer au paiement"
-          />
+            className="deliveryButton" type="submit">
+            Passer au paiement </button>
+        
         </form>
       </section>
 

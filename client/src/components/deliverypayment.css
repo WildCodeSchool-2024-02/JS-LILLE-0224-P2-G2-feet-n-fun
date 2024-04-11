@@ -101,14 +101,14 @@ input {
   margin-top: 1em;
   background-color: var(--third-color);
   border-radius: 0.5rem;
-
   text-align: center;
   color: var(--background-color);
   cursor: pointer;
   font-family: var(--primaryfont);
   font-size: 1.1em;
   font-weight: bolder;
-  width: 60vw;
+  width: fit-content;
+  padding:0.5em;
 }
 
 .deliveryButton:hover,
@@ -136,7 +136,7 @@ input {
   .deliveryForm,
   .paymentForm {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -145,4 +145,19 @@ input {
     width: 20vw;
     height: 2em;
   }
+
+  .deliveryFormContainer {display:flex;
+  flex-direction: row;
+align-items: center;
+justify-content: space-around;
+gap:10vw;
+padding-top:2vh;
+padding-bottom:2vh}
+
+.buttonCloseDeliveryPayment {display:none}
+.deliverySection, .paymentSection {width:70vw; margin:auto}
+
 }
+
+
+
