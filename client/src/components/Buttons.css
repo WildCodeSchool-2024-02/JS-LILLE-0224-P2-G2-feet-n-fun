@@ -1,0 +1,7 @@
+button {background-color:transparent;
+border:none
+}
+
+button:hover {cursor: pointer;}
+
+img {height:6vh}
