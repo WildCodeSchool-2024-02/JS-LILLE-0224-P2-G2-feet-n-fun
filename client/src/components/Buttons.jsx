@@ -3,10 +3,11 @@ import "./Buttons.css";
 
 /* pour appeler les boutons : 
 - les import dans le composants
-    <Buttons buttonIndex={3} />
-    <Buttons buttonIndex={2} />
-    <Buttons buttonIndex={1} />
-    <Buttons buttonIndex={0} /> */
+    <Buttons buttonIndex={4} /> pour le bouton enlever du panier (delete)
+    <Buttons buttonIndex={3} /> pour le bouton ajout aux fav 
+    <Buttons buttonIndex={2} /> pour le bouton ajout au panier
+    <Buttons buttonIndex={1} /> pour le bouton favori
+    <Buttons buttonIndex={0} /> pour le bouton panier*/
 
 function Buttons({ buttonIndex }) {
   const buttonsArray = [
@@ -22,6 +23,9 @@ function Buttons({ buttonIndex }) {
       src: "./public/assets/images/icons/add-heart.svg",
       name: "heartadd",
     },
+      {id:4,
+       src: "./public/assets/images/icons/delete.svg",
+       name: "delete",
   ];
 
   /* Fonction pour ajouter au "tableau" panier */
