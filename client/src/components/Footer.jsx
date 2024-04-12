@@ -26,26 +26,28 @@ function Footer() {
           />
         </a>
       </div>
-      <div className="navigation-footer">
-        <a href="www.ggogle.com" className="art-font color-nav">
+      <div className="end-navigation navigation-footer">
+        <a href="www.google.com" className="art-font  color-nav">
           ART
         </a>
-        <a href="www.ggogle.com" className="sports-font color-nav">
+        <a href="www.google.com" className="sports-font  color-nav">
           SPORTS
         </a>
-        <a href="www.ggogle.com" className="geek-font color-nav">
+        <a href="www.google.com" className="geek-font color-nav">
           GEEK
         </a>
-        <a href="www.ggogle.com" className="anime-font color-nav">
+        <a href="www.google.com" className="anime-font color-nav">
           ANIME{" "}
         </a>
-        <a href="www.ggogle.com" className="festif-font color-nav">
+        <a href="www.google.com" className="festif-font color-nav">
           FESTIF{" "}
         </a>
       </div>
-      <h6>
-        © 2024 <span>Feet & Fun</span> Tous droits réservés.
-      </h6>
+      <div className=" center copieright">
+        <h6>
+          © 2024<span> Feet & Fun </span> Tous droits réservés.
+        </h6>
+      </div>
     </div>
   );
 }
