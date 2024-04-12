@@ -1,39 +1,68 @@
 nav {
   width: 100%;
-  height: 10em;
-  background-color: var(--card-background);
+  height: 7em;
+  background-color: var(--background-color);
   position: relative;
 }
 
 .image_logo {
-  width: 20%;
+  width: 4em;
   border-radius: 50%;
   padding: 0.2em;
   background-color: white;
   position: absolute;
   top: 5%;
   right: 5%;
+  border: 0.5px solid var(--text-color);
 }
 
 .h1FeetAndFun {
   font-size: 2em;
-  color: black;
   padding: 0.5em;
   display: inline-block;
   position: absolute;
   top: 50%;
   right: 0%;
-  border-top-left-radius: 0.5em;
-  border-bottom-left-radius: 0.5em;
 }
 
-.logo_menu_burger {
-  font-size: 3em;
-  font-weight: 900;
-  padding: 0.1em;
+.bouton_menu_burger {
+  background-color: var(--background-color);
+  border: 1px solid var(--background-color);
+  opacity: 0.4;
 }
 
 .and {
   color: var(--secondary-color);
   font-size: 1em;
+}
+
+/*.categories {
+  display: none;
+}
+*/
+@media screen and (min-width: 992px) {
+  .bouton_menu_burger {
+    display: none;
+  }
+
+  .image_logo {
+    width: 5%;
+    top: 8%;
+    left: 5%;
+    border: 1px solid var(--text-color);
+  }
+
+  nav {
+    background-color: var(--background-color);
+    height: 6em;
+  }
+
+  .h1FeetAndFun {
+    font-size: 2.5em;
+    padding: 0.5em;
+    display: inline-block;
+    position: absolute;
+    top: 0%;
+    left: 40%;
+  }
 }
