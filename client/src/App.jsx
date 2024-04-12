@@ -1,8 +1,11 @@
 import "./App.css";
+import CartContainer from "./components/CartContainer";
 
 function App() {
-  return (
+  return (<>
     <h1>Feet & fun</h1>
+    <CartContainer/>
+</>
   );
 }
 
