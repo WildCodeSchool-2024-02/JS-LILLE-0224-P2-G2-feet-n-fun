@@ -18,7 +18,6 @@ body {
     text-align: center;
   }
   
-  /*Delivery*/
   .deliveryDate {
     font-family: var(--titlesfont);
     font-size: 1.5em;
@@ -61,8 +60,7 @@ body {
     padding-top: 1em;
   }
   
-  .deliverySection,
-  .paymentSection {
+  .cartSection {
     background-color: var(--cardBackground);
     text-align: center;
     font-family: var(--primaryfont);
