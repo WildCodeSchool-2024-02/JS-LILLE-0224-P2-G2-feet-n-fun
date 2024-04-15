@@ -6,22 +6,29 @@
   --secondary-color: #b79dec;
   --third-color: #e87172;
   --text-color: #4c4b48;
-  --footer-text-color: black /*Police*/ --h1font: "Yomogi";
-  --titlesfont: "Nanum Pen";
+  --footer-text-color: black
+  /*Police*/
+  --h1font: "Yomogi";
+  --titlesfont: "Nanum Pen Script";
   --primaryfont: "Jura";
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
-  font-size: 16px;
 }
-
+body {
+  font-size: 16px;
+  font-family: var(--primaryfont);
+  background-color: var(--background-color);
+}
 h1 {
   font-family: var(--h1font);
   font-size: 4em;
   color: var(--text-color);
 }
-body {
-  background-color: var(--background-color);
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
