@@ -1,0 +1,146 @@
+.one_off {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  width: 40%;
+  border: 4px double var(--text-color);
+}
+
+.block {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5%;
+  margin-top: 1em;
+}
+
+.first_block {
+  width: 100%;
+}
+
+span {
+  font-weight: bolder;
+  color: var(--text-color);
+}
+
+.last_block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation-name: selection;
+  animation-duration: 0.5s;
+  background-color: var(--secondary-color);
+  padding: 0.3em;
+  border-radius: 10px;
+  border: 4px double var(--text-color);
+}
+
+.img_filter {
+  width: 2em;
+}
+
+@keyframes selection {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.img_filter {
+  width: 2em;
+}
+
+.select {
+  width: 50%;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bolder;
+  box-shadow: 3px 3px 3px var(--text-color);
+  color: var(--text-color);
+  margin-left: 25%;
+  text-align: center;
+  font-size: 15px;
+}
+
+option {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-weight: bolder;
+  border-bottom: 1px solid black;
+  font-size: 10px;
+}
+
+@media screen and (min-width: 992px) {
+  .one_off {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .block {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 2.5%;
+    margin-top: 1em;
+  }
+
+  .first_block {
+    width: 10%;
+  }
+
+  span {
+    font-weight: bolder;
+    color: var(--text-color);
+  }
+
+  .last_block {
+    width: 89%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    animation-name: selection;
+    animation-duration: 0.5s;
+    background-color: var(--secondary-color);
+    padding: 0.3em;
+    border-radius: 10px;
+    border: 4px double var(--text-color);
+  }
+
+  @keyframes selection {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 89%;
+    }
+  }
+
+  .img_filter {
+    width: 2em;
+  }
+
+  .select {
+    width: 20%;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bolder;
+    box-shadow: 3px 3px 3px var(--text-color);
+    color: var(--text-color);
+    margin-left: 0%;
+    cursor: pointer;
+  }
+
+  option {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-weight: bolder;
+    border-bottom: 1px solid black;
+    width: 100%;
+    cursor: pointer;
+    font-size: 15px;
+  }
+}

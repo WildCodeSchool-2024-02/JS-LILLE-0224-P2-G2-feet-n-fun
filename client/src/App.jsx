@@ -1,8 +1,13 @@
 import "./App.css";
+import FiltreButton from './components/FilterButton';
+// import Bdd from './components/Bdd';
 
 function App() {
+  
   return (
-    <h1>Feet & fun</h1>
+    
+    <FiltreButton /* Bdd={Bdd} */ />
+    
   );
 }
 
