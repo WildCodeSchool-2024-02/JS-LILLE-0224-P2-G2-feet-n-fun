@@ -1,7 +1,9 @@
 import "./App.css";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CardContainer from "./components/CardContainer";
+
 
 function App() {
 
@@ -40,6 +42,7 @@ function App() {
         </>
       )}
     </>
+
   );
 }
 
