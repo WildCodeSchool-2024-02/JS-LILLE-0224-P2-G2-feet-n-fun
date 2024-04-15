@@ -17,13 +17,26 @@ function App() {
       });
   }, []);
 
+  // State qui stock l'index de la section, pour générer les cards des produits correspondant
+  const [ sectionSelected, setSectionSelected ] = useState(0)
+
+  const changeSection = (indexSectionSelected) => {
+    setSectionSelected(indexSectionSelected)
+  }
+
   return (
+
     <>
       {/* Le 'data &&' permet d'afficher le composant une fois la data récolté */}
       {data && (
         <>
           <h1>Feet & fun</h1>
-          <CardContainer data={data} />
+          <nav>
+            {data.map((categorie, index) =>
+              <button type="button" key={categorie.id} onClick={() => changeSection(index)} onKeyDown={() => changeSection(index)}>{categorie.name}</button>
+            )}
+          </nav>
+          <CardContainer data={data} sectionSelected={sectionSelected} />
         </>
       )}
     </>
