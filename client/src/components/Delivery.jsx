@@ -4,25 +4,24 @@ import "./deliverypayment.css";
 import Payment from "./Payment";
 
 function Delivery() {
-  /* afficher la page paiement une fois le formulaire rempli */
+  /* display payment form once form is completed */
   const [showPayment, setShowPayment] = useState(false);
   const displayPayment = (event) => {
     event.preventDefault();
     setShowPayment(true);
   };
-
-  /* changer le prénom du client pour le message de fin */
+  /* change client name on final message  */
   const [clientName, setClientName] = useState("");
   const changeClientName = (event) => {
     setClientName(event.target.value);
   };
-  /* idem pour le nom */
+  /* same thing for the name */
   const [clienSurname, setClientSurname] = useState("");
   const changeClientSurname = (event) => {
     setClientSurname(event.target.value);
   };
 
-  /* idem pour le mail */
+  /* same thing for the mail */
   const [clientMail, setClientMail] = useState("");
   const changeClientMail = (event) => {
     setClientMail(event.target.value);

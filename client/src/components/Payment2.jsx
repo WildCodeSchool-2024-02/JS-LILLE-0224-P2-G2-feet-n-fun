@@ -1,10 +1,9 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import "./deliverypayment.css";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import ConfirmationPayment from "./ConfirmationPayment";
+import "./deliverypayment.css";
 
-/* props : totalPrice */
+/* props to add : totalPrice */
 
 function Payment2({ clientName, clientSurname, clientMail }) {
   const [showConfirmationMessage, setConfirmationMessage] = useState(false);
