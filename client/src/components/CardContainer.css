@@ -1,0 +1,19 @@
+.card-container {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* ROUGE */
+  /* background-color: #FFEFEF; */
+  /* Orange */
+  /* background-color: #fff3d5; */
+  /* Vert */
+  /* background-color: #DEFFD9; */
+  /* BLEU */
+  /* background-color: #EFF7FF; */
+  /* VIOLET */
+  /* background-color: #FFEFFE; */
+  /* JAUNE */
+  /* background-color: #FFFFD0; */
+}
