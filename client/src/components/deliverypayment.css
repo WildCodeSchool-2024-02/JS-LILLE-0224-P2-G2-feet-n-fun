@@ -1,0 +1,170 @@
+/*General*/
+body {
+  color: var(--text-color);
+  text-align: right;
+  font-size: 1.1em;
+}
+
+h2 {
+  font-family: var(--titlesfont);
+  font-size: 3em;
+  font-weight: lighter;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+/*Delivery*/
+.deliveryDate {
+  font-family: var(--titlesfont);
+  font-size: 1.5em;
+}
+
+/*Payment*/
+.creditCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fakeCardsImg {
+  width: 8em;
+}
+
+.buttonFakeCards {
+  background-color: transparent;
+  border: none;
+}
+.confirmationMessagePayment {
+  font-size: 1.1em;
+  padding: 1em 0 1em 0;
+}
+.infosClient {
+  font-weight: bold;
+}
+
+/*Both*/
+.numberInput {
+  width: 5em;
+}
+
+.containerInputNumber {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 1em;
+}
+
+.deliverySection,
+.paymentSection {
+  background-color: var(--cardBackground);
+  text-align: center;
+  font-family: var(--primaryfont);
+  padding: 0.5em;
+  border: var(--text-color) 2px solid;
+  border-radius: 15px;
+  margin-right: 5vw;
+  margin-left: 5vw;
+}
+
+.deliveryForm,
+.paymentForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.paymentForm {
+  align-items: flex-start;
+}
+
+input {
+  width: 70vw;
+  font-size: 1em;
+  font-family: var(--primaryfont);
+  border: var(--text-color) 1px solid;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.deliveryButton,
+.paymentButton {
+  margin-top: 1em;
+  background-color: var(--secondary-color);
+  border-radius: 0.5rem;
+  text-align: center;
+  color: var(--background-color);
+  cursor: pointer;
+  font-family: var(--primaryfont);
+  font-size: 1.1em;
+  font-weight: bolder;
+  width: fit-content;
+  padding: 0.5em;
+}
+
+.deliveryButton:hover,
+.paymentButton:hover {
+  background-color: var(--third-color-hover);
+}
+
+.deliveryButton:focus,
+.paymentButton:hover {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.buttonCloseDeliveryPayment {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: var(--third-color);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 992px) {
+  .deliveryForm,
+  .paymentForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input {
+    width: 20vw;
+    height: 2em;
+  }
+
+  .deliveryFormContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+
+  .buttonCloseDeliveryPayment {
+    display: none;
+  }
+
+  .deliverySection,
+  .paymentSection {
+    width: 70vw;
+    margin: auto;
+  }
+}
