@@ -1,5 +1,4 @@
 :root {
-
   /* Couleur*/
   --background-color: #fffdf9;
   --card-background: #fff7ce;
@@ -21,7 +20,6 @@
 }
 
 body {
-  background-color: var(--background-color);
   font-size: 16px;
   font-family: var(--primaryfont);
 }

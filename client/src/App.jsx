@@ -1,8 +1,10 @@
 import "./App.css";
-
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CardContainer from "./components/CardContainer";
+import Navbar from "./components/Header/Navbar";
+import CategoryBar from "./components/Header/CategoryBar";
+import CardContainer from "./components/Shop/CardContainer";
+
 
 
 function App() {
@@ -33,7 +35,8 @@ function App() {
       {/* Le 'data &&' permet d'afficher le composant une fois la data récolté */}
       {data && (
         <>
-          <h1>Feet & fun</h1>
+          <Navbar />
+          <CategoryBar />
           <nav>
             {data.map((categorie, index) =>
               <button type="button" key={categorie.id} onClick={() => changeSection(index)} onKeyDown={() => changeSection(index)}>{categorie.name}</button>
