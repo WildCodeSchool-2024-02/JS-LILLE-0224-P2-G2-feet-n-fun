@@ -3,9 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CardContainer from "./components/CardContainer";
 
-
 function App() {
-
   // Ici le state qui va recevoir la data de l'API
   const [data, setData] = useState(null);
 
@@ -20,9 +18,6 @@ function App() {
 
   return (
     <>
-
-      <h1>Feet & fun</h1>
-
       {/* Le 'data &&' permet d'afficher le composant une fois la data récolté */}
       {data && (
         <>

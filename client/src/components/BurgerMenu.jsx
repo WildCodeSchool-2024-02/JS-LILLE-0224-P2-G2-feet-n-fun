@@ -6,7 +6,12 @@ function BurgerMenu({ handleToggle, visible }) {
   return (
     <div className="burgerMenu" id={!visible ? "close" : ""}>
       <div className="burgerMenu-container">
-        <button type="button" className="exit-btn" onClick={handleToggle} onKeyDown={handleToggle} >
+        <button
+          type="button"
+          className="exit-btn"
+          onClick={handleToggle}
+          onKeyDown={handleToggle}
+        >
           <img
             src="../assets/images/icons/exit-btn-white.svg"
             alt="Bouton de sortie du Burger Menu"
