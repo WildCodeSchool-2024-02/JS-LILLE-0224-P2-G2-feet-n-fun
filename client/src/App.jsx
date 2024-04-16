@@ -29,6 +29,7 @@ function App() {
   return (
 
     <>
+
       {/* Le 'data &&' permet d'afficher le composant une fois la data récolté */}
       {data && (
         <>
