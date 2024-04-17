@@ -20,7 +20,7 @@ function ButtonsList ({buttonIndex}) {
            name: "delete", click :""},
            {id:5,
         src:"./public/assets/images/icons/search.svg",
-    name:"search", click:""}
+          name:"search", click:""}
       ];
 
       return (

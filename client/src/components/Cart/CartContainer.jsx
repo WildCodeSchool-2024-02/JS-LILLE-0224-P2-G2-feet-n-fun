@@ -1,17 +1,50 @@
-import "./Cart.css"
-import CartCard from "./CartCard"
+import "./Cart.css";
+import { useState } from "react";
+import CartCard from "./CartCard";
 
-function CartContainer () {
-/* A ajouter : 
+function CartContainer({ cartItems }) {
+  const [tableauPanier, setTableauPanier] = useState([]);
+  function ajouterAuPanier () {
+    const nouveauTableau = [...tableauPanier, cartItems]; // Créer un nouveau tableau avec l'élément ajouté
+    setTableauPanier(nouveauTableau); // Mettre à jour l'état avec le nouveau tableau
+  };
+
+  /* A ajouter : 
 - fonction pour calculer le total des prix des produits
 - fonction boutton on Click pour passer faire la page livraison 
 - fonction pour quitter et revenir à la page précédente 
 
-⚠️ J'utilise un tableau ici pour tester le design, il faudra enelever avant de push sur dev, il faudra faire appel à l'API */ 
+⚠️ J'utilise un tableau ici pour tester le design, il faudra enelever avant de push sur dev, il faudra faire appel à l'API */
+  return (
+    <section className="sectionCart">
+      <button type="button" className="buttonCloseDeliveryPayment">
+        <img src="./public/assets/images/icons/exit-btn-red.svg" alt="croix" />
+      </button>
+      <h2>Panier</h2>
+      <div className="cardsContainerCart">
+        {cartItems && (()=>ajouterAuPanier) &&
+         (console.log(tableauPanier)) &&
+         (tableauPanier.map((chaussette) => (
+            <CartCard
+              key={chaussette.id}
+              name={chaussette.name}
+              src={chaussette.src}
+              price={chaussette.price}
+            />
+          )))}
 
+        <span className="totalCart">Total : €</span>
+        <button type="button" className="cartValidationButton">
+          Valider
+        </button>
+      </div>
+    </section>
+  );
+}
 
-  const chaussettes = [
-      {
+export default CartContainer;
+
+/*  {
         "id": 114,
         "src": "../assets/images/socks/Art/114.jpeg",
         "name": "Michelangelo",
@@ -80,25 +113,4 @@ function CartContainer () {
         "new": false,
         "color": ["blue", "white"],
         "size": [{ "35_38": true }, { "39_42": true }, { "43_46": true }]
-      }
-    ] 
-  
-
-    return (<section className="sectionCart">
-    <button type="button" className="buttonCloseDeliveryPayment">
-        <img src="./public/assets/images/icons/exit-btn-red.svg" alt="croix"/>
-      </button>
-        <h2>Panier</h2>
-        <div className="cardsContainerCart">
-        {chaussettes.map((chaussette) => (<CartCard key={chaussette.id} name = {chaussette.name} src={chaussette.src} price={chaussette.price}/>))}
-        
-        <span className="totalCart">Total : €</span>
-        <button type="button" className="cartValidationButton">Valider</button>
- </div>
-        </section>
-    )
-
-}
-
-
-export default CartContainer
+      } */

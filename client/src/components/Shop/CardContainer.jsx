@@ -4,7 +4,7 @@ import { useState } from "react";
 import Card from "./Card";
 import ProductDetails from "./ProductDetails";
 
-function CardContainer({ data, sectionSelected }) {
+function CardContainer({ data, sectionSelected, cartItems, setCartItems }) {
   // State qui stock l'état Ouvert/Fermé du composant ProductDetails
   const [visible, setVisible] = useState(false);
 
@@ -21,6 +21,15 @@ function CardContainer({ data, sectionSelected }) {
   // State qui stock la taille choisit pour l'ajout au panier
   const [chooseSize, setChooseSize] = useState("Votre taille");
 
+  const addToCart = (indexOfItem) => {
+    const itemSelected = data[sectionSelected].products.find((product) =>
+      product.id === indexOfItem
+    ) 
+    setCartItems(itemSelected)
+    console.log(`bonjour c'est ${itemSelected}`)
+  } 
+
+
   return (
     <>
       <div className="card-container">
@@ -31,6 +40,7 @@ function CardContainer({ data, sectionSelected }) {
             data={product}
             colorSection={data[sectionSelected].color}
             handleToggle={() => handleToggle(index)}
+            addToCart={() => addToCart(index)}
           />
         ))}
       </div>

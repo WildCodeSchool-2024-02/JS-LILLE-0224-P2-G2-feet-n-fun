@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/Header/Navbar";
 import CategoryBar from "./components/Header/CategoryBar";
 import CardContainer from "./components/Shop/CardContainer";
+import CartContainer from "./components/Cart/CartContainer"
 
 
 
@@ -28,6 +29,8 @@ function App() {
     setSectionSelected(indexSectionSelected)
   }
 
+  const [cartItems, setCartItems] = useState()
+
   return (
 
     <>
@@ -42,7 +45,8 @@ function App() {
               <button type="button" key={categorie.id} onClick={() => changeSection(index)} onKeyDown={() => changeSection(index)}>{categorie.name}</button>
             )}
           </nav>
-          <CardContainer data={data} sectionSelected={sectionSelected} />
+          <CardContainer data={data} sectionSelected={sectionSelected} cartItems={cartItems} setCartItems={setCartItems} />
+          <CartContainer cartItems={cartItems}/>
         </>
       )}
     </>
