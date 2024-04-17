@@ -1,13 +1,14 @@
 import "./Cart.css"
 import CartCard from "./CartCard"
 
-function CartContainer () {
+function CartContainer ({data}) {
 /* A ajouter : 
 - fonction pour calculer le total des prix des produits
 - fonction boutton on Click pour passer faire la page livraison 
 - fonction pour quitter et revenir à la page précédente 
 
 ⚠️ J'utilise un tableau ici pour tester le design, il faudra enelever avant de push sur dev, il faudra faire appel à l'API */ 
+console.log(data[3].products)
 
 
   const chaussettes = [
@@ -82,7 +83,6 @@ function CartContainer () {
         "size": [{ "35_38": true }, { "39_42": true }, { "43_46": true }]
       }
     ] 
-  
 
     return (<>
     <button type="button" className="buttonCloseDeliveryPayment">
@@ -90,7 +90,7 @@ function CartContainer () {
       </button>
         <h2>Panier</h2>
         <div className="cardsContainerCart">
-        {chaussettes.map((chaussette) => (<CartCard key={chaussette.id} name = {chaussette.name} src={chaussette.src} price={chaussette.price}/>))}
+        {data[3].products.map((chaussette) => (<CartCard key={chaussette.id} name = {chaussette.name} src={chaussette.src} price={chaussette.price}/>))}
         
         <span className="totalCart">Total : €</span>
         <button type="button" className="cartValidationButton">Valider</button>
