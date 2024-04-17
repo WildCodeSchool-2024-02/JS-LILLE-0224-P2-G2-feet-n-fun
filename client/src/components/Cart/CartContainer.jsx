@@ -84,7 +84,7 @@ function CartContainer () {
     ] 
   
 
-    return (<>
+    return (<section className="sectionCart">
     <button type="button" className="buttonCloseDeliveryPayment">
         <img src="./public/assets/images/icons/exit-btn-red.svg" alt="croix"/>
       </button>
@@ -95,7 +95,7 @@ function CartContainer () {
         <span className="totalCart">Total : €</span>
         <button type="button" className="cartValidationButton">Valider</button>
  </div>
-        </>
+        </section>
     )
 
 }

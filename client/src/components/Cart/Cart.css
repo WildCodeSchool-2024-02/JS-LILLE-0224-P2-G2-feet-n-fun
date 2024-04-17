@@ -19,6 +19,10 @@ h3 {
   padding-top: 1em;
 }
 
+.sectionCart {
+  background-color: var(--background-color);
+  z-index: 999;
+}
 /* ensemble des cards*/
 .cardsContainerCart {
   display: flex;
