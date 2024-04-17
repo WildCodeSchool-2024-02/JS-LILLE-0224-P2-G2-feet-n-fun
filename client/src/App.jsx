@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   // State qui stock l'index de la section, pour générer les cards des produits correspondant
-  const [ sectionSelected, setSectionSelected ] = useState(0)
+  const [ sectionSelected, setSectionSelected ] = useState(3)
 
   const changeSection = (indexSectionSelected) => {
     setSectionSelected(indexSectionSelected)
