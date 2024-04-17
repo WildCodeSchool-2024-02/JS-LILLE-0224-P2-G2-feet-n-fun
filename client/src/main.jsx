@@ -20,7 +20,6 @@ const getData = () => {
       data = response.data;
     })
     .then(() => {
-      return data;
     });
 };
 
@@ -34,7 +33,7 @@ const router = createBrowserRouter([
         element: <Home />,
         loader: () =>{ getData()}
         },
-      },
+
       {
         path: "/categories/:id",
         element: <Categories />,
