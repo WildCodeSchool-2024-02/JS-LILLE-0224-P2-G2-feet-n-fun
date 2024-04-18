@@ -4,7 +4,7 @@ import { useState } from "react";
 import Card from "./Card";
 import ProductDetails from "./ProductDetails";
 
-function CardContainer({ data, sectionSelected }) {
+function CardContainer({ data }) {
   // State qui stock l'état Ouvert/Fermé du composant ProductDetails
   const [visible, setVisible] = useState(false);
 
@@ -32,11 +32,11 @@ function CardContainer({ data, sectionSelected }) {
         className="card-container"
       >
         {/* .map() Pour générer toutes les cards d'une section */}
-        {data[sectionSelected].products.map((product, index) => (
+        {data.products.map((product, index) => (
           <Card
             key={`${product.id}.${product.name}`}
             data={product}
-            colorSection={data[sectionSelected].color}
+            colorSection={data.color}
             openProduct={() => openProduct(index)}
             setVisible={setVisible}
           />
@@ -45,8 +45,8 @@ function CardContainer({ data, sectionSelected }) {
       {/* Ouvre le composant ProductDetails lors ce que visible est true */}
       {visible && (
         <ProductDetails
-          data={data[sectionSelected].products[productSelected]}
-          colorSection={data[sectionSelected].color}
+          data={data.products[productSelected]}
+          colorSection={data.color}
           visible={visible}
           closeProduct={closeProduct}
           chooseSize={chooseSize}
@@ -58,13 +58,12 @@ function CardContainer({ data, sectionSelected }) {
 }
 
 CardContainer.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
+  data: PropTypes.shape({
+    color: PropTypes.string.isRequired,
     products: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
-    })).isRequired,    
-    color: PropTypes.string
-  })).isRequired,
-  sectionSelected: PropTypes.number.isRequired,
+    })).isRequired
+  }).isRequired,
 };
 export default CardContainer;
