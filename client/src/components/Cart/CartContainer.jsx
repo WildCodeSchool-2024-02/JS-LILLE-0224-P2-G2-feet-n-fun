@@ -1,20 +1,26 @@
+import React, { useContext } from "react";
 import "./Cart.css";
-import { useState } from "react";
 import CartCard from "./CartCard";
+import { ShopContext } from "../../context/shop-context";
 
-function CartContainer({ cartItems }) {
-  const [tableauPanier, setTableauPanier] = useState([]);
-  function ajouterAuPanier () {
-    const nouveauTableau = [...tableauPanier, cartItems]; // Créer un nouveau tableau avec l'élément ajouté
-    setTableauPanier(nouveauTableau); // Mettre à jour l'état avec le nouveau tableau
-  };
+export function CartContainer({ data, sectionSelected }) {
+  const { cartItems } = useContext(ShopContext);
 
-  /* A ajouter : 
-- fonction pour calculer le total des prix des produits
-- fonction boutton on Click pour passer faire la page livraison 
-- fonction pour quitter et revenir à la page précédente 
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
+    for (const itemId in cartItems) {
+      if (cartItems[itemId] > 0) {
+        const sectionData = data[sectionSelected];
+        if (sectionData && sectionData.products) {
+          const product = sectionData.products.find(product => product.id === Number(itemId));
+          if (product) {
+            totalAmount += cartItems[itemId] * product.price;
+          }
+        }
+      }
+    }
+    return totalAmount;}
 
-⚠️ J'utilise un tableau ici pour tester le design, il faudra enelever avant de push sur dev, il faudra faire appel à l'API */
   return (
     <section className="sectionCart">
       <button type="button" className="buttonCloseDeliveryPayment">
@@ -22,18 +28,18 @@ function CartContainer({ cartItems }) {
       </button>
       <h2>Panier</h2>
       <div className="cardsContainerCart">
-        {cartItems && (()=>ajouterAuPanier) &&
-         (console.log(tableauPanier)) &&
-         (tableauPanier.map((chaussette) => (
-            <CartCard
-              key={chaussette.id}
-              name={chaussette.name}
-              src={chaussette.src}
-              price={chaussette.price}
-            />
-          )))}
-
-        <span className="totalCart">Total : €</span>
+        {/* Utilisez 'cartItems' pour afficher les produits dans le panier */}
+        {Object.entries(cartItems).map(([itemId, quantity]) => {
+          if (quantity > 0) {
+            const product = data[sectionSelected].products.find(product => product.id === Number(itemId));
+            if (product) {
+              return <CartCard key={itemId} product={product} quantity={quantity} />;
+            }
+          }
+          return null;
+        })}
+        {/* Utilisez getTotalCartAmount pour afficher le total */}
+        <span className="totalCart">Total : {getTotalCartAmount()} €</span>
         <button type="button" className="cartValidationButton">
           Valider
         </button>

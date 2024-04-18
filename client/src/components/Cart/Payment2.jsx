@@ -19,7 +19,7 @@ function Payment2({ clientName, clientSurname, clientMail }) {
         <label>
           Numéro de Carte{" "}
           <div>
-            <input type="number" name="cardnumber" />
+            <input type="tel" name="cardnumber" />
           </div>
         </label>
         <label>

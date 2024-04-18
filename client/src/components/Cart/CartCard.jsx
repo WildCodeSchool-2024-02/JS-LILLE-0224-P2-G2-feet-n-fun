@@ -1,6 +1,33 @@
+import { useContext } from "react";
 import "./Cart.css"
-import PropTypes from 'prop-types'; 
+import {ShopContext} from "../../context/shop-context"
 
+function CartCard({ product, quantity }) {
+    const { id, name, price, src } = product; 
+    const { addToCart, removeFromCart, cartItems } = useContext(ShopContext);
+    return ( 
+      <div className="cardContainerCart">
+        <img className="imgSocksCart" src={src} alt="" />
+        <div className="cardTextCart">
+          <h4>{name}</h4> 
+          <div className="sizeCart">
+            <p> Taille : </p>
+            <p> Quantité : {quantity} </p>
+          </div>
+          <div className="priceCart">
+            <p>{price * quantity}€</p>
+          </div>
+        </div> 
+        <div className="cardButtonsCard">
+          <button type="button" onClick={() => removeFromCart(id)}> - </button> 
+          <input value={cartItems[id]} />
+          <button type="button" onClick={() => addToCart(id)}> +</button>
+        </div> 
+      </div>
+    );
+  }
+
+export default CartCard
 /* 
 A faire : 
 - Il faudra changer les boutons avec le composant buttons
@@ -17,34 +44,3 @@ import Buttons from "./Buttons.jsx"
 
 - Attention le prix doit évoluer avec la quantité ! 
  */ 
-
-function CartCard({name, price, src}) {
-  return (
-    <div className="cardContainerCart">
-       
-            <img className="imgSocksCart" src={src} alt="" />
-                
-                <div className="cardTextCart">
-                    <h4>{name}</h4> <div className="sizeCart">
-                    <p> Taille : </p>
-                    <p> Quantité : </p></div>
-
-                    <div className="priceCart"><p>{price}€</p></div>
-                </div> 
-                <div className="cardButtonsCard">
-                    <button label="Supprimer" type="button"><img alt="supprimer" src="./public/assets/images/icons/add-heart.svg"/></button>
-                    <button label="Ajout Favoris" type="button"><img alt="ajoutFav" src="./public/assets/images/icons/trash-bin.svg"/></button>
-                </div>
-      
-    </div>
-  );
-}
-
-export default CartCard;
-
-CartCard.propTypes  = {
-    name : PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    src : PropTypes.string.isRequired,
-    
-} 

@@ -65,7 +65,7 @@ p {
 
 .deliverySection,
 .paymentSection {
-  background-color: var(--cardBackground);
+  background-color: var(--background-color);
   text-align: center;
   font-family: var(--primaryfont);
   padding: 0.5em;

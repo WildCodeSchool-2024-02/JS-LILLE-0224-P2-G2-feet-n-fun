@@ -4,7 +4,7 @@ import BurgerMenu from './BurgerMenu'
 import ButtonsList from "../Cart/ButtonsList";
 import CartContainer from "../Cart/CartContainer"
 
-function Navbar() {
+function Navbar(sectionSelected) {
   const [visible, setVisible] = useState(false);
   const handleToggle = () => {
     setVisible(!visible);
@@ -39,7 +39,7 @@ function Navbar() {
         Feet <span className="and">&</span> fun
       </h1>
       <div>
-      <button className="buttonsNavBar searchInNav" onClick={displayCart}><ButtonsList buttonIndex={5}/></button>
+      <button className="buttonsNavBar searchInNav" onClick={displayCart}><ButtonsList buttonIndex={5} sectionSelected={sectionSelected}/></button>
       <button className="buttonsNavBar" onClick={displayCart}><ButtonsList buttonIndex={1}/></button> 
       <button className="buttonsNavBar" onClick={displayCart}><ButtonsList buttonIndex={0}/></button></div>
  

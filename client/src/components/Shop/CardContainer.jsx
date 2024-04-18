@@ -21,13 +21,11 @@ function CardContainer({ data, sectionSelected, cartItems, setCartItems }) {
   // State qui stock la taille choisit pour l'ajout au panier
   const [chooseSize, setChooseSize] = useState("Votre taille");
 
-  const addToCart = (indexOfItem) => {
-    const itemSelected = data[sectionSelected].products.find((product) =>
-      product.id === indexOfItem
-    ) 
-    setCartItems(itemSelected)
-    console.log(`bonjour c'est ${itemSelected}`)
-  } 
+  const addToCart = (itemId) => {
+    setCartItems(itemId);
+  };
+
+   
 
 
   return (
