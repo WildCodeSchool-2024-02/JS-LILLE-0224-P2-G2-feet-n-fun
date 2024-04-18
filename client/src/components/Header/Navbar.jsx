@@ -23,7 +23,6 @@ function Navbar() {
         />
       </button>
       <BurgerMenu setVisible={setVisible} visible={visible}  />
-      {/* {visible ? <BurgerMenu handleToggle={handleToggle} visible={visible} /> : <BurgerMenu handleToggle={handleToggle} visible={visible} />} */}
       <h1 className="h1FeetAndFun">
         Feet <span className="and">&</span> fun
       </h1>
