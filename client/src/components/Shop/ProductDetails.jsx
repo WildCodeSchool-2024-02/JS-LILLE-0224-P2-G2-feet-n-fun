@@ -1,4 +1,5 @@
 import "./ProductDetails.css";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import SizeList from "./SizeList";
 
@@ -6,7 +7,7 @@ function ProductDetails({
   data,
   colorSection,
   visible,
-  handleToggle,
+  setVisible,
   chooseSize,
   setChooseSize,
 }) {
@@ -15,8 +16,18 @@ function ProductDetails({
     setChooseSize(data.size[selectedIndex].size);
   };
 
+  const [isTheFirstOpening, setisTheFirstOpening] = useState(false);
+
+  const isClose = (isTheFirstOpening && !visible) ? "close" : "";
+  const isOpen = visible ? "open" : "";
+
+  const handleToggle = () => {
+    setVisible(!visible);
+    setisTheFirstOpening(true);
+  };
+
   return (
-    <div className="product-details" id={!visible ? "close" : ""}>
+    <div className={`product-details ${isClose} ${isOpen}`}>
       <button type="button" className="exit-btn" onClick={handleToggle}>
         <img
           src="../assets/images/icons/exit-btn-red.svg"
@@ -58,7 +69,7 @@ ProductDetails.propTypes = {
   }).isRequired,
   colorSection: PropTypes.string.isRequired,
   visible: PropTypes.bool.isRequired,
-  handleToggle: PropTypes.func.isRequired,
+  setVisible: PropTypes.func.isRequired,
   chooseSize: PropTypes.string.isRequired,
   setChooseSize: PropTypes.func.isRequired,
 };

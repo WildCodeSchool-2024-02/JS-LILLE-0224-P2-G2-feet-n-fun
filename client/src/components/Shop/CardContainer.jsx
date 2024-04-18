@@ -35,16 +35,16 @@ function CardContainer({ data, sectionSelected }) {
         ))}
       </div>
       {/* Ouvre le composant ProductDetails lors ce que visible est true */}
-      {visible && (
+      {(productSelected + 1) && 
         <ProductDetails
           data={data[sectionSelected].products[productSelected]}
           colorSection={data[sectionSelected].color}
           visible={visible}
-          handleToggle={handleToggle}
+          setVisible={setVisible}
           chooseSize={chooseSize}
           setChooseSize={setChooseSize}
         />
-      )}
+      }
     </>
   );
 }

@@ -1,4 +1,5 @@
 .product-details {
+  display: none;
   height: 100vh;
   width: 100%;
   background-color: var(--background-color);
@@ -9,19 +10,24 @@
   padding: 1rem;
   z-index: 999;
   overflow-y: scroll;
-  /* transform: translateY(100%); */
+  transform: translateY(100%);
+}
+
+.product-details.open {
+  display: block;
   animation-name: slideTop;
   animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-/* .product-details#close {
-    animation-name: slideBottom;
-    animation-duration: 1.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-} */
+.product-details.close {
+  display: block;
+  animation-name: slideBottom;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
 
 .product-details .exit-btn {
   position: absolute;

@@ -4,6 +4,7 @@ import BurgerMenu from './BurgerMenu'
 
 function Navbar() {
   const [visible, setVisible] = useState(false);
+
   const handleToggle = () => {
     setVisible(!visible);
   };
@@ -21,7 +22,8 @@ function Navbar() {
           alt="picture_not_found"
         />
       </button>
-      {visible && <BurgerMenu handleToggle={handleToggle} visible={visible} />}
+      <BurgerMenu setVisible={setVisible} visible={visible}  />
+      {/* {visible ? <BurgerMenu handleToggle={handleToggle} visible={visible} /> : <BurgerMenu handleToggle={handleToggle} visible={visible} />} */}
       <h1 className="h1FeetAndFun">
         Feet <span className="and">&</span> fun
       </h1>
