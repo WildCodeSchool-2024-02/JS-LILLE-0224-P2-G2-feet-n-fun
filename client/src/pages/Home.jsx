@@ -1,12 +1,10 @@
-import { useLoaderData, useRouteLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 
 function Home () {
-    const toto = useLoaderData();
-  
-    console.log('toto dans home',toto)
+    const data = useLoaderData();
 
-    return (<h1>Bonjour </h1>)
+    return (<h1>Bonjour {data[0].products[0].name} </h1>)
 }
 
 export default Home 

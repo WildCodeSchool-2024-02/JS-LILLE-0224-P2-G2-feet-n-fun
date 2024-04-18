@@ -41,7 +41,7 @@
   .categories {
     display: block;
     width: 100%;
-    height: 4em;
+    height: 4.5em;
     background-color: var(--primary-color);
     position: relative;
     top: 0px;
@@ -57,37 +57,115 @@
   }
 
   li {
-    cursor: pointer;
     font-size: 30px;
-    color: var(--text-color);
   }
 
-  li:hover {
+  button:hover {
     transform: scale(1.2);
     transition: transform 0.2s;
     color: var(--secondary-color);
     text-shadow: 5px 5px 5px black;
+    cursor: pointer;
   }
 
-  li:nth-child(1) {
+  .button_art_active {
     font-family: "Nanum Pen Script", cursive;
     font-size: 48px;
+    background-color: var(--primary-color);
+    border: var(--primary-color);
+    padding: -10px;
+    color: var(--secondary-color);
+    transform: scale(1.2);
+    text-shadow: 5px 5px 5px black;
   }
 
-  li:nth-child(2) {
+  .button_art {
+    font-family: "Nanum Pen Script", cursive;
+    font-size: 48px;
+    background-color: var(--primary-color);
+    border: var(--primary-color);
+    padding: -10px;
+    color: var(--text-color);
+  }
+
+  .button_sport_active {
     font-family: "Racing Sans One", sans-serif;
-    font-weight: lighter;
+    font-size: 35px;
+    background-color: var(--primary-color);
+    border: var(--primary-color);
+    padding: -10px;
+    color: var(--secondary-color);
+    transform: scale(1.2);
+    text-shadow: 5px 5px 5px black;
   }
 
-  li:nth-child(3) {
+  .button_sport {
+    font-family: "Racing Sans One", sans-serif;
+    font-size: 35px;
+    background-color: var(--primary-color);
+    border: var(--primary-color);
+    padding: -10px;
+    color: var(--text-color);
+  }
+
+  .button_geek_active {
     font-family: "Slackey", sans-serif;
+    font-size: 30px;
+    background-color: var(--primary-color);
+    border: var(--primary-color);
+    padding: -10px;
+    transform: scale(1.2);
+    color: var(--secondary-color);
+    text-shadow: 5px 5px 5px black;
   }
 
-  li:nth-child(4) {
+  .button_geek {
+    font-family: "Slackey", sans-serif;
+    font-size: 30px;
+    background-color: var(--primary-color);
+    border: var(--primary-color);
+    padding: -10px;
+    color: var(--text-color);
+  }
+
+  .button_anime_active {
     font-family: "Marko One", serif;
+    font-size: 30px;
+    background-color: var(--primary-color);
+    border: var(--primary-color);
+    padding: -10px;
+    transform: scale(1.2);
+    color: var(--secondary-color);
+    text-shadow: 5px 5px 5px black;
   }
 
-  li:nth-child(5) {
+  .button_anime {
+    font-family: "Marko One", serif;
+    font-size: 30px;
+    background-color: var(--primary-color);
+    border: var(--primary-color);
+    padding: -10px;
+    color: var(--text-color);
+  }
+
+  .button_festif_active {
     font-family: "Vampiro One", system-ui;
+    font-size: 30px;
+    background-color: var(--primary-color);
+    border: var(--primary-color);
+    padding: -10px;
+    color: var(--text-color);
+    transform: scale(1.2);
+    color: var(--secondary-color);
+    text-shadow: 5px 5px 5px black;
+  }
+
+  .button_festif {
+    font-family: "Vampiro One", system-ui;
+    font-size: 30px;
+    background-color: var(--primary-color);
+    border: var(--primary-color);
+    padding: -10px;
+    color: var(--text-color);
   }
 }

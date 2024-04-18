@@ -3,74 +3,59 @@ import { Link } from "react-router-dom";
 
 import "./CategoryBar.css";
 
-function CategoryBar({ sectionSelected, changeSection }) {
+function CategoryBar({ id }) {
   return (
       <div className="categories">
         <ul className="ulCategories">
           <li>
-          <Link to="/categories/art"><button
+          <Link to="/categories/4"><button
               type="button" className={
-                sectionSelected === 3 ? "button_art_active" : "button_art"
+                id === 4 ? "button_art_active" : "button_art"
               }
-              onClick={() => {
-                changeSection(3);
-              }}
               >
 
               ART 
             </button></Link>
           </li>
           <li>
-          <Link to="/categories/sports">
+          <Link to="/categories/1">
             <button
               type="button"
-              onClick={() => {
-                changeSection(0);
-              }}
               className={
-                sectionSelected === 0 ? "button_sport_active" : "button_sport"
+                id === 1 ? "button_sport_active" : "button_sport"
               }
             >
               SPORTS
             </button> </Link>
           </li>
           <li>
-          <Link to="/categories/geeks">
+          <Link to="/categories/2">
             <button
               type="button"
-              onClick={() => {
-                changeSection(1);
-              }}
               className={
-                sectionSelected === 1 ? "button_geek_active" : "button_geek"
+                id === 2 ? "button_geek_active" : "button_geek"
               }
             >
               GEEKS
             </button></Link>
           </li>
           <li>
-          <Link to="/categories/anime">
+          <Link to="/categories/3">
             <button
               type="button"
-              onClick={() => {
-                changeSection(2);
-              }}
               className={
-                sectionSelected === 2 ? "button_anime_active" : "button_anime"
+                id === 3 ? "button_anime_active" : "button_anime"
               }
             >
               ANIMÉ
             </button> </Link>
           </li>
           <li>
-          <Link to="/categories/festif">
+          <Link to="/categories/5">
             <button
               type="button"
-              onClick={() => {
-                changeSection(4);
-              }}
               className={
-                sectionSelected === 4 ? "button_festif_active" : "button_festif"
+                id === "5" ? "button_festif_active" : "button_festif"
               }
             >
               FESTIF
@@ -81,7 +66,6 @@ function CategoryBar({ sectionSelected, changeSection }) {
   );
 }
 CategoryBar.propTypes = {
-  sectionSelected: PropTypes.number.isRequired,
-  changeSection: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
 };
 export default CategoryBar;

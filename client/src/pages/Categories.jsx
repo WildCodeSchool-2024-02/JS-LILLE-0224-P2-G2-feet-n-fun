@@ -1,17 +1,13 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import CardContainer from "../components/Shop/CardContainer";
 import { useLoaderData, useParams } from "react-router-dom";
+import CardContainer from "../components/Shop/CardContainer";
 
-function Categories({data}) {
+function Categories() {
     const {id} = useParams()
-    const toto = useLoaderData(id);
-    
-    console.log(toto)
+    const data = useLoaderData(id);
 
   return (
 
-      <CardContainer data={data} sectionSelected={sectionSelected} />
+      <CardContainer data={data} />
   );
 }
 

@@ -1,6 +1,6 @@
 import FavorisContainer from "../components/Cart/FavorisContainer";
 
-function Favoris({data}) {
+function Favoris() {
   return <FavorisContainer />;
 }
 

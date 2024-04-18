@@ -1,6 +1,6 @@
 import CartContainer from "../components/Cart/CartContainer";
 
-function Panier({data}) {
+function Panier() {
   return <CartContainer />;
 }
 export default Panier;
