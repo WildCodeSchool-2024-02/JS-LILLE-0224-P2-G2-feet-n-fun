@@ -35,6 +35,7 @@
   right: 0;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .product-details .product-picture img {
@@ -43,6 +44,7 @@
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .product-details .product-desc h3 {
@@ -61,12 +63,25 @@
 .product-details span {
   display: inline-block;
   margin-bottom: 0.5rem;
+}
+
+.product-details #price {
   font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .product-footer {
   display: flex;
   justify-content: space-between;
+}
+
+.product-details .product-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-details .product-cart {
+  display: flex;
 }
 
 .product-details .add-to-cart {
@@ -76,7 +91,11 @@
   margin-top: 0.5rem;
   margin-right: 0.1rem;
   background-color: var(--secondary-color);
-  border: black 1px solid;
+  border-radius: 3px;
+  border: solid 1px black;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-family: "Montserrat";
+  cursor: pointer;
 }
 
 .product-details .like {
@@ -85,6 +104,14 @@
   font-size: 1rem;
   margin-top: 0.5rem;
   margin-left: 0.3rem;
+  border-radius: 3px;
+  border: solid 1px black;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  cursor: pointer;
+}
+
+.product-details .product-cart button:active {
+  box-shadow: none;
 }
 
 /* ANIMATION OUVERTURE DU COMPOSANT */
@@ -106,5 +133,37 @@
 
   to {
     transform: translateY(100%);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .product-details {
+    height: 50vh;
+    overflow-y: visible;
+    display: flex;
+    border-top: solid 1px black;
+  }
+
+  .product-details .exit-btn {
+    top: 0.4rem;
+  }
+
+  .product-details .product-picture img {
+    width: auto;
+    height: 100%;
+    margin-top: 0;
+    margin-right: 1rem;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .product-details .product-desc {
+    margin-right: 3rem;
+  }
+
+  .product-details .product-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }

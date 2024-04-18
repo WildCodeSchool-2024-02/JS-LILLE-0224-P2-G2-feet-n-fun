@@ -1,13 +1,14 @@
 import "./ProductDetails.css";
 import { useState } from "react";
 import PropTypes from "prop-types";
-import SizeList from "./SizeList";
+import SizeListMobile from "./SizeListMobile";
+import SizeListDekstop from "./SizeListDekstop";
 
 function ProductDetails({
   data,
   colorSection,
   visible,
-  setVisible,
+  closeProduct,
   chooseSize,
   setChooseSize,
 }) {
@@ -41,16 +42,21 @@ function ProductDetails({
         <div className="product-desc">
           <h3>{data.name}</h3>
           <p>{data.desc}</p>
-          <span style={{ color: `${colorSection}` }}>{data.price}€</span>
         </div>
-        <SizeList data={data} chooseSize={chooseSize} changeSize={changeSize} />
+        <div className="price">
+        <span id="price" style={{ color: `${colorSection}` }}>{data.price}€</span>
+        <SizeListDekstop data={data} chooseSize={chooseSize} changeSize={changeSize} />
+        </div>
         <div className="product-footer">
+        <SizeListMobile data={data} chooseSize={chooseSize} changeSize={changeSize} />
+        <div className="product-cart">
           <button type="button" className="add-to-cart">
             Ajouter au panier
           </button>
           <button type="button" className="like">
             ❤️
           </button>
+        </div>
         </div>
       </div>
     </div>
@@ -59,13 +65,15 @@ function ProductDetails({
 
 ProductDetails.propTypes = {
   data: PropTypes.shape({
-    size: PropTypes.arrayOf.isRequired,
+    size: PropTypes.arrayOf(PropTypes.shape({
+      size: PropTypes.string.isRequired,
+      available: PropTypes.bool.isRequired
+    })).isRequired,
     price: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
-    bgColor: PropTypes.string.isRequired,
+    color: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   colorSection: PropTypes.string.isRequired,
   visible: PropTypes.bool.isRequired,
