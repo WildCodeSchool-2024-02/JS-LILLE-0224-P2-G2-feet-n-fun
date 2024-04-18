@@ -11,11 +11,16 @@ function CardContainer({ data }) {
   // State qui stock l'index du produit cliqué
   const [productSelected, setProductSelected] = useState();
 
-  // Fonction qui change l'état de visible true/false (Ouvre/Ferme ProductDetails)
+  // Fonction qui change l'état de visible à true (Ouvre ProductDetails)
   // Qui assigne l'index du produit cliqué à ProductSelected (Pour obtenir les détails du bon produit)
-  const handleToggle = (indexOfProduct) => {
-    setVisible(!visible);
+  const openProduct = (indexOfProduct) => {
+    setVisible(true);
     setProductSelected(indexOfProduct);
+  };
+
+  // Fonction qui change l'état de visible à false (Ferme ProductDetails)
+  const closeProduct = () => {
+    setVisible(!visible);
   };
 
   // State qui stock la taille choisit pour l'ajout au panier
@@ -23,14 +28,17 @@ function CardContainer({ data }) {
 
   return (
     <>
-      <div className="card-container">
+      <div
+        className="card-container"
+      >
         {/* .map() Pour générer toutes les cards d'une section */}
         {data.products.map((product, index) => (
           <Card
             key={`${product.id}.${product.name}`}
             data={product}
             colorSection={data.color}
-            handleToggle={() => handleToggle(index)}
+            openProduct={() => openProduct(index)}
+            setVisible={setVisible}
           />
         ))}
       </div>
@@ -40,7 +48,7 @@ function CardContainer({ data }) {
           data={data.products[productSelected]}
           colorSection={data.color}
           visible={visible}
-          handleToggle={handleToggle}
+          closeProduct={closeProduct}
           chooseSize={chooseSize}
           setChooseSize={setChooseSize}
         />

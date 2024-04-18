@@ -1,12 +1,13 @@
 import "./ProductDetails.css";
 import PropTypes from "prop-types";
-import SizeList from "./SizeList";
+import SizeListMobile from "./SizeListMobile";
+import SizeListDekstop from "./SizeListDekstop";
 
 function ProductDetails({
   data,
   colorSection,
   visible,
-  handleToggle,
+  closeProduct,
   chooseSize,
   setChooseSize,
 }) {
@@ -16,8 +17,8 @@ function ProductDetails({
   };
 
   return (
-    <div className="product-details" id={!visible ? "close" : ""}>
-      <button type="button" className="exit-btn" onClick={handleToggle}>
+    <div className="product-details" id={visible ? "open" : "close"}>
+      <button type="button" className="exit-btn" onClick={closeProduct}>
         <img
           src="../assets/images/icons/exit-btn-red.svg"
           alt="Bouton pour fermer la fenêtre des détails du produit."
@@ -30,16 +31,21 @@ function ProductDetails({
         <div className="product-desc">
           <h3>{data.name}</h3>
           <p>{data.desc}</p>
-          <span style={{ color: `${colorSection}` }}>{data.price}€</span>
         </div>
-        <SizeList data={data} chooseSize={chooseSize} changeSize={changeSize} />
+        <div className="price">
+        <span id="price" style={{ color: `${colorSection}` }}>{data.price}€</span>
+        <SizeListDekstop data={data} chooseSize={chooseSize} changeSize={changeSize} />
+        </div>
         <div className="product-footer">
+        <SizeListMobile data={data} chooseSize={chooseSize} changeSize={changeSize} />
+        <div className="product-cart">
           <button type="button" className="add-to-cart">
             Ajouter au panier
           </button>
           <button type="button" className="like">
             ❤️
           </button>
+        </div>
         </div>
       </div>
     </div>
@@ -48,17 +54,19 @@ function ProductDetails({
 
 ProductDetails.propTypes = {
   data: PropTypes.shape({
-    size: PropTypes.arrayOf.isRequired,
+    size: PropTypes.arrayOf(PropTypes.shape({
+      size: PropTypes.string.isRequired,
+      available: PropTypes.bool.isRequired
+    })).isRequired,
     price: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
-    bgColor: PropTypes.string.isRequired,
+    color: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   colorSection: PropTypes.string.isRequired,
   visible: PropTypes.bool.isRequired,
-  handleToggle: PropTypes.func.isRequired,
+  closeProduct: PropTypes.func.isRequired,
   chooseSize: PropTypes.string.isRequired,
   setChooseSize: PropTypes.func.isRequired,
 };
