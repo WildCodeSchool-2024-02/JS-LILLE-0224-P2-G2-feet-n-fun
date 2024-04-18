@@ -1,11 +1,14 @@
 import "./Card.css";
 import PropTypes from "prop-types";
 
-function Card({ data, handleToggle, colorSection }) {
+function Card({ data, openProduct, colorSection }) {
   return (
     // ENLEVER LE ROLE BUTTON ET TABINDEX UNE FOIS QUE LE ONCLICK SERA SUR LES ELEMENTS QUI IRONS VERS LE PRODUCTDETAILS
-    <div className="card" role='button' tabIndex={0} onClick={handleToggle} onKeyDown={handleToggle}>
+    <div className="card">
       <div className="card-header">
+      <div className='eye-container' role='button' tabIndex={0} onClick={openProduct} onKeyDown={openProduct}>
+        <img className='eye-img' src="./assets/images/icons/eye-hover.svg" alt="Clique ici pour plus de détails sur le produit"/>
+      </div>
         <img className="product-img" src={data.src} alt="" />
         {/* REMPLACER ICI LE BOUTON LIKE QUI APPARAIT DANS L'IMAGE */}
         <button type="button">
@@ -16,7 +19,9 @@ function Card({ data, handleToggle, colorSection }) {
         </button>
       </div>
       <div className="card-content">
-        <p>{data.name}</p>
+        <div role='button' tabIndex={0} onClick={openProduct} onKeyDown={openProduct}>
+          <p>{data.name}</p>
+        </div>
         <div className="card-footer">
           <span style={{ color: `${colorSection}` }}>{data.price} €</span>
           {/* REMPLACER ICI LE BOUTON D'AJOUT RAPIDE AU PANIER */}
@@ -38,7 +43,7 @@ Card.propTypes = {
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
   }).isRequired,
-  handleToggle: PropTypes.func.isRequired,
+  openProduct: PropTypes.func.isRequired,
   colorSection: PropTypes.string.isRequired,
 };
 export default Card;
