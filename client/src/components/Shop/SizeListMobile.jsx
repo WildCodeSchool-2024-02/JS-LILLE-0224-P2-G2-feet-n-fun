@@ -1,8 +1,8 @@
-import "./SizeList.css";
+import "./SizeListMobile.css";
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-function SizeList({ data, chooseSize, changeSize }) {
+function SizeListMobile({ data, chooseSize, changeSize }) {
   // State qui stock l'état Ouvert/Fermé de la liste des tailles
   const [isOpen, setIsOpen] = useState(false);
 
@@ -12,7 +12,7 @@ function SizeList({ data, chooseSize, changeSize }) {
   };
 
   return (
-    <>
+    <div className="sizelist">
       <button
         type="button"
         className={isOpen ? "choose-size open" : "choose-size"}
@@ -46,18 +46,20 @@ function SizeList({ data, chooseSize, changeSize }) {
               </button>
             </>
           ))}
-        </div>
+        </div> 
       )}
-    </>
+    </div>
   );
 }
 
-SizeList.propTypes = {
+SizeListMobile.propTypes = {
   data: PropTypes.shape({
-    size: PropTypes.arrayOf.isRequired,
-    available: PropTypes.bool.isRequired,
+    size: PropTypes.arrayOf(PropTypes.shape({
+      size: PropTypes.string.isRequired,
+      available: PropTypes.bool.isRequired
+    })).isRequired,
   }).isRequired,
   chooseSize: PropTypes.string.isRequired,
   changeSize: PropTypes.func.isRequired,
 };
-export default SizeList;
+export default SizeListMobile;
