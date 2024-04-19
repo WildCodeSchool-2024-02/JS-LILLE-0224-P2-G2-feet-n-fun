@@ -1,6 +1,6 @@
 import "./ProductDetails.css";
-import { useState } from "react";
 import PropTypes from "prop-types";
+import { useState } from "react";
 import SizeListMobile from "./SizeList/SizeListMobile";
 import SizeListDekstop from "./SizeList/SizeListDekstop";
 
@@ -10,7 +10,7 @@ function ProductDetails({
   visible,
   setVisible,
   chooseSize,
-  setChooseSize, 
+  setChooseSize,
 }) {
   // Function qui assigne la taille sélectionner au state chooseSize (dans le composant CardContainer) pour transmettre la taille lors de l'ajout au panier.
   const changeSize = (selectedIndex) => {
@@ -19,7 +19,7 @@ function ProductDetails({
 
   const [isTheFirstOpening, setisTheFirstOpening] = useState(false);
 
-  const isClose = (isTheFirstOpening && !visible) ? "close" : "";
+  const isClose = isTheFirstOpening && !visible ? "close" : "";
   const isOpen = visible ? "open" : "";
 
   const closeProduct = () => {
@@ -44,19 +44,29 @@ function ProductDetails({
           <p>{data.desc}</p>
         </div>
         <div className="price">
-        <span id="price" style={{ color: `${colorSection}` }}>{data.price}€</span>
-        <SizeListDekstop data={data} chooseSize={chooseSize} changeSize={changeSize} />
+          <span id="price" style={{ color: `${colorSection}` }}>
+            {data.price}€
+          </span>
+          <SizeListDekstop
+            data={data}
+            chooseSize={chooseSize}
+            changeSize={changeSize}
+          />
         </div>
         <div className="product-footer">
-        <SizeListMobile data={data} chooseSize={chooseSize} changeSize={changeSize} />
-        <div className="product-cart">
-          <button type="button" className="add-to-cart">
-            Ajouter au panier
-          </button>
-          <button type="button" className="like">
-            ❤️
-          </button>
-        </div>
+          <SizeListMobile
+            data={data}
+            chooseSize={chooseSize}
+            changeSize={changeSize}
+          />
+          <div className="product-cart">
+            <button type="button" className="add-to-cart">
+              Ajouter au panier
+            </button>
+            <button type="button" className="like">
+              ❤️
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -65,10 +75,12 @@ function ProductDetails({
 
 ProductDetails.propTypes = {
   data: PropTypes.shape({
-    size: PropTypes.arrayOf(PropTypes.shape({
-      size: PropTypes.string.isRequired,
-      available: PropTypes.bool.isRequired
-    })).isRequired,
+    size: PropTypes.arrayOf(
+      PropTypes.shape({
+        size: PropTypes.string.isRequired,
+        available: PropTypes.bool.isRequired,
+      })
+    ).isRequired,
     price: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
