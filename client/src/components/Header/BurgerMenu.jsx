@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import "./BurgerMenu.css";
 
@@ -29,7 +30,7 @@ function BurgerMenu({ handleToggle, visible }) {
         <nav>
           <p>Navigation</p>
           <a href="http://google.fr/">Accueil</a>
-          <a href="http://google.fr/">A propos</a>
+          <Link to="/a-propos">A propos</Link>
           <a href="http://google.fr/">Contact</a>
         </nav>
       </div>
