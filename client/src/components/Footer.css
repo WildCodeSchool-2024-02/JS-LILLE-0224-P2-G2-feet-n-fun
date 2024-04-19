@@ -52,8 +52,8 @@ h6 {
 .navigation-footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  gap: 25px;
+  justify-content: space-between;
+  gap: 0.6rem;
   align-items: center;
 }
 .color-nav {
