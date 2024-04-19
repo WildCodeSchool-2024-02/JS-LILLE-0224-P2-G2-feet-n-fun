@@ -18,11 +18,6 @@ function CardContainer({ data }) {
     setProductSelected(indexOfProduct);
   }; 
 
-  // Fonction qui change l'état de visible à false (Ferme ProductDetails)
-  // const closeProduct = () => {
-  //   setVisible(!visible);
-  // };
-
   // State qui stock la taille choisit pour l'ajout au panier
   const [chooseSize, setChooseSize] = useState("Votre taille");
 
