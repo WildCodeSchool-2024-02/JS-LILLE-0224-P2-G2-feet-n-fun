@@ -1,8 +1,9 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="footer-box">
+    <div className="footer-box"> 
       <div className="social-icon">
         <a href="www.facebook.com">
           <img
@@ -27,21 +28,21 @@ function Footer() {
         </a>
       </div>
       <div className="end-navigation navigation-footer">
-        <a href="www.google.com" className="art-font  color-nav">
+        <Link to="/categories/4" className="art-font  color-nav">
           ART
-        </a>
-        <a href="www.google.com" className="sports-font  color-nav">
+        </Link>
+        <Link to="/categories/1" className="sports-font  color-nav">
           SPORTS
-        </a>
-        <a href="www.google.com" className="geek-font color-nav">
+        </Link>
+        <Link to="/categories/3" className="geek-font color-nav">
           GEEK
-        </a>
-        <a href="www.google.com" className="anime-font color-nav">
+        </Link>
+        <Link to="/categories/2" className="anime-font color-nav">
           ANIME{" "}
-        </a>
-        <a href="www.google.com" className="festif-font color-nav">
+        </Link>
+        <Link to="/categories/5" className="festif-font color-nav">
           FESTIF{" "}
-        </a>
+        </Link>
       </div>
       <div className=" center copieright">
         <h6>

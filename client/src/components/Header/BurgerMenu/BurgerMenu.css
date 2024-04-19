@@ -1,5 +1,5 @@
 .burgerMenu {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 1);
   width: 80%;
   height: 100vh;
   position: fixed;
@@ -39,6 +39,8 @@
   position: absolute;
   top: 0;
   right: 0;
+  background-color: transparent;
+  border: none;
 }
 
 .burgerMenu-container .exit-btn img {

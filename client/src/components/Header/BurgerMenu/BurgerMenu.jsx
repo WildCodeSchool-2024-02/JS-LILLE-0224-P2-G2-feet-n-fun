@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 import "./BurgerMenu.css";
 
 function BurgerMenu({ handleToggle, visible }) {
@@ -21,17 +21,17 @@ function BurgerMenu({ handleToggle, visible }) {
         <SearchBar />
         <nav>
           <p>Nos catégories</p>
-          <a href="http://google.fr/">Art</a>
-          <a href="http://google.fr/">Sport</a>
-          <a href="http://google.fr/">Geek</a>
-          <a href="http://google.fr/">Animé</a>
-          <a href="http://google.fr/">Festif</a>
+          <Link to="/categories/4" onClick={handleToggle} onKeyDown={handleToggle}>Art</Link>
+          <Link to="/categories/1" onClick={handleToggle} onKeyDown={handleToggle}>Sport</Link>
+          <Link to="/categories/2" onClick={handleToggle} onKeyDown={handleToggle}>Geek</Link>
+          <Link to="/categories/3" onClick={handleToggle} onKeyDown={handleToggle}>Animé</Link>
+          <Link to="/categories/5" onClick={handleToggle} onKeyDown={handleToggle}>Festif</Link>
         </nav>
         <nav>
           <p>Navigation</p>
-          <a href="http://google.fr/">Accueil</a>
-          <Link to="/a-propos">A propos</Link>
-          <a href="http://google.fr/">Contact</a>
+          <Link to="/" onClick={handleToggle} onKeyDown={handleToggle}>Accueil</Link>
+          <Link to="/a-propos" onClick={handleToggle} onKeyDown={handleToggle}>A propos</Link>
+          <Link to="/contact" onClick={handleToggle} onKeyDown={handleToggle}>Contact</Link>
         </nav>
       </div>
     </div>

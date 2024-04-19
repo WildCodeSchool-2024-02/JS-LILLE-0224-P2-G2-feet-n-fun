@@ -6,10 +6,16 @@ function SizeListMobile({ data, chooseSize, changeSize }) {
   // State qui stock l'état Ouvert/Fermé de la liste des tailles
   const [isOpen, setIsOpen] = useState(false);
 
+  const [isTheFirstOpening, setisTheFirstOpening] = useState(true);
+
   // Fonction qui change l'état de isOpen true/false (Ouvre/Ferme la liste des tailles)
   const handleClick = () => {
     setIsOpen(!isOpen);
+    setisTheFirstOpening(true);
   };
+
+  const listIsClose = (isTheFirstOpening && !isOpen) ? "size-list close-list" : "";
+  const listIsOpen = isOpen ? "size-list open-list" : "";
 
   return (
     <div className="sizelist">
@@ -21,9 +27,8 @@ function SizeListMobile({ data, chooseSize, changeSize }) {
         {chooseSize}{" "}
         <img src="../assets/images/icons/arrow-bottom.png" alt="" />
       </button>
-      {isOpen && (
         <div
-          className={isOpen ? "size-list open-list" : "size-list close-list"}
+          className={` ${listIsClose} ${listIsOpen}`}
         >
           {data.size.map((size, index) => (
             <>
@@ -47,7 +52,6 @@ function SizeListMobile({ data, chooseSize, changeSize }) {
             </>
           ))}
         </div> 
-      )}
     </div>
   );
 }

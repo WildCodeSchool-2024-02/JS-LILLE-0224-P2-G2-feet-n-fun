@@ -1,4 +1,4 @@
-import FavorisContainer from "../components/Cart/FavorisContainer";
+import FavorisContainer from "../components/Cart/Favoris/FavorisContainer";
 
 function Favoris() {
   return <FavorisContainer />;
