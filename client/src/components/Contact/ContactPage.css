@@ -1,7 +1,11 @@
 .contact-container {
-  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
   padding: 20px;
+  text-align: left;
 }
 
 .form-group {
@@ -12,7 +16,35 @@ label {
   display: block;
   margin-bottom: 5px;
 }
+.titleContact {
+  padding: 2rem;
+}
+.champ {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  padding: 1rem;
+}
 
+.icon {
+  width: 2rem;
+}
+.barreSeperation {
+  width: 90%;
+  height: 4px;
+  margin: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.fomulaireSection {
+  width: 100%;
+  font-weight: bold;
+}
 input[type="text"],
 input[type="email"],
 textarea {
@@ -21,7 +53,14 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
+.infoContactSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  width: 100%;
+  font-weight: bold;
+}
 textarea {
   height: 150px;
 }
@@ -37,4 +76,54 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+@media only screen and (min-width: 992px) {
+  .contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem;
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+  }
+  .titleContact {
+    padding: 2rem;
+  }
+  .champ {
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 1rem;
+    width: 80%;
+  }
+
+  .icon {
+    width: 2rem;
+  }
+  .barreSeperation {
+    width: 4px;
+    height: 25rem;
+    background-color: black;
+  }
+  .infoContactSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+    width: 40%;
+    font-weight: bold;
+  }
+  .fomulaireSection {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+  }
+  .formFormulaire {
+    width: 80%;
+  }
 }
