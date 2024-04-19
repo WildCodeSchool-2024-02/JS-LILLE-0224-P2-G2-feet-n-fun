@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+
+.parisienne-regular {
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.About {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+}
+
+.About-h1 {
+  font-size: 1.5em;
+  font-family: "Parisienne", cursive;
+  text-align: center;
+  margin-top: 1em;
+  color: white;
+}
+
+.History {
+  margin-top: 1em;
+  font-weight: bold;
+  position: absolute;
+}
+
+#History-reverse {
+  margin-right: 1em;
+}
+
+.Text {
+  width: 50%;
+  text-align: left;
+  margin-top: 3em;
+}
+
+#text-reverse {
+  margin-right: 1em;
+}
+
+.Section-about {
+  display: flex;
+  flex-direction: row;
+
+  padding: 0.5em;
+  background-color: black;
+  color: white;
+}
+
+.Img-history {
+  width: 8em;
+  height: 8em;
+  margin-top: 10%;
+  margin-left: 1.5em;
+  clear: right;
+}
+
+.Column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1em;
+}
+
+#Reverse {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.Img-history2 {
+  width: 8em;
+  height: 8em;
+  margin-top: 10%;
+  margin-left: 0em;
+  clear: right;
+}
+
+@media screen and (min-width: 992px) {
+  .Section-about {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    padding: 0.5em;
+    align-items: center;
+  }
+
+  .Column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .Img-history {
+    width: 25em;
+    height: 15em;
+    margin-top: 2%;
+    margin-left: 0em;
+    clear: right;
+  }
+
+  .Text {
+    width: 80%;
+    text-align: justify;
+    margin-top: 5em;
+  }
+
+  #Reverse {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #Column-reverse {
+    width: 112%;
+  }
+
+  .Img-history2 {
+    width: 25em;
+    height: 15em;
+    margin-top: 2%;
+    margin-left: 0em;
+  }
+
+  .About-h1 {
+    font-size: 3em;
+    font-family: "Parisienne", cursive;
+    text-align: center;
+    margin-top: 1em;
+  }
+}

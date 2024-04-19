@@ -1,13 +1,11 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-/* import Home from "./pages/Home"; */
 import Favoris from "./pages/Favoris";
 import Categories from "./pages/Categories";
 import Panier from "./pages/Panier";
 import App from "./App";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import About from "./components/About";
 import Contact from "./pages/Contact";
 import Delivery from "./pages/Delivery";
 
@@ -17,7 +15,7 @@ const getData = async () => {
   const result = await fetch(
     "https://fantinerudent.github.io/api-feet-n-fun/data.json"
   );
-  const datas = await result.json(); 
+  const datas = await result.json();
   return datas;
 };
 
@@ -39,22 +37,11 @@ const router = createBrowserRouter([
           return datas[parseInt(params.id, 10) - 1];
         },
       },
-      { path: "/favoris",
-        element: <Favoris />,
-        loader: () => getData(),
-      },
-      { path: "/panier", element: <Panier />,
-      loader: () => getData(),
-      },
-      { path: "/a-propos", element: <About />,
-      loader: () => getData(),
-      },
-      { path: "/contact", element: <Contact />,
-      loader: () => getData(),
-      },
-      { path: "/livraison", element: <Delivery />,
-      loader: () => getData(),
-      },
+      { path: "/favoris", element: <Favoris />, loader: () => getData() },
+      { path: "/panier", element: <Panier />, loader: () => getData() },
+      { path: "/a-propos", element: <About />, loader: () => getData() },
+      { path: "/contact", element: <Contact />, loader: () => getData() },
+      { path: "/livraison", element: <Delivery />, loader: () => getData() },
     ],
   },
 ]);
