@@ -1,14 +1,11 @@
 import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Navbar from "./components/Header/Navbar";
-import CategoryBar from "./components/Header/CategoryBar";
-import CardContainer from "./components/Shop/CardContainer";
-
-
+import CategoryBar from "./components/Header/CategoryBar"
+import Navbar from "./components/Header/Navbar"
+import CardContainer from "./components/Cart/CartContainer"
 
 function App() {
-
   // Ici le state qui va recevoir la data de l'API
   const [data, setData] = useState(null);
 
@@ -22,17 +19,15 @@ function App() {
   }, []);
 
   // State qui stock l'index de la section, pour générer les cards des produits correspondant
-  const [ sectionSelected, setSectionSelected ] = useState(0)
+  const [sectionSelected, setSectionSelected] = useState(0);
 
   const changeSection = (indexSectionSelected) => {
-    setSectionSelected(indexSectionSelected)
-  }
+    setSectionSelected(indexSectionSelected);
+  };
 
   return (
-
     <>
-
-      {/* Le 'data &&' permet d'afficher le composant une fois la data récolté */}
+      {/* Le ‘data &&’ permet d’afficher le composant une fois la data récolté */}
       {data && (
         <>
           <Navbar />
@@ -46,7 +41,6 @@ function App() {
         </>
       )}
     </>
-
   );
 }
 
