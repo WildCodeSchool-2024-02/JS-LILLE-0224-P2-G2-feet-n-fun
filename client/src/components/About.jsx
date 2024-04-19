@@ -1,6 +1,6 @@
-import "./Apropos.css";
+import "./About.css";
 
-function Apropos() {
+function About() {
   return (
     <>
       <div className="About">
@@ -13,7 +13,7 @@ function Apropos() {
             Tout a commencé avec une passion pour le style. <br />
             En 1730, Mr Houari (alias Aziz) et son équipe ont lancé Feet & fun
             avec une mission simple : offrir des chaussettes de qualité
-            supérieure qui allient confort et design. Depuis nos début dans le
+            supérieure qui allient confort et design. Depuis nos débuts dans le
             massachusetts, nous avons grandi pour devenir une marque reconnue.
           </p>
           <div className="Column">
@@ -96,4 +96,4 @@ function Apropos() {
     </>
   );
 }
-export default Apropos;
+export default About;

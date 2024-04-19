@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Apropos from "./components/Apropos";
+import About from "./components/About";
 import App from "./App";
 
 const router = createBrowserRouter([
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/a-propos",
-    element: <Apropos />,
+    element: <About />,
   },
 ]);
 
