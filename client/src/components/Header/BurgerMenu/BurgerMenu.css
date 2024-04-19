@@ -9,13 +9,18 @@
   bottom: 0;
   z-index: 999;
   transform: translateX(-100%);
+}
+
+.burgerMenu.open {
+  display: block;
   animation-name: slideRight;
   animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-.burgerMenu#close {
+.burgerMenu.close {
+  display: block;
   animation-name: slideLeft;
   animation-duration: 1.5s;
   animation-iteration-count: 1;

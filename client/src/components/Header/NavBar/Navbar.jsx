@@ -22,7 +22,7 @@ function Navbar() {
           alt="picture_not_found"
         />
       </button>
-      {visible && <BurgerMenu handleToggle={handleToggle} visible={visible} />}
+      <BurgerMenu setVisible={setVisible} visible={visible}  />
       <img
         src="/assets/images/logo.svg"
         className="image_logo"

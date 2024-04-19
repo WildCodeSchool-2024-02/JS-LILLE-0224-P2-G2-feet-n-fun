@@ -1,6 +1,6 @@
 import "./ProductDetails.css";
-import PropTypes from "prop-types";
 import { useState } from "react";
+import PropTypes from "prop-types";
 import SizeListMobile from "./SizeList/SizeListMobile";
 import SizeListDekstop from "./SizeList/SizeListDekstop";
 
