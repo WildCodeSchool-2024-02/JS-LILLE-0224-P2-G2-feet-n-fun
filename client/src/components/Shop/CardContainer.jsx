@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import Card from "./Card";
 import ProductDetails from "./ProductDetails";
+import Filtermobile from '../filtermobile/Filtermobile';
 
 function CardContainer({ data, sectionSelected }) {
   // State qui stock l'état Ouvert/Fermé du composant ProductDetails
@@ -23,7 +24,9 @@ function CardContainer({ data, sectionSelected }) {
 
   return (
     <>
+    <Filtermobile />
       <div className="card-container">
+        
         {/* .map() Pour générer toutes les cards d'une section */}
         {data[sectionSelected].products.map((product, index) => (
           <Card
