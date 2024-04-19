@@ -15,7 +15,9 @@
 }
 .search-bar .btn-search {
   padding-left: 1rem;
+  border: none;
   border-left: solid 1px #000000;
+  background-color: transparent;
 }
 
 .search-bar .btn-search img:hover,

@@ -1,23 +1,34 @@
 import "./ProductDetails.css";
 import PropTypes from "prop-types";
-import SizeListMobile from "./SizeListMobile";
-import SizeListDekstop from "./SizeListDekstop";
+import { useState } from "react";
+import SizeListMobile from "./SizeList/SizeListMobile";
+import SizeListDekstop from "./SizeList/SizeListDekstop";
 
 function ProductDetails({
   data,
   colorSection,
   visible,
-  closeProduct,
+  setVisible,
   chooseSize,
-  setChooseSize,
+  setChooseSize, 
 }) {
   // Function qui assigne la taille sélectionner au state chooseSize (dans le composant CardContainer) pour transmettre la taille lors de l'ajout au panier.
   const changeSize = (selectedIndex) => {
     setChooseSize(data.size[selectedIndex].size);
   };
 
+  const [isTheFirstOpening, setisTheFirstOpening] = useState(false);
+
+  const isClose = (isTheFirstOpening && !visible) ? "close" : "";
+  const isOpen = visible ? "open" : "";
+
+  const closeProduct = () => {
+    setVisible(!visible);
+    setisTheFirstOpening(true);
+  };
+
   return (
-    <div className="product-details" id={visible ? "open" : "close"}>
+    <div className={`product-details ${isClose} ${isOpen}`}>
       <button type="button" className="exit-btn" onClick={closeProduct}>
         <img
           src="../assets/images/icons/exit-btn-red.svg"
@@ -66,7 +77,7 @@ ProductDetails.propTypes = {
   }).isRequired,
   colorSection: PropTypes.string.isRequired,
   visible: PropTypes.bool.isRequired,
-  closeProduct: PropTypes.func.isRequired,
+  setVisible: PropTypes.func.isRequired,
   chooseSize: PropTypes.string.isRequired,
   setChooseSize: PropTypes.func.isRequired,
 };

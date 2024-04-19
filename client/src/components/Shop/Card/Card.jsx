@@ -7,7 +7,7 @@ function Card({ data, openProduct, colorSection }) {
     <div className="card">
       <div className="card-header">
       <div className='eye-container' role='button' tabIndex={0} onClick={openProduct} onKeyDown={openProduct}>
-        <img className='eye-img' src="./assets/images/icons/eye-hover.svg" alt="Clique ici pour plus de détails sur le produit"/>
+        <img className='eye-img' src="../assets/images/icons/eye-hover.svg" alt="Clique ici pour plus de détails sur le produit"/>
       </div>
         <img className="product-img" src={data.src} alt="" />
         {/* REMPLACER ICI LE BOUTON LIKE QUI APPARAIT DANS L'IMAGE */}

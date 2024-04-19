@@ -23,25 +23,27 @@
 
 .product-details .size-list {
   border-right: solid 1px black;
-  border-bottom: solid 1px black;
   border-left: solid 1px black;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   overflow: hidden;
+  color: black;
 }
 
 .open-list {
   animation-name: openList;
   animation-iteration-count: 1;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
+  border-bottom: solid 1px black;
 }
 
 .close-list {
   animation-name: closeList;
   animation-iteration-count: 1;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
+  border-bottom: none;
 }
 
 .product-details .size-select {

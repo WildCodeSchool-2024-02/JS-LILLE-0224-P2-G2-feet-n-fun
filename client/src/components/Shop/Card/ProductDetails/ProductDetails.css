@@ -9,17 +9,17 @@
   padding: 1rem;
   z-index: 999;
   overflow-y: scroll;
-  /* transform: translateY(100%); */
+  transform: translateY(100%);
 }
 
-.product-details#open {
+.product-details.open {
   animation-name: slideTop;
   animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-.product-details#close {
+.product-details.close {
   animation-name: slideBottom;
   animation-duration: 1.5s;
   animation-iteration-count: 1;
@@ -55,6 +55,7 @@
   font-style: italic;
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  text-align: left;
 }
 
 .product-details span {

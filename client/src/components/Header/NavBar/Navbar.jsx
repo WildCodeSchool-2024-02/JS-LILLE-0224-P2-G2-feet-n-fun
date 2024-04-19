@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import { useState } from "react";
-import BurgerMenu from './BurgerMenu'
+import { Link } from "react-router-dom";
+import BurgerMenu from '../BurgerMenu/BurgerMenu'
 
 function Navbar() {
   const [visible, setVisible] = useState(false);
@@ -8,7 +9,7 @@ function Navbar() {
     setVisible(!visible);
   };
 
-  return (
+  return ( 
     <nav className="navbar">
       <button
         type="button"
@@ -22,14 +23,21 @@ function Navbar() {
         />
       </button>
       {visible && <BurgerMenu handleToggle={handleToggle} visible={visible} />}
-      <h1 className="h1FeetAndFun">
-        Feet <span className="and">&</span> fun
-      </h1>
       <img
         src="/assets/images/logo.svg"
         className="image_logo"
         alt="picture_not_found"
       />
+      <div className="h1andButtonsContainer">
+     <h1 className="h1FeetAndFun">
+        Feet <span className="and">&</span> fun
+      </h1>
+      <div>
+      <button type='button' className="buttonsNavBar searchInNav"><img className="buttonsNavBar" src="../public/assets/images/icons/search.svg" alt="recherche"/></button>
+      <Link  to="/favoris"><img className="buttonsNavBar" src="../public/assets/images/icons/heart4.svg" alt="favoris"/></Link>
+      <Link to="/panier"><img className="buttonsNavBar" src="../public/assets/images/icons/cart4.svg" alt="panier"/></Link>
+      </div>
+      </div>
     </nav>
   );
 }

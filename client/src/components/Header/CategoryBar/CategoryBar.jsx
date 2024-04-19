@@ -6,7 +6,7 @@ import "./CategoryBar.css";
 function CategoryBar({ id }) {
   return (
       <div className="categories">
-        <ul className="ulCategories">
+        <ul className="ulCategories"> 
           <li>
           <Link to="/categories/4"><button
               type="button" className={
@@ -25,7 +25,7 @@ function CategoryBar({ id }) {
                 id === 1 ? "button_sport_active" : "button_sport"
               }
             >
-              SPORTS
+              SPORTS 
             </button> </Link>
           </li>
           <li>

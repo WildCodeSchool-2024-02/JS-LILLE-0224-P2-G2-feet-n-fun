@@ -60,7 +60,8 @@
     font-size: 30px;
   }
 
-  button:hover {
+  .categories button:hover,
+  .end-navigation.navigation-footer:hover {
     transform: scale(1.2);
     transition: transform 0.2s;
     color: var(--secondary-color);
