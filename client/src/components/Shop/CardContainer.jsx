@@ -23,6 +23,7 @@ function CardContainer({ data }) {
 
   return (
     <>
+      <h2 className="titreCategorie">{data.name}</h2>
       <div className="card-container">
         {/* .map() Pour générer toutes les cards d'une section */}
         {data.products.map((product, index) => (
@@ -51,11 +52,14 @@ function CardContainer({ data }) {
 
 CardContainer.propTypes = {
   data: PropTypes.shape({
+    name: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
-    products: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-    })).isRequired
+    products: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+      })
+    ).isRequired,
   }).isRequired,
 };
 export default CardContainer;
