@@ -29,7 +29,7 @@ function BurgerMenu({ setVisible, visible }) {
             alt="Bouton de sortie du Burger Menu"
           />
         </button>
-        <SearchBar />
+        <SearchBar handleToggle={handleToggle} />
         <nav>
           <p>Nos catégories</p>
           <Link to="/categories/4" onClick={handleToggle} onKeyDown={handleToggle}>Art</Link>
