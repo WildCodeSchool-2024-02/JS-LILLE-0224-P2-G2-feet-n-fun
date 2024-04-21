@@ -4,6 +4,11 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  /* border: rgb(241, 166, 45) solid 5px;
+  width:95vw;
+  margin:auto;
+  border-radius: 0px 0px 20px 20px;
+  margin-bottom:2vh
   /* ROUGE */
   /* background-color: #FFEFEF; */
   /* Orange */
@@ -17,3 +22,33 @@
   /* JAUNE */
   /* background-color: #FFFFD0; */
 }
+
+
+.headerCategorie{height:30vh;
+  margin:auto;
+  margin-top  :2vh;
+  background-color: var(--primary-color);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titreHeaderCategorie, .descHeaderCategorie {
+  color :var(--background-color)
+}
+
+.titreHeaderCategorie{
+  font-size: 2em;
+}
+
+.descHeaderCategorie {width:60vw;
+  font-size:1.2em;
+text-align: center;
+margin-top:2vh;}
+
+/*  background-image: url("https://cdn.carredartistes.com/products_images/prod_208999/f_36-x-36-cm-herz-svenja-f4-no-name-3-21461-20230511-37-front-0.jpg");
+  background-attachment:scroll;
+  background-size: cover;
+  border-radius: 20px 20px 0px 0px; */ 
+

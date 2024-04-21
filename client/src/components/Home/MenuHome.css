@@ -1,0 +1,89 @@
+.imgMenuHome {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+
+.catalogue {
+  width: 45vw;
+  height: 35vw;
+  background-color: var(--fourth-color);
+}
+
+.cataloguetitre {
+  color: var(--text-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%, -25%);
+  text-align: center;
+  z-index: 3;
+  font-size: 1.1em;
+  margin-left:-8vw;
+  margin-top:-3vh;
+}
+.fondMenuHome {
+  width: 45vw;
+  height: 35vw;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+}
+
+.MenuHomeCatTitle {
+  color: var(--background-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 3;
+  font-size: 2em;
+}
+
+.menuLink {
+  position: relative;
+}
+
+@media screen and (min-width: 992px) {
+  .imgMenuHome {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2vh;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    background-color:var(--fourth-color);
+  }
+  .fondMenuHome {
+    width: 10vw;
+    height: 10vw;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  
+  }
+
+  .fondMenuHome:hover{
+    transform: scale(1.1);
+    border: solid 4px rgb(238, 240, 214);
+  }
+  .catalogue {
+    width: 18vw;
+    height: 30vh;
+    background-color: var(--fourth-color);
+    margin-right: 14vw;
+  }
+  .cataloguetitre {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left:-8vw
+  }
+}

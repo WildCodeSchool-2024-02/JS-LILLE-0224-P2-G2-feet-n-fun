@@ -14,12 +14,12 @@ function Payment2({ clientName, clientSurname, clientMail }) {
 
   return (
     <>
-      <h3>TOTAL : €</h3>
+      <h3 className="totalAffichage">TOTAL : €</h3>
       <form className="paymentForm">
         <label>
           Numéro de Carte{" "}
           <div>
-            <input type="number" name="cardnumber" />
+            <input className="inputDelivery" type="number" name="cardnumber" />
           </div>
         </label>
         <label>

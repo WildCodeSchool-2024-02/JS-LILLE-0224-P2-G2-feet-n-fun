@@ -15,6 +15,7 @@ function Card({ data, openProduct, colorSection }) {
           <img
             src="../assets/images/icons/add-heart.svg"
             alt="Bouton d'ajout à la liste d'envie"
+            className="iconFavCard"
           />
         </button>
       </div>
@@ -29,6 +30,7 @@ function Card({ data, openProduct, colorSection }) {
             <img
               src="../assets/images/icons/add-cart.svg"
               alt="Bouton d'ajout au panier"
+              className="iconCartCard"
             />
           </button>
         </div>

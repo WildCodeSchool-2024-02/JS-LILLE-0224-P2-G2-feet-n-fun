@@ -1,19 +1,16 @@
 /*General*/
 body {
   color: var(--text-color);
-  text-align: right;
   font-size: 1em;
 }
 
-h2 {
+.titleFavoris {
   font-family: var(--titlesfont);
   font-size: 3em;
   font-weight: lighter;
   text-align: center;
 }
-h3 {
-  text-align: center;
-}
+
 .totalCart {
   font-size: 2em;
   padding-top: 1em;
@@ -25,13 +22,14 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(253, 245, 233);
+  background-color: var(--fourth-color);
   gap: 0.5em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  width: 85vw;
+  width: 90vw;
   margin: auto;
   border-radius: 15px;
+  margin-bottom:2em
 }
 
 /* une seule card*/
@@ -39,7 +37,7 @@ h3 {
   background-color: white;
   font-family: var(--primaryfont);
   border-radius: 5px;
-  width: 80vw;
+  width: 85vw;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -78,15 +76,6 @@ h3 {
 
 /* buttons */
 
-.buttonCloseDeliveryPayment {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  box-sizing: border-box;
-  color: var(--third-color);
-  cursor: pointer;
-}
-
 .cardButtonsCard {
   display: flex;
   flex-direction: column;
@@ -104,7 +93,7 @@ h3 {
 }
 
 .cardButtonsCard > button > img {
-  height: 3vh;
+  height: 4vh;
 }
 
 .cartValidationButton {
@@ -154,5 +143,6 @@ h3 {
     width: 72vw;
     margin: auto;
     border-radius: 15px;
+    margin-bottom: 2em;
   }
 }

@@ -12,10 +12,8 @@ function CartContainer () {
   const data = useLoaderData();
 
     return (<>
-    <button type="button" className="buttonCloseDeliveryPayment">
-        <img src="./public/assets/images/icons/exit-btn-red.svg" alt="croix"/>
-      </button>
-        <h2>Panier</h2>
+    
+        <h2 className="titleRubrique">Panier</h2>
         <div className="cardsContainerCart">
         {data[3].products.map((chaussette) => (<CartCard key={chaussette.id} name = {chaussette.name} src={chaussette.src} price={chaussette.price}/>))}
         

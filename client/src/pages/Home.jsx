@@ -1,10 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+
+import EventsContainer from "../components/Home/EventsContainer";
+import MenuHome from "../components/Home/MenuHome"
 
 
 function Home () {
-    const data = useLoaderData();
+   
 
-    return (<h1>Bonjour {data[0].products[0].name} </h1>)
+    return (<><EventsContainer/>
+    <MenuHome/></>)
 }
 
 export default Home 

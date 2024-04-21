@@ -6,7 +6,15 @@ import "./CategoryBar.css";
 function CategoryBar({ id }) {
   return (
       <div className="categories">
+      
         <ul className="ulCategories"> 
+        <li>
+          <Link to="/">
+
+              <img  className="button_accueil" src="../public/assets/images/icons/iconAccueil.svg" alt="retour à l'accueil"/>
+           </Link>
+          </li>
+          
           <li>
           <Link to="/categories/4"><button
               type="button" className={

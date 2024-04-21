@@ -41,10 +41,10 @@
   .categories {
     display: block;
     width: 100%;
-    height: 4.5em;
-    background-color: var(--primary-color);
-    position: relative;
+    height: 4em;
+    background-color: var(--card-background);
     top: 0px;
+    border-bottom: 10px solid orange;
   }
 
   .ulCategories {
@@ -56,44 +56,32 @@
     align-items: center;
   }
 
-  li {
-    font-size: 30px;
-  }
-
   .categories button:hover,
-  .end-navigation.navigation-footer:hover {
+  .end-navigation.navigation-footer:hover,
+  .button_accueil:hover {
     transform: scale(1.2);
     transition: transform 0.2s;
     color: var(--secondary-color);
-    text-shadow: 5px 5px 5px black;
+    text-shadow: 3px 3px 3px rgb(221, 184, 136);
     cursor: pointer;
   }
 
-  .button_art_active {
-    font-family: "Nanum Pen Script", cursive;
-    font-size: 48px;
-    background-color: var(--primary-color);
-    border: var(--primary-color);
-    padding: -10px;
-    color: var(--secondary-color);
-    transform: scale(1.2);
-    text-shadow: 5px 5px 5px black;
-  }
+  .button_accueil {height:4vh;}
+
 
   .button_art {
     font-family: "Nanum Pen Script", cursive;
-    font-size: 48px;
-    background-color: var(--primary-color);
-    border: var(--primary-color);
-    padding: -10px;
+    font-size: 2em;
+    background-color: var(--card-background);
+    border: var(--card-background);
     color: var(--text-color);
   }
 
   .button_sport_active {
     font-family: "Racing Sans One", sans-serif;
     font-size: 35px;
-    background-color: var(--primary-color);
-    border: var(--primary-color);
+    background-color: var(--card-background);
+    border: var(--card-background);
     padding: -10px;
     color: var(--secondary-color);
     transform: scale(1.2);
@@ -102,9 +90,9 @@
 
   .button_sport {
     font-family: "Racing Sans One", sans-serif;
-    font-size: 35px;
-    background-color: var(--primary-color);
-    border: var(--primary-color);
+    font-size: 1.5em;
+    background-color: var(--card-background);
+    border: var(--card-background);
     padding: -10px;
     color: var(--text-color);
   }
@@ -112,8 +100,8 @@
   .button_geek_active {
     font-family: "Slackey", sans-serif;
     font-size: 30px;
-    background-color: var(--primary-color);
-    border: var(--primary-color);
+    background-color: var(--card-background);
+    border: var(--card-background);
     padding: -10px;
     transform: scale(1.2);
     color: var(--secondary-color);
@@ -122,9 +110,9 @@
 
   .button_geek {
     font-family: "Slackey", sans-serif;
-    font-size: 30px;
-    background-color: var(--primary-color);
-    border: var(--primary-color);
+    font-size: 1.5em;
+    background-color: var(--card-background);
+    border: var(--card-background);
     padding: -10px;
     color: var(--text-color);
   }
@@ -132,8 +120,8 @@
   .button_anime_active {
     font-family: "Marko One", serif;
     font-size: 30px;
-    background-color: var(--primary-color);
-    border: var(--primary-color);
+    background-color: var(--card-background);
+    border: var(--card-background);
     padding: -10px;
     transform: scale(1.2);
     color: var(--secondary-color);
@@ -142,9 +130,9 @@
 
   .button_anime {
     font-family: "Marko One", serif;
-    font-size: 30px;
-    background-color: var(--primary-color);
-    border: var(--primary-color);
+    font-size: 1.2em;
+    background-color: var(--card-background);
+    border: var(--card-background);
     padding: -10px;
     color: var(--text-color);
   }
@@ -152,8 +140,8 @@
   .button_festif_active {
     font-family: "Vampiro One", system-ui;
     font-size: 30px;
-    background-color: var(--primary-color);
-    border: var(--primary-color);
+    background-color: var(--card-background);
+    border: var(--card-background);
     padding: -10px;
     color: var(--text-color);
     transform: scale(1.2);
@@ -163,9 +151,9 @@
 
   .button_festif {
     font-family: "Vampiro One", system-ui;
-    font-size: 30px;
-    background-color: var(--primary-color);
-    border: var(--primary-color);
+    font-size: 1.3em;
+    background-color: var(--card-background);
+    border: var(--card-background);
     padding: -10px;
     color: var(--text-color);
   }

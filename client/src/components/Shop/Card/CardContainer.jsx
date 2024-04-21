@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import Card from "./Card";
 import ProductDetails from "./ProductDetails/ProductDetails";
+import CategoryBar from "../../Header/CategoryBar/CategoryBar"
+
 
 function CardContainer({ data }) {
   // State qui stock l'état Ouvert/Fermé du composant ProductDetails
@@ -23,9 +25,13 @@ function CardContainer({ data }) {
 
   return (
     <>
+    <CategoryBar/>
+
+     
       <div
         className="card-container"
       >
+     
         {/* .map() Pour générer toutes les cards d'une section */}
         {data.products.map((product, index) => (
           <Card
@@ -60,3 +66,8 @@ CardContainer.propTypes = {
   }).isRequired,
 };
 export default CardContainer;
+
+/* <div className="headerCategorie"> 
+      <h3 className="titreHeaderCategorie">Art</h3> 
+      <p className="descHeaderCategorie"> Découvrez notre collection 'Art' et habillez vos pieds avec des œuvres d'art à chaque pas ! Ces chaussettes éclatantes et créatives sont bien plus qu'un simple accessoire de mode, elles sont une expression de votre individualité et de votre passion pour l'art. Des motifs audacieux et des couleurs vives vous attendent, transformant chaque journée en une toile sur laquelle vous pouvez laisser votre empreinte artistique.</p>
+      </div> */

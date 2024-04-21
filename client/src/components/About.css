@@ -1,132 +1,120 @@
-@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
-
-.parisienne-regular {
-  font-family: "Parisienne", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
 .About {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  color: white;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-.About-h1 {
-  font-size: 1.5em;
-  font-family: "Parisienne", cursive;
+
+
+.Section-histoire,
+.Section-philosophie,
+.Section-équipe {
+  color: var(--text-color);
   text-align: center;
+  padding-bottom: 2em;
+  margin-bottom: -20px;
+}
+
+.Section-histoire {
+  background-color: rgb(250, 225, 179);
+}
+.Section-philosophie {
+  background-color: rgb(250, 213, 145);
+}
+.Section-équipe {
+  background-color: rgb(248, 199, 109);
+  margin-bottom: 1em;
+}
+.Img-history {
+  width: 100vw;
+}
+
+.equipeContent,
+.philoContent,
+.histoireContent {
+  display: flex;
   margin-top: 1em;
-  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Text {
+  text-align: center;
+  padding-top: 0.5em;
+  width: 95vw;
 }
 
 .History {
   margin-top: 1em;
-  font-weight: bold;
-  position: absolute;
+  margin-bottom:1em
+}
+@media screen and (min-width: 750px) {
+.About {margin-bottom:2em}
+.Section-histoire,
+.Section-philosophie,
+.Section-équipe {
+  display: block;
+  color: var(--text-color);
+  width:fit-content;
+  padding-bottom:0px;
+  margin-bottom: 0px;
+  height:30vh;
+  padding-right:2em;
+  border-radius : 0px 20px 20px 0px
+}
+.Section-histoire{position:relative;
+  left:10vw;
+
+
+}
+.Section-philosophie{position:relative;
+  left:20vw;
+
 }
 
-#History-reverse {
-  margin-right: 1em;
+.Section-équipe{position:relative;
+  left:30vw;
+
 }
 
-.Text {
-  width: 50%;
-  text-align: left;
-  margin-top: 3em;
-}
 
-#text-reverse {
-  margin-right: 1em;
-}
-
-.Section-about {
-  display: flex;
-  flex-direction: row;
-
-  padding: 0.5em;
-  background-color: black;
-  color: white;
-}
-
-.Img-history {
-  width: 8em;
-  height: 8em;
-  margin-top: 10%;
-  margin-left: 1.5em;
-  clear: right;
-}
-
-.Column {
-  display: flex;
-  flex-direction: column;
-  margin-right: 1em;
-}
-
-#Reverse {
-  flex-direction: row-reverse;
-  justify-content: space-between;
-}
-
-.Img-history2 {
-  width: 8em;
-  height: 8em;
-  margin-top: 10%;
-  margin-left: 0em;
-  clear: right;
-}
-
-@media screen and (min-width: 992px) {
-  .Section-about {
+  .equipeContent,
+  .histoireContent {
     display: flex;
-    flex-direction: column;
-    margin-top: 2em;
-    padding: 0.5em;
-    align-items: center;
-  }
-
-  .Column {
-    display: flex;
+    margin-top: 1em;
     flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  .Img-history {
-    width: 25em;
-    height: 15em;
-    margin-top: 2%;
-    margin-left: 0em;
-    clear: right;
+    justify-content: center;
+    align-items: center;
+    gap:3vw
+}
+    .philoContent {
+      display: flex;
+      margin-top: 1em;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap :3vw
+  
   }
 
   .Text {
-    width: 80%;
     text-align: justify;
-    margin-top: 5em;
-  }
-
-  #Reverse {
+    padding-top: 0.5em;
+    width: 40vw;
+    display:flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    height:30vh;
+  }
+ 
+  .Img-history {
+    height: 30vh;
+    width: 30vh;
   }
 
-  #Column-reverse {
-    width: 112%;
-  }
-
-  .Img-history2 {
-    width: 25em;
-    height: 15em;
-    margin-top: 2%;
-    margin-left: 0em;
-  }
-
+  
   .About-h1 {
     font-size: 3em;
-    font-family: "Parisienne", cursive;
     text-align: center;
     margin-top: 1em;
   }

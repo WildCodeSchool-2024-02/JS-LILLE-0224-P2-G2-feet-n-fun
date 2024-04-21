@@ -7,7 +7,7 @@ import App from "./App";
 import Home from "./pages/Home";
 import About from "./components/About";
 import Contact from "./pages/Contact";
-import Delivery from "./pages/Delivery";
+import Deliveries from "./pages/Deliveries";
 
 // Le useEffect fait un appel d'API au démarrage de la page et stock le resultat dans le state "data"
 
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       { path: "/panier", element: <Panier />, loader: () => getData() },
       { path: "/a-propos", element: <About />, loader: () => getData() },
       { path: "/contact", element: <Contact />, loader: () => getData() },
-      { path: "/livraison", element: <Delivery />, loader: () => getData() },
+      { path: "/livraison", element: <Deliveries />, loader: () => getData() },
     ],
   },
 ]);

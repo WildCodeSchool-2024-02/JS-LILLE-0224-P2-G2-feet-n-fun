@@ -1,7 +1,12 @@
+.navigation {background-color:   var(--primary-color)}
+
 .buttonsNavBar {
-  background-color: transparent;
-  border: none;
-  height: 10vh;
+  background-color: var(--background-color);
+  border-radius: 20px;
+  height: 7vh;
+  margin-top:0.5em;
+  margin-right:0.5em;
+  padding: 0.8em
 }
 .buttonsNavBar:hover {
   cursor: pointer;
@@ -10,16 +15,27 @@
 
 .h1andButtonsContainer {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: flex-end;
+  justify-content: space-between;
+  
 }
+.h1andButtonsContainer a {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+}
+
+
+.textlabelnav {font-size: 0px;}
 .navbar {
-  width: 100%;
-  background-color: var(--background-color);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  height:10vh
 }
 
 .image_logo {
@@ -27,61 +43,84 @@
 }
 
 .h1FeetAndFun {
-  font-size: 2.5em;
+  font-size: 3em;
+  text-align: center;
+  color:var(--background-color);
 }
 
+.imagetraitsburger{width:30px;
+  margin-top:0.5em;}
 .bouton_menu_burger {
-  background-color: var(--background-color);
-  border: 1px solid var(--background-color);
-  opacity: 0.4;
+  border-radius: 20px;
+  height: 50px;
+  width:50px;
+  margin-top:0.5em;
+  margin-left:0.5em;
+  border:none
 }
 
 .and {
-  color: var(--secondary-color);
-  font-size: 1em;
+color:rgb(243, 241, 192);
+  position:relative;
+  -webkit-transform: rotate(20deg);
+			transform: rotate(20deg);
+	display: inline-block;
+  font-size: 0.8em;
+
 }
 
 .searchInNav {
   display: none;
 }
 
+.groupeBoutonsNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
 @media screen and (min-width: 992px) {
-  .navbar {
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    padding-left: 5vw;
+
+  .navigation {width:100vw;
+    height:15vh;
+    display:flex;
+  flex-direction: row-reverse;
+justify-content: space-around;
+align-items: center;}
+
+  .textlabelnav {
+    font-family: var(--primaryfont);
+    font-size: 0.8em;
+    text-align: center;
   }
+ 
   .bouton_menu_burger {
     display: none;
   }
   .searchInNav {
     display: inline-block;
   }
-  .h1andButtonsContainer {
+ 
+  .groupeBoutonsNav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 35vw;
+    gap: 2vw;
   }
-
   .image_logo {
     display: block;
     width: 5em;
     height: 5em;
     padding: 0.2em;
-    background-color: white;
     border: none;
-  }
-
-  .navbar {
-    background-color: var(--background-color);
-    height: 20vh;
   }
 
   .h1FeetAndFun {
     font-size: 4em;
-    padding: 0.5em;
+    margin-left:12vw
+
   }
 }
