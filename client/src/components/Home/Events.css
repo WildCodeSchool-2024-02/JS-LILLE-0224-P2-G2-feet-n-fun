@@ -16,6 +16,7 @@
 
 .image2Accueil {
   width: 100%;
+  margin-top:-18px;
 }
 
 .eventContent {
@@ -50,6 +51,7 @@
   cursor: pointer;
 }
 
+.eventCard{margin-top:0;}
 .nouveautés {display:none;}
 
 @media screen and (min-width: 992px) {
@@ -76,12 +78,12 @@
     /* titre nouveauté */ 
     .nouveautés {display:block;
    width:30vw;
-   height:30vh;
-padding-top:13vh;
-      background-color: var(--fourth-color);
+   height:80vh;
+padding-top:38vh;
+      background-color: var(--background-color);
       font-family: var(--primaryfont);
       text-align: center;
-      border-radius: 0px 20px 20px 0px;
+  
     }
   
 
@@ -107,6 +109,7 @@ padding-top:13vh;
     max-height: 30vh;
     transition: transform 1s ease-in-out;
     transform: translateX(0);
+    margin:0
   }
 
   .image1Accueil,

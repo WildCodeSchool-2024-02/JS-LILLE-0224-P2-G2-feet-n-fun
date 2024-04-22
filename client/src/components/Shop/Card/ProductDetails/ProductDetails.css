@@ -48,17 +48,17 @@
 }
 
 .product-details .product-desc h3 {
-  padding: 1rem;
+  padding: 0.8rem;
   margin-bottom: 0.5rem;
   background-color: var(--primary-color);
   text-align: center;
+  font-size: 1.6rem;
 }
 
 .product-details .product-desc p {
-  font-style: italic;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-bottom: 0.5rem;
-  text-align: left;
+  text-align:start;
 }
 
 .product-details span {
@@ -84,13 +84,16 @@
 .product-details .product-cart {
   display: flex;
 }
-
+.title-product {font-family: var(--titlesfont);
+color:var(--background-color);
+font-size: 1.2em;}
 .product-details .add-to-cart {
   width: 100%;
   padding: 0.3rem;
   font-size: 1rem;
   margin-top: 0.5rem;
   margin-right: 0.1rem;
+  color:var(--background-color);
   background-color: var(--secondary-color);
   border-radius: 3px;
   border: solid 1px black;
@@ -99,16 +102,22 @@
   cursor: pointer;
 }
 
-.product-details .like {
-  width: 11%;
-  max-width: 2rem;
+.product-details .add-to-fav{
   font-size: 1rem;
   margin-top: 0.5rem;
   margin-left: 0.3rem;
   border-radius: 3px;
-  border: solid 1px black;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   cursor: pointer;
+  border: 2px solid var(--fourth-color);
+  border-radius:25px;
+  width:16vw;
+  height:15vw;
+  
+}
+
+.product-details .iconFavCard {
+  width:8vw;
+  height:8vw
 }
 
 .product-details .product-cart button:active {

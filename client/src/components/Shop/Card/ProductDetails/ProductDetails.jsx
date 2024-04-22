@@ -3,7 +3,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import SizeListMobile from "./SizeList/SizeListMobile";
 import SizeListDekstop from "./SizeList/SizeListDekstop";
-
+/* à ajouter pour la dernière version onClick={() => addToFav(id)} avec useContext */
 function ProductDetails({
   data,
   colorSection,
@@ -12,7 +12,7 @@ function ProductDetails({
   chooseSize,
   setChooseSize, 
 }) {
-  // Function qui assigne la taille sélectionner au state chooseSize (dans le composant CardContainer) pour transmettre la taille lors de l'ajout au panier.
+  // Function qui assigne la taille sélectionnée au state chooseSize (dans le composant CardContainer) pour transmettre la taille lors de l'ajout au panier.
   const changeSize = (selectedIndex) => {
     setChooseSize(data.size[selectedIndex].size);
   };
@@ -40,7 +40,7 @@ function ProductDetails({
       </div>
       <div className="product-content">
         <div className="product-desc">
-          <h3>{data.name}</h3>
+          <h3 className="title-product">{data.name}</h3>
           <p>{data.desc}</p>
         </div>
         <div className="price">
@@ -53,9 +53,13 @@ function ProductDetails({
           <button type="button" className="add-to-cart">
             Ajouter au panier
           </button>
-          <button type="button" className="like">
-            ❤️
-          </button>
+          <button type="button"  className="add-to-fav">
+          <img
+            src="../assets/images/icons/add-heart.svg"
+            alt="Bouton d'ajout à la liste d'envie"
+            className="iconFavCard"
+          />
+        </button>
         </div>
         </div>
       </div>
