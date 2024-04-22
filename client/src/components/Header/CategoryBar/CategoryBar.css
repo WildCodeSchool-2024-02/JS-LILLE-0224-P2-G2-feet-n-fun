@@ -9,7 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Marko+One&family=Nanum+Pen+Script&family=Racing+Sans+One&family=Slackey&family=Vampiro+One&display=swap");
 
 .categories {
-  display: none;
+  display: none
 }
 
 @media screen and (min-width: 992px) {
@@ -41,10 +41,9 @@
   .categories {
     display: block;
     width: 100%;
+    margin:auto;
     height: 4em;
     background-color: var(--card-background);
-    top: 0px;
-    border-bottom: 10px solid orange;
   }
 
   .ulCategories {
@@ -54,6 +53,7 @@
     list-style-type: none;
     justify-content: space-evenly;
     align-items: center;
+    background-color: var(--card-background);
   }
 
   .categories button:hover,
@@ -63,6 +63,7 @@
     transition: transform 0.2s;
     color: var(--secondary-color);
     text-shadow: 3px 3px 3px rgb(221, 184, 136);
+    background-color: var(--card-background);
     cursor: pointer;
   }
 
