@@ -19,14 +19,22 @@ label {
 .titleContact {
   padding: 2rem;
 }
+
 .champ {
   border-radius: 5px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   border: 1px solid #ccc;
-  cursor: pointer;
   padding: 1rem;
+}
+.champ:hover {
+  transform: scale(1.15);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .icon {
@@ -61,6 +69,7 @@ textarea {
   width: 100%;
   font-weight: bold;
 }
+
 textarea {
   height: 150px;
 }
@@ -76,6 +85,13 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+.formFormulaire {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:;
 }
 @media only screen and (min-width: 992px) {
   .contact-container {
