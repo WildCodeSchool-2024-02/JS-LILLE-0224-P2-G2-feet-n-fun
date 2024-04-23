@@ -14,11 +14,11 @@ function FavorisContainer({ data }) {
       foundProduct = category.products.find(
         (product) => product.id === productId
       );
-      return foundProduct !== undefined; // Sortir de la boucle si le produit est trouvé
+      return foundProduct !== undefined;
     });
-    return foundProduct; // Retourner le produit trouvé ou null s'il n'est pas trouvé
+    return foundProduct;
   };
-  
+
   return (
     <>
       <button type="button" className="buttonCloseDeliveryPayment">

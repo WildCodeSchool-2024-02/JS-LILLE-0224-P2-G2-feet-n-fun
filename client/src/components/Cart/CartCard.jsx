@@ -3,17 +3,12 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import { ShopContext } from "../../context/ShopContext";
 
-/* 
-A faire : 
-- fonction pour quitter et continuer mes achats
- */
-
 function CartCard({ product, quantity }) {
   const { id, name, price, src } = product;
   const { addToCart, removeFromCart, cartItems } = useContext(ShopContext);
 
-const prixProduit = price *quantity
-const prixProduit2 = prixProduit.toFixed(2)
+  const prixProduit = price * quantity;
+  const prixProduit2 = prixProduit.toFixed(2);
   return (
     <div className="cardContainerCart">
       <img className="imgSocksCart" src={src} alt="" />

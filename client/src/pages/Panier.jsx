@@ -4,12 +4,6 @@ import CartContainer from "../components/Cart/CartContainer";
 function Panier() {
   const data = useLoaderData();
 
-
-  return data && (
-    
-     
-    <CartContainer data={data} />
-
-  )
+  return data && <CartContainer data={data} />;
 }
 export default Panier;

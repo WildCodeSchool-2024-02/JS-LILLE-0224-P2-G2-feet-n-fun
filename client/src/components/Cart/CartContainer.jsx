@@ -5,32 +5,24 @@ import PropTypes from "prop-types";
 import CartCard from "./CartCard";
 import { ShopContext } from "../../context/ShopContext";
 
-/* A ajouter : 
-- fonction pour quitter et revenir à la page précédente (continuer mes achats)  */
 function CartContainer({ data }) {
-
   const { cartItems } = useContext(ShopContext);
 
-  // Fonction pour trouver un produit par son ID et le faire correspondre à la data de notre API
+  /*  Fonction pour trouver un produit par son ID et le faire correspondre à la data de notre API */
   const findProductById = (productId) => {
     let foundProduct = null;
-    
-  // eslint-disable-next-line react/prop-types
-    data.some((category) => {
 
+    // eslint-disable-next-line react/prop-types
+    data.some((category) => {
       foundProduct = category.products.find(
         (product) => product.id === productId
       );
-      return foundProduct !== undefined; // Sortir de la boucle si le produit est trouvé
+      return foundProduct !== undefined; 
     });
 
-    return foundProduct; // Retourner le produit trouvé ou null s'il n'est pas trouvé
+    return foundProduct; /* Retourner le produit trouvé ou null s'il n'est pas trouvé */
   };
 
-  /* cartItems ressemble à : [{1:2, 33:4}].
-1 c'est l'ID de l'item, 2 c'est la quantité. Loop dans chaque item qui sont dans cartItems pour voir si 
-leur quantité est plus importante que 0,  ce qui signifie qu'il y en a au moins 1 dans le panier. S'ils sont dans le panier,
-on prend la quantié et on multiplie par leur prix). */
   const getTotalCartAmount = () => {
     let totalAmount2 = 0;
     let totalAmount;
@@ -71,8 +63,7 @@ on prend la quantié et on multiplie par leur prix). */
           </button>
         </Link>
       </div>
-
-    </section> 
+    </section>
   );
 }
 

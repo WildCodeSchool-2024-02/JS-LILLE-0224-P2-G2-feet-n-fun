@@ -24,9 +24,7 @@ function App() {
     <ShopContextProvider>
       <Navbar />
       <CategoryBar />
-      <main>
-      {data && <Outlet data={data}/>} 
-      </main>
+      <main>{data && <Outlet data={data} />}</main>
     </ShopContextProvider>
   );
 }

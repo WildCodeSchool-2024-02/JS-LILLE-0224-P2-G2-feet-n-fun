@@ -8,7 +8,7 @@ function CategoryBar({ id }) {
       <div className="categories">
         <ul className="ulCategories">
           <li>
-          <Link to="/panier"><button
+          <Link to="/categories/4"><button
               type="button" className={
                 id === 4 ? "button_art_active" : "button_art"
               }
