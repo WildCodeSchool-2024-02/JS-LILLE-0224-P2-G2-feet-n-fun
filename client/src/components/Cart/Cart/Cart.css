@@ -22,7 +22,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--fourth-color);
+  background-color: var(--background-color);
   gap: 0.5em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -36,7 +36,6 @@ body {
 .cardContainerCart {
   background-color: white;
   font-family: var(--primaryfont);
-  border-radius: 5px;
   width: 85vw;
   margin: auto;
   display: flex;
@@ -145,7 +144,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--fourth-color);
+    background-color: var(--background-color);
     gap: 0.5em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
@@ -154,6 +153,7 @@ body {
     margin-bottom: 2em;
     margin-left: 0;
     margin-right: 0;
+    
   }
 
   .cartSection {
@@ -163,18 +163,17 @@ body {
   }
 
   .totalCart {
-    background-color: var(--background-color);
+    background-color: var(--fourth-color);
     height: 30vh;
     margin-top: 10vh;
+    margin-left:10vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 0px 20px 20px 0px;
     border: 2px solid var(--fourth-color);
     padding: 4vh;
-    position: fixed;
-    right: 7.8vw;
+  
   }
   .buttonsContainerCart {
     display: flex;
@@ -185,11 +184,12 @@ body {
 
   .cartValidationButton,
   .cartKeepShoppingButton {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     border-radius: 0.5rem;
     text-align: center;
     color: var(--background-color);
-    border: none;
+    border: 2px var(--text-color) solid ;
+    box-shadow: 1px 2px 1px black;
     cursor: pointer;
     height: fit-content;
     font-size: 0.6em;
@@ -198,6 +198,14 @@ body {
     padding: 0.5em;
     margin: 0.5em;
   }
+
+
+  .cartValidationButton:hover,
+  .cartKeepShoppingButton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
   .cartKeepShoppingButton {
     font-size: 0.4em;
   }

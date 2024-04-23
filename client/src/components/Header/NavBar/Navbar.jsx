@@ -28,16 +28,20 @@ function Navbar() {
 
         <div className="h1andButtonsContainer">
           <div className="groupeBoutonsNav">
-            <Link to="/favoris">
-              <img
-                className="buttonsNavBar searchInNav"
-                src="../public/assets/images/icons/search.svg"
-                alt="recherche"
-              />
-            </Link>
+        
+               <div className="search-bar buttonsNavBar searchInNav">
+      <input type="text" placeholder="Rechercher..." />
+      <button type="button" className="btn-search">
+        <img
+          src="../assets/images/icons/loupe-black.svg"
+          alt="Bouton de recherche"
+        />
+      </button>
+    </div>
+       
             <Link to="/categories/4">
               <img
-                className="buttonsNavBar"
+                className="buttonsNavBar shopNavBar"
                 src="../public/assets/images/icons/shopicon.svg"
                 alt="recherche"
               />

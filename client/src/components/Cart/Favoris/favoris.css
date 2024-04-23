@@ -34,7 +34,7 @@ body {
 
 /* une seule card*/
 .cardContainerFav {
-  background-color: white;
+  background-color: var(--background-color);
   font-family: var(--primaryfont);
   border-radius: 5px;
   width: 85vw;
@@ -102,7 +102,7 @@ body {
   }
 
   .cardContainerFav {
-    width: 70vw;
+    width: 25vw;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -114,19 +114,20 @@ body {
     flex-direction: column;
     justify-content: space-between;
     padding-left: 2vw;
-    width: 80vw;
+    width: 25vw;
   }
 
   .cardsContainerFav {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
-    background-color: rgb(253, 245, 233);
+    background-color: var(--background-color);
     gap: 0.5em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    width: 72vw;
+    width: 70vw;
     margin: auto;
     border-radius: 15px;
     margin-bottom: 2em;

@@ -9,6 +9,7 @@
   bottom: 0;
   z-index: 999;
   transform: translateX(-100%);
+  border-right: solid 3px white ;
 }
 
 .burgerMenu.open {
