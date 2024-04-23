@@ -19,7 +19,6 @@ export default function ShopContextProvider({ children }) {
   On aura donc {56:2}
   */
 
-
   const addToCart = (itemId) => {
     setCartItems((prev) => {
       if (prev[itemId]) {

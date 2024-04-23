@@ -8,7 +8,6 @@ function Card({ data, handleToggle, colorSection }) {
   const { addToCart, addToFav } = useContext(ShopContext);
 
   return (
-    // ENLEVER LE ROLE BUTTON ET TABINDEX UNE FOIS QUE LE ONCLICK SERA SUR LES ELEMENTS QUI IRONS VERS LE PRODUCTDETAILS
     <div className="card">
       <div
         className="card-header"
