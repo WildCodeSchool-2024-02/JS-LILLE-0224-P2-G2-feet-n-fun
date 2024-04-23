@@ -4,14 +4,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 /* import Home from "./pages/Home"; */
 import Favoris from "./pages/Favoris";
 import Categories from "./pages/Categories";
-import Panier from "./pages/Panier";
+import Panier from "./pages/ShoppingCart";
 import App from "./App";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Deliveries from "./pages/Deliveries";
-
-// Le useEffect fait un appel d'API au démarrage de la page et stock le resultat dans le state "data"
 
 const getData = async () => {
   const result = await fetch(
@@ -41,9 +39,9 @@ const router = createBrowserRouter([
       },
       { path: "/favoris", element: <Favoris />, loader: () => getData() },
       { path: "/panier", element: <Panier />, loader: () => getData() },
-      { path: "/a-propos", element: <About />, loader: () => getData() },
-      { path: "/contact", element: <Contact />, loader: () => getData() },
-      { path: "/livraison", element: <Deliveries />, loader: () => getData() },
+      { path: "/a-propos", element: <About />},
+      { path: "/contact", element: <Contact /> },
+      { path: "/livraison", element: <Deliveries />},
     ],
   },
 ]);

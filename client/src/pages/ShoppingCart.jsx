@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 import CartContainer from "../components/Cart/CartContainer";
 
-function Panier() {
+function ShoppingCart() {
   const data = useLoaderData();
 
   return data && <CartContainer data={data} />;
 }
-export default Panier;
+export default ShoppingCart;

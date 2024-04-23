@@ -8,11 +8,20 @@ export default function ShopContextProvider({ children }) {
   const [cartItems, setCartItems] = useState({});
   const [favItems, setFavItems] = useState({});
 
-  /* Ajout au panier */
+  /* Ajout au panier 
+  Cette fonction prend l'id d'un article en apramètre (on l'appelera dans les composants avec addToCart(id)) 
+  Elle change l'état de notre cartItems (qui contient les produits du panier). 
+  - prev sert à désigner l'état précédent de cartItems 
+  - si dans cet état (donc dans l'objet cartItems) il existe déjà une entrée avec notre id, elle retourne prev et ajoute +1 à sa quantité. 
+  - sinon elle ajoute 1 à sa quantité
+  Pour prendre un exemple concrêt, si on a déjà ajouté la paire de chaussette 56 au panier une fois, le cartItems va être {56 :1}
+  Si on rajoute une paire 56, cartItems va conserver son état précédent puis ajouter 1 à cartItems[itemsId] donc à cartItems[56]. 
+  On aura donc {56:2}
+  */
+
 
   const addToCart = (itemId) => {
     setCartItems((prev) => {
-      // Si l'article existe déjà dans le panier, ajoute 1 à sa quantité
       if (prev[itemId]) {
         return { ...prev, [itemId]: prev[itemId] + 1 };
       }

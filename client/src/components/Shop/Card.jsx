@@ -18,7 +18,6 @@ function Card({ data, handleToggle, colorSection }) {
         onClick={handleToggle}
       >
         <img className="product-img" src={src} alt="" />
-        {/* REMPLACER ICI LE BOUTON LIKE QUI APPARAIT DANS L'IMAGE */}
         <button type="button" onClick={() => addToFav(id)}>
           <img
             src="../assets/images/icons/add-heart.svg"
@@ -35,7 +34,7 @@ function Card({ data, handleToggle, colorSection }) {
             className="buttonsNavBar searchInNav"
             onClick={() => addToCart(id)}
           >
-            <img src="../public/assets/images/icons/cart4.svg" alt="favoris" />
+            <img src="../assets/images/icons/add-cart.svg" alt="favoris" />
           </button>
         </div>
       </div>
