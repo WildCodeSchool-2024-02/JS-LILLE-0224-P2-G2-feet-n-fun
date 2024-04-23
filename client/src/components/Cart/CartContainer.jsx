@@ -46,14 +46,14 @@ let foundProduct = null;
     itemId représente chacune de ces clés (donc ici nos itemId sont 37 et 56)
     - on appelle ensuite la fonction findProductById  pour trouver le produit correspondant à l'itemId dans le panier.
      La fonction Number est utilisée pour convertir l'itemId en un nombre entier au cas où il serait stocké sous forme de chaîne de caractères (comme parsInt)
-     On stocke le résultat dans la constante product.  Donc dans notre exemple, il va aller chercher dans l'API le produit 37 et 56. 
-     A ce stade on a les informations provenant de l'API de chacun de nos produits dans le panier (ex : prix, image ...)
+     On stocke le résultat dans la constante product.  Dans notre exemple, il va aller chercher dans l'API le produit 37 et 56. 
+     A ce stade, on a les informations provenant de l'API de chacun de nos produits dans le panier (ex : prix, image ...)
 
-     - On initie ensuite une condition : si un produit a été trouvé et que la quantité de celui-ci est supérieur à zéro,
+     - On initie ensuite une condition : si un produit a été trouvé et que la quantité de celui-ci est supérieure à zéro,
      on ajoute au total la quanité multipliée par le prix (récupéré de l'API, noté product.price)
      On a la quantité parce que cartItems.itemId va donner la "valeur" de itemId. Par exemple cartItems.37 est égal à 2. 
 
-     - la dernière condition sert à afficher un message : si le total est égal à 0, un message votre panier est vide s'affiche. 
+     - la dernière condition sert à afficher un message : si le total est égal à 0, un message "votre panier est vide" s'affiche. 
      Sinon, on affiche le Total arrondi à 2 chiffres derrière la virgule grace à .toFixed(2)
 
      */
@@ -82,15 +82,15 @@ let foundProduct = null;
       </button>
       <h2>Panier</h2>
 
-      { /* On va mettre une condition pour afficher les carte : 
-      - la méthode object.entries() retourne un tableau contenant les paires clé-valeur d'un objet sous forme de tableaux. 
+      { /* On va mettre une condition pour afficher les cartes : 
+      - la méthode object.entries() retourne un tableau contenant les paires clé-valeur d'un objet sous forme de tableau. 
       Par exemple si on fait un object.entries sur const obj = { a: 1, b: 2, c: 3 };, cela va renvoyer [ ["a", 1], ["b", 2], ["c", 3] ] 
-      Ici on le fait sur cartItems. Si on reprend l'exemple plus haut, on a donc [[37, 2], [56:1]] qui est retourné. 
+      Ici on le fait sur cartItems. Si on reprend l'exemple plus haut, on a donc [[37,2], [56,1]] qui est retourné. 
       - on fait une map sur ce tableau, qui prend comme valeur nos deux éléments du tableau (l'id du produit et la quantité). 
       On va executer une fonction sur chacun de ses éléments 
-      - on réutilise ici le const product qui a été délcaré localement plutot dans la fonction getTotalAmount 
+      - on réutilise ici le const product qui a été déclaré localement plutot dans la fonction getTotalAmount 
       - si product est présent et la quantité est supérieur à 0 alors on affiche une card du produit dans le panier */ }
-      
+
       <div className="cardsContainerCart">
         {Object.entries(cartItems).map(([productId, quantity]) => {
           const product = findProductById(Number(productId));
