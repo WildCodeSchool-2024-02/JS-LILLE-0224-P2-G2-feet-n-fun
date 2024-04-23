@@ -8,12 +8,16 @@ import { ShopContext } from "../../context/ShopContext";
 /* A ajouter : 
 - fonction pour quitter et revenir à la page précédente (continuer mes achats)  */
 function CartContainer({ data }) {
+
   const { cartItems } = useContext(ShopContext);
+
   // Fonction pour trouver un produit par son ID et le faire correspondre à la data de notre API
   const findProductById = (productId) => {
     let foundProduct = null;
-    // eslint-disable-next-line react/prop-types
+    
+  // eslint-disable-next-line react/prop-types
     data.some((category) => {
+
       foundProduct = category.products.find(
         (product) => product.id === productId
       );
@@ -34,7 +38,7 @@ on prend la quantié et on multiplie par leur prix). */
       const product = findProductById(Number(itemId));
       if (product && cartItems[itemId] > 0) {
         totalAmount2 += cartItems[itemId] * product.price;
-        totalAmount = `Total ${totalAmount2.toString()} €`;
+        totalAmount = `Total ${totalAmount2.toFixed(2)} €`;
       }
     });
     if (totalAmount2 === 0) {
@@ -67,7 +71,8 @@ on prend la quantié et on multiplie par leur prix). */
           </button>
         </Link>
       </div>
-    </section>
+
+    </section> 
   );
 }
 

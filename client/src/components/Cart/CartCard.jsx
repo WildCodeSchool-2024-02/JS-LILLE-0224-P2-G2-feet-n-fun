@@ -11,6 +11,9 @@ A faire :
 function CartCard({ product, quantity }) {
   const { id, name, price, src } = product;
   const { addToCart, removeFromCart, cartItems } = useContext(ShopContext);
+
+const prixProduit = price *quantity
+const prixProduit2 = prixProduit.toFixed(2)
   return (
     <div className="cardContainerCart">
       <img className="imgSocksCart" src={src} alt="" />
@@ -21,7 +24,7 @@ function CartCard({ product, quantity }) {
           <p> Quantité : {quantity} </p>
         </div>
         <div className="priceCart">
-          <p>{price * quantity}€</p>
+          <p>{prixProduit2}€</p>
         </div>
       </div>
       <div className="cardButtonsCard">
