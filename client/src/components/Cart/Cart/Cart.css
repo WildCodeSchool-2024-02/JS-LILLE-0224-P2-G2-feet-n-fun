@@ -1,0 +1,207 @@
+/*General*/
+body {
+  color: var(--text-color);
+  font-size: 1em;
+}
+
+.titleFavoris {
+  font-family: var(--titlesfont);
+  font-size: 3em;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.totalCart {
+  font-size: 2em;
+  padding-top: 1em;
+}
+
+/* ensemble des cards*/
+.cardsContainerCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  gap: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  width: 90vw;
+  margin: auto;
+  border-radius: 15px;
+  margin-bottom: 2em;
+}
+
+/* une seule card*/
+.cardContainerCart {
+  background-color: white;
+  font-family: var(--primaryfont);
+  width: 85vw;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.textandbuttonsCartContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* image */
+.imgSocksCart {
+  height: 5em;
+  width: 5em;
+  border-radius: 5px 0 0 5px;
+}
+
+/* text */
+.cardTextCart {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 2vw;
+  width: 80vw;
+}
+
+.sizeCart {
+  font-size: 0.8em;
+}
+.priceCart {
+  text-align: right;
+}
+
+/* buttons */
+.cardButtonsCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 5vw;
+}
+
+.cardButtonsCard > button {
+  background-color: transparent;
+  border: none;
+}
+
+.cardButtonsCard > button:hover {
+  cursor: pointer;
+}
+
+.cardButtonsCard > button > img {
+  height: 4vh;
+}
+
+.cartValidationButton,
+.cartKeepShoppingButton {
+  margin-top: 1em;
+  background-color: var(--secondary-color);
+  border-radius: 0.5rem;
+  text-align: center;
+  color: var(--background-color);
+  cursor: pointer;
+  font-family: var(--primaryfont);
+  font-size: 1.1em;
+  font-weight: bolder;
+  width: fit-content;
+  padding: 0.5em;
+}
+
+@media screen and (min-width: 992px) {
+  .imgSocksCart {
+    height: 6em;
+    width: 6em;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .buttonCloseDeliveryPayment {
+    display: none;
+  }
+
+  .cardContainerCart {
+    width: 40vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .cardTextCart {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 2vw;
+    width: 30vw;
+    font-size: 1.5em;
+  }
+
+  .cardsContainerCart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    gap: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    width: 42vw;
+    border-radius: 15px;
+    margin-bottom: 2em;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .cartSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .totalCart {
+    background-color: var(--fourth-color);
+    height: 30vh;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--fourth-color);
+    padding: 4vh;
+  }
+  .buttonsContainerCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4vh;
+  }
+
+  .cartValidationButton,
+  .cartKeepShoppingButton {
+    background-color: var(--secondary-color);
+    border-radius: 0.5rem;
+    text-align: center;
+    color: var(--background-color);
+    border: 2px var(--text-color) solid;
+    box-shadow: 1px 2px 1px black;
+    cursor: pointer;
+    height: fit-content;
+    font-size: 0.6em;
+    font-weight: bolder;
+    width: fit-content;
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+
+  .cartValidationButton:hover,
+  .cartKeepShoppingButton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .cartKeepShoppingButton {
+    font-size: 0.4em;
+  }
+}

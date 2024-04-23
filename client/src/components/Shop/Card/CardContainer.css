@@ -1,0 +1,31 @@
+.card-container {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.headerCategorie{height:30vh;
+  margin:auto;
+  margin-top  :2vh;
+  background-color: var(--primary-color);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titreHeaderCategorie, .descHeaderCategorie {
+  color :var(--background-color)
+}
+
+.titreHeaderCategorie{
+  font-size: 2em;
+}
+
+.descHeaderCategorie {width:60vw;
+  font-size:1.2em;
+text-align: center;
+margin-top:2vh;}
