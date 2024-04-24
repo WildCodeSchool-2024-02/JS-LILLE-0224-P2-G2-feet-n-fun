@@ -9,7 +9,7 @@ function ContactPage() {
     message: "",
   });
 
-  const displayeConfirmation = () => {
+  const displayConfirmation = () => {
     if (
       formData.name === "" ||
       formData.email === "" ||
@@ -49,7 +49,7 @@ function ContactPage() {
           <div className="numberContact champ">
             <img
               className="icon"
-              src="../../../public/assets/images/icons/phone.svg"
+              src="public/assets/images/icons/phone.svg"
               alt="phone logo"
             />
             <a href="tel:+33922124578">+33 922 124 578</a>
@@ -57,7 +57,7 @@ function ContactPage() {
           <div className="mailContact champ">
             <img
               className="icon"
-              src="../../../public/assets/images/icons/mail.svg"
+              src="public/assets/images/icons/mail.svg"
               alt="mail logo"
             />
             <a href="mailto:feet&fun@gmail.com">feet&fun@gmail.com</a>
@@ -65,7 +65,7 @@ function ContactPage() {
           <div className="locationContact champ">
             <img
               className="icon"
-              src="../../../public/assets/images/icons/location.svg"
+              src="public/assets/images/icons/location.svg"
               alt="location place logo"
             />
             <a href="https://www.google.com/maps/place/Wild+Code+School/@50.6339332,3.0197752,16z/data=!4m14!1m7!3m6!1s0x47c2d55c63d0d77d:0x6986c08acba25607!2sWild+Code+School!8m2!3d50.6339298!4d3.0223501!16s%2Fg%2F11f0w_dmt3!3m5!1s0x47c2d55c63d0d77d:0x6986c08acba25607!8m2!3d50.6339298!4d3.0223501!16s%2Fg%2F11f0w_dmt3?authuser=0&entry=ttu">
@@ -74,9 +74,9 @@ function ContactPage() {
           </div>
         </div>
 
-        <div className="barreSeperation" />
+        <div className="separationBar" />
         <div className="fomulaireSection">
-          <form className="formFormulaire" onSubmit={handleSubmit}>
+          <form className="formContact" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Nom:</label>
               <input
@@ -109,7 +109,7 @@ function ContactPage() {
                 required
               />
             </div>
-            <button onClick={displayeConfirmation} type="submit">
+            <button onClick={displayConfirmation} type="submit">
               Envoyer
             </button>
             <div className="centreMsg">

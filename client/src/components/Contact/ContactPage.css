@@ -40,7 +40,7 @@ label {
 .icon {
   width: 2rem;
 }
-.barreSeperation {
+.separationBar {
   width: 90%;
   height: 4px;
   margin: 1.5rem;
@@ -87,11 +87,10 @@ button:hover {
   background-color: #0056b3;
 }
 
-.formFormulaire {
+.formContact {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:;
 }
 @media only screen and (min-width: 992px) {
   .contact-container {
@@ -121,7 +120,7 @@ button:hover {
   .icon {
     width: 2rem;
   }
-  .barreSeperation {
+  .separationBar {
     width: 4px;
     height: 25rem;
     background-color: black;
@@ -139,7 +138,7 @@ button:hover {
     justify-content: center;
     width: 40%;
   }
-  .formFormulaire {
+  .formContact {
     width: 80%;
   }
 }
