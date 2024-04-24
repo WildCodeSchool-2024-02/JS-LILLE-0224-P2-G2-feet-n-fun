@@ -3,22 +3,22 @@ import { useLoaderData, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CardContainerFilter from "../components/Shop/Card/CardContainerFilter/CardContainerFilter";
 
-function Filter() {
+function Filter() { 
   const data = useLoaderData();
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const query = searchParams.get("query");
-  // Stock la catégorie de la recherche (contenu à la fin de l'URL)
+  // Stocke la catégorie de la recherche (contenue à la fin de l'URL)
   const [category, setCategory] = useState(query.charAt(query.length - 1) - 1);
-  // Stock le tableau final de la recherche pour afficher le résultat dans CardContainerFilter
+  // Stocke le tableau final de la recherche pour afficher le résultat dans CardContainerFilter
   const [filterBy, setFilterBy] = useState([]);
 
   // Fonction qui mélange les objets d'un tableau
   function mixArray() {
     return Math.random() - 0.5;
   }
-  // Fonction qui effectue la recherche le paramètre value correspond à l'URL (Tous ce qui se trouve après query)
+  // Fonction qui effectue la recherche le paramètre value correspond à l'URL (Tout ce qui se trouve après query)
   const filterItem = (value) => {
     let array;
     let categorySelected = [];
@@ -26,10 +26,10 @@ function Filter() {
     // Si la valeur de l'URL contient all, je retourne un tableau contenant tous les produits.
     if (value.includes("all")) {
       let arrayCombined = [];
-      // ici j'obtient un tableau contenant les 5 tableaux products de chaque catégorie
+      // ici j'obtiens un tableau contenant les 5 tableaux products de chaque catégorie
       const arrayProducts = data.map((categorySection) => categorySection.products);
       // Ici je boucle sur le tableau contenant tous les tableaux products via forEach, je fusionne le contenu dans arrayCombined
-      // Je slice arrayCombined et je stock son résultat pour retourner seulement les produits de chaque tableau products
+      // Je slice arrayCombined et je stocke son résultat pour retourner seulement les produits de chaque tableau products
       // sort prend en paramètre la fonction mixArray pour mélanger les produits et je réassigne les produits à categorySelected
       arrayProducts.forEach((categorySection) => {
         arrayCombined = arrayCombined.concat(categorySection);
@@ -62,7 +62,7 @@ function Filter() {
       priceIndexStart = value.indexOf("*");
       priceIndexEnd = value.indexOf("$");
       price = value.slice(priceIndexStart + 1, priceIndexEnd);
-          // Si l'URL contient price et size, j'effectue mon filter sur le tableau array étant déjà passer dans le script qui
+          // Si l'URL contient price et size, j'effectue mon filter sur le tableau array étant déjà passé dans le script qui
           // filtre les tailles, sinon je filtre sur CategorySelected qui est le tableau d'origine.
       if (value.includes("size") && value.includes("price")) {
         array = array.filter((product) => product.price < price);
@@ -72,11 +72,11 @@ function Filter() {
     }
 
     // Selection par couleur
-    // Si l'URL contient 'color' je stock l'index de color= dans l'URL.
+    // Si l'URL contient 'color' je stocke l'index de color= dans l'URL.
     if (value.includes("color")) {
       const colorFilterIndex = value.indexOf("color=");
-      // Si le filtre contient prix et couleur, je filtre sur le tableau array étant déjà passer dans le script de filtre de prix.
-      // Je stock dans colors toutes les couleurs séparer par une ',' se trouvant à la suite de color= via son index.
+      // Si le filtre contient prix et couleur, je filtre sur le tableau array étant déjà passé dans le script de filtre de prix.
+      // Je stocke dans colors toutes les couleurs séparées par une ',' se trouvant à la suite de color= via son index.
 
       if (value.includes("price") && value.includes("color")) {
   if (colorFilterIndex !== -1) {

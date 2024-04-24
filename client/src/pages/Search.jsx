@@ -5,7 +5,7 @@ import CardContainerSearch from "../components/Shop/Card/CardContainerSearch/Car
 
 function Search() {
     const data = useLoaderData();
-    // Stock le resultat du tableau final de recherche
+    // Stocke le resultat du tableau final de recherche
     const [ result, setResult ] = useState([])
 
     const location = useLocation();
@@ -16,15 +16,15 @@ function Search() {
         const searchValue = value.toLowerCase()
         let arrayProducts
         let arrayCombined = []
-        // ici j'obtient un tableau contenant les 5 tableaux products de chaque catégories
+        // ici j'obtiens un tableau contenant les 5 tableaux products de chaque catégorie
         arrayProducts = data.map((category) =>
             category.products
         )
-        // ici j'obtient 1 seul tableau contenant tous les items
+        // ici j'obtiens 1 seul tableau contenant tous les items
         arrayProducts.forEach((array) => {
           arrayCombined = arrayCombined.concat(array)
         })
-        // ici je filtre le tableau pour obtenir les items correspondant
+        // ici je filtre le tableau pour obtenir les items correspondants
         arrayProducts = arrayCombined.filter((item) =>
           item.name.toLowerCase().includes(searchValue) ||
           item.desc.toLowerCase().includes(searchValue) ||
@@ -33,7 +33,7 @@ function Search() {
         if(arrayProducts.length > 0) {
           setResult(arrayProducts)
         } else {
-          setResult([])
+          setResult([]) 
         }  
     }
     // Ici je lance la fonction de recherche dès le chargement de Search.jsx avec en paramètre la valeur de l'URL.

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
-function SearchBar({ handleToggle }) {
+function SearchBar({ handleToggle }) { 
 
   const navigate = useNavigate();
   // Fonction qui prend en paramètre la valeur de la recherche pour transmettre la bonne requête dans l'URL. 
@@ -11,10 +11,10 @@ function SearchBar({ handleToggle }) {
     navigate(`/recherche?query=${searchValue}`);
     handleToggle();
   };
-  // Stock la valeur de la recherche.
+  // Stocke la valeur de la recherche.
   const [ inputValue, setInputValue ] = useState()
 
-  // Fonction qui permet de lancer la fonction handleSearch lors ce que la touche entrée est pressée.
+  // Fonction qui permet de lancer la fonction handleSearch lorsque la touche entrée est pressée.
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       handleSearch(inputValue)

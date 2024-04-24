@@ -11,19 +11,19 @@ function FilterMenu({ visible, setVisible, dataCategory }) {
 
   // Si l'URL contient all (filtre pour rechercher dans toutes les catégories) l'état est true sinon false.
   const [allCategory, setAllCategory] = useState(false);
-  // Stock la taille sélectionnée pour le filtre
+  // Stocke la taille sélectionnée pour le filtre
   const [size, setSize] = useState("");
-  // Stock le prix sélectionné pour le filtre (15€ étant le prix max, si "15", pas de filtre de prix selectionné).
+  // Stocke le prix sélectionné pour le filtre (15€ étant le prix max, si "15", pas de filtre de prix selectionné).
   const [price, setPrice] = useState("15");
-  // Stock la couleur ou les couleurs sélectionnée(s) pour le filtre.
+  // Stocke la couleur ou les couleurs sélectionnée(s) pour le filtre.
   const [color, setColor] = useState([]);
-  // Stock l'état du filtre selon l'URL si elle contient déjà une recherche ou pas.
+  // Stocke l'état du filtre selon l'URL si elle contient déjà une recherche ou pas.
   const [isNull, setIsNull] = useState(false);
-  // Fonction qui prend en paramétre la couleur sélectionnée pour vérifier si elle est déjà contenue dans le state color.
+  // Fonction qui prend en paramètre la couleur sélectionnée pour vérifier si elle est déjà contenue dans le state color.
   // Si la couleur est déjà inclue dans le state : -Copie le contenu du tableau color dans la constante array
-    // -Retourne l'index dans le tableau de la couleur selectionné. | -Via l'index la couleur est enlevée du tableau array.
+    // -Retourne l'index dans le tableau de la couleur selectionnée. | -Via l'index la couleur est enlevée du tableau array.
     // -Puis re-assigne array à la place de color.
-    // Sinon array copie le contenu de color et ajoute la couleur sélectionné, puis re-assigne array à la place de color.
+    // Sinon array copie le contenu de color et ajoute la couleur sélectionnée, puis re-assigne array à la place de color.
   const onChangeColor = (colorSelected) => {
     if (color.includes(colorSelected)) {
       const array = [...color];
@@ -69,8 +69,8 @@ function FilterMenu({ visible, setVisible, dataCategory }) {
   };
   // Constante qui passe à true si l'URL contient déjà une recherche et si elle contient "all" (recherche toutes catégories).
   const queryContain = query && query.includes("all");
-  // Fonction qui s'éxécute via le bouton final pour submit la recherche, prend en paramètre la valeur pour l'URL de la recherche,
-  // via la fonction filter plus haut et vérifie si la recherche est null ou pas, si la recherche est bonne, naviguate permet
+  // Fonction qui s'exécute via le bouton final pour submit la recherche, prend en paramètre la valeur pour l'URL de la recherche,
+  // via la fonction filter plus haut et vérifie si la recherche est null ou pas, si la recherche est bonne, navigate permet
   // de donner la bonne URL pour effectuer la bonne requête dans Filter.jsx
   const filterItem = (filterValue) => {
     if(filterValue === null) {
@@ -90,7 +90,7 @@ function FilterMenu({ visible, setVisible, dataCategory }) {
     <div className={`${isClose} ${isOpen}`}>
         <button type="button" aria-label="exit" label="exit" className="exit-filter-btn" onClick={handleToggle}>
         <img
-          src="../../../../../../assets/images/icons/exit-btn-red.svg"
+          src="/public/assets/images/icons/exit-btn-red.svg"
           alt=""
         />
       </button>
@@ -121,7 +121,7 @@ function FilterMenu({ visible, setVisible, dataCategory }) {
               id="size-one"
               value="size-one%"
               onChange={(e) => setSize(e.target.value)}
-            />
+            /> 
           </div>
           <hr />
           <div className="filter">
