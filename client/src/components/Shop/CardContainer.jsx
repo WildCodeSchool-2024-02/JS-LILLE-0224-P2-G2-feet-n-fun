@@ -1,12 +1,12 @@
 import "./CardContainer.css";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Card from "./Card";
 import ProductDetails from "./ProductDetails";
+import { ShopContext } from "../../context/ShopContext";
 
 function CardContainer({ data }) {
-  // State qui stock l'état Ouvert/Fermé du composant ProductDetails
-  const [visible, setVisible] = useState(false);
+  const { visible, setVisible } = useContext(ShopContext);
 
   // State qui stock l'index du produit cliqué
   const [productSelected, setProductSelected] = useState();
@@ -18,12 +18,8 @@ function CardContainer({ data }) {
     setProductSelected(indexOfProduct);
   };
 
-  // State qui stock la taille choisit pour l'ajout au panier
-  const [chooseSize, setChooseSize] = useState("Votre taille");
-
   return (
     <>
-      <h2 className="titreCategorie">{data.name}</h2>
       <div className="card-container">
         {/* .map() Pour générer toutes les cards d'une section */}
         {data.products.map((product, index) => (
@@ -42,8 +38,6 @@ function CardContainer({ data }) {
           colorSection={data.color}
           visible={visible}
           handleToggle={handleToggle}
-          chooseSize={chooseSize}
-          setChooseSize={setChooseSize}
         />
       )}
     </>

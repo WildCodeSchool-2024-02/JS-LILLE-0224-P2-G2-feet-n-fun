@@ -1,12 +1,18 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useState, useMemo } from "react";
 import PropTypes from "prop-types";
 
 export const ShopContext = createContext(null);
 
 export default function ShopContextProvider({ children }) {
-  /* Les state qui contiennent les id des éléments du panier et des favoris */
+  /* Les states qui contiennent les id des éléments du panier et des favoris */
   const [cartItems, setCartItems] = useState({});
   const [favItems, setFavItems] = useState({});
+  // State qui stock la taille choisit pour l'ajout au panier
+  const [chooseSize, setChooseSize] = useState("Votre taille");
+
+  // State qui stock l'état Ouvert/Fermé du composant ProductDetails
+  const [visible, setVisible] = useState(false);
 
   /* Ajout au panier 
   Cette fonction prend l'id d'un article en paramètre (on l'appelera dans les composants avec addToCart(id)) 
@@ -19,18 +25,39 @@ export default function ShopContextProvider({ children }) {
   On aura donc {56:2}
   */
 
+  /* const addToCart = (itemId) => {
+    setCartItems((prev) => {
+      if (prev[itemId]) {
+        return { ...prev, [itemId]: prev[itemId] + 1 , size : chooseSize}
+        ;
+      } 
+      return { ...prev, [itemId]: 1 , "taille" : chooseSize};
+    });
+    console.log(`shop context cartitems:`, [cartItems])
+  }; */
+
   const addToCart = (itemId) => {
     setCartItems((prev) => {
       if (prev[itemId]) {
-        return { ...prev, [itemId]: prev[itemId] + 1 };
+        setVisible(false);
+        return {
+          ...prev,
+          [itemId]: { quantity: prev[itemId].quantity + 1, size: chooseSize },
+        };
       }
-      return { ...prev, [itemId]: 1 };
+      setVisible(false);
+      return { ...prev, [itemId]: { quantity: 1, size: chooseSize } };
     });
+
+    setChooseSize("Votre taille");
   };
 
   /* Retirer du panier */
   const removeFromCart = (itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: { quantity: prev[itemId].quantity - 1, size: chooseSize },
+    }));
   };
 
   /* Ajout aux fav */
@@ -47,16 +74,38 @@ export default function ShopContextProvider({ children }) {
   const removeFromFav = (itemId) => {
     setFavItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
+
+  const [finalTotal, setFinalTotal] = useState(0);
+
   const contextValue = useMemo(
     () => ({
+      finalTotal,
+      setFinalTotal,
+      chooseSize,
+      setChooseSize,
       cartItems,
       favItems,
       addToCart,
       removeFromCart,
       addToFav,
       removeFromFav,
+      visible,
+      setVisible,
     }),
-    [cartItems, favItems, addToCart, removeFromCart, addToFav, removeFromFav]
+    [
+      finalTotal,
+      setFinalTotal,
+      chooseSize,
+      setChooseSize,
+      cartItems,
+      favItems,
+      addToCart,
+      removeFromCart,
+      addToFav,
+      removeFromFav,
+      visible,
+      setVisible,
+    ]
   );
 
   return (

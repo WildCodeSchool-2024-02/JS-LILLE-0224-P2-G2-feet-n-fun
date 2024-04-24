@@ -4,6 +4,8 @@ import "./App.css";
 import Navbar from "./components/Header/Navbar";
 import CategoryBar from "./components/Header/CategoryBar";
 import ShopContextProvider from "./context/ShopContext";
+import CartContainer from "./components/Cart/CartContainer";
+import Favorites from "./components/Cart/FavorisContainer";
 
 function App() {
   const [data, setData] = useState(null);
@@ -23,6 +25,13 @@ function App() {
   return (
     <ShopContextProvider>
       <Navbar />
+      {data && (
+        <>
+          {" "}
+          <CartContainer data={data} />
+          <Favorites data={data} />
+        </>
+      )}
       <CategoryBar />
       <main>{data && <Outlet data={data} />}</main>
     </ShopContextProvider>

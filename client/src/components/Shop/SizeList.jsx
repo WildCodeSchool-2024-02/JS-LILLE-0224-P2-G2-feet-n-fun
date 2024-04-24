@@ -1,16 +1,20 @@
 import "./SizeList.css";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ShopContext } from "../../context/ShopContext";
 
-function SizeList({ data, chooseSize, changeSize }) {
+function SizeList({ data }) {
+  const { chooseSize, setChooseSize } = useContext(ShopContext);
   // State qui stock l'état Ouvert/Fermé de la liste des tailles
   const [isOpen, setIsOpen] = useState(false);
-
   // Fonction qui change l'état de isOpen true/false (Ouvre/Ferme la liste des tailles)
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-
+  // Function qui assigne la taille sélectionner au state chooseSize (dans le composant CardContainer) pour transmettre la taille lors de l'ajout au panier.
+  const changeSize = (selectedIndex) => {
+    setChooseSize(data.size[selectedIndex].size);
+  };
   return (
     <>
       <button
@@ -57,7 +61,5 @@ SizeList.propTypes = {
     size: PropTypes.arrayOf.isRequired,
     available: PropTypes.bool.isRequired,
   }).isRequired,
-  chooseSize: PropTypes.string.isRequired,
-  changeSize: PropTypes.func.isRequired,
 };
 export default SizeList;

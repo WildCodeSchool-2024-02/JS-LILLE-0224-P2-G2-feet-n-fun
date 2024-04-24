@@ -5,17 +5,11 @@ import { ShopContext } from "../../context/ShopContext";
 
 function Card({ data, handleToggle, colorSection }) {
   const { id, name, price, src } = data;
-  const { addToCart, addToFav } = useContext(ShopContext);
+  const { addToFav } = useContext(ShopContext);
 
   return (
     <div className="card">
-      <div
-        className="card-header"
-        role="button"
-        tabIndex={0}
-        onKeyDown={handleToggle}
-        onClick={handleToggle}
-      >
+      <div className="card-header">
         <img className="product-img" src={src} alt="" />
         <button type="button" onClick={() => addToFav(id)}>
           <img
@@ -31,9 +25,9 @@ function Card({ data, handleToggle, colorSection }) {
           <button
             type="button"
             className="buttonsNavBar searchInNav"
-            onClick={() => addToCart(id)}
+            onClick={handleToggle}
           >
-            <img src="../assets/images/icons/add-cart.svg" alt="favoris" />
+            <img src="../assets/images/icons/add-cart.svg" alt="cart" />
           </button>
         </div>
       </div>

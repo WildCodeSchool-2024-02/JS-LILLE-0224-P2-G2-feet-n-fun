@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 /* import Home from "./pages/Home"; */
-import Favoris from "./pages/Favoris";
+import Favorites from "./pages/Favorites";
 import Categories from "./pages/Categories";
 import ShoppingCart from "./pages/ShoppingCart";
 import App from "./App";
@@ -37,11 +37,11 @@ const router = createBrowserRouter([
           return datas[parseInt(params.id, 10) - 1];
         },
       },
-      { path: "/favoris", element: <Favoris />, loader: () => getData() },
+      { path: "/favoris", element: <Favorites />, loader: () => getData() },
       { path: "/panier", element: <ShoppingCart />, loader: () => getData() },
-      { path: "/a-propos", element: <About />},
+      { path: "/a-propos", element: <About /> },
       { path: "/contact", element: <Contact /> },
-      { path: "/livraison", element: <Deliveries />},
+      { path: "/livraison", element: <Deliveries /> },
     ],
   },
 ]);

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import FavorisCard from "./FavorisCard";
 import { ShopContext } from "../../context/ShopContext";
 
-function FavorisContainer({ data }) {
+function FavoritesContainer({ data }) {
   const { favItems } = useContext(ShopContext);
 
   const findProductById = (productId) => {
@@ -21,9 +21,6 @@ function FavorisContainer({ data }) {
 
   return (
     <>
-      <button type="button" className="buttonCloseDeliveryPayment">
-        <img src="./public/assets/images/icons/exit-btn-red.svg" alt="croix" />
-      </button>
       <h2>Favoris</h2>
       <div className="cardsContainerFav">
         {Object.entries(favItems).map(([productId, quantity]) => {
@@ -43,7 +40,7 @@ function FavorisContainer({ data }) {
     </>
   );
 }
-FavorisContainer.propTypes = {
+FavoritesContainer.propTypes = {
   data: PropTypes.shape({
     name: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
@@ -57,4 +54,4 @@ FavorisContainer.propTypes = {
   some: PropTypes.func.isRequired,
 };
 
-export default FavorisContainer;
+export default FavoritesContainer;

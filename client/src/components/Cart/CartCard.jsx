@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import { ShopContext } from "../../context/ShopContext";
 
-function CartCard({ product, quantity }) {
+function CartCard({ product, quantity, size }) {
   const { id, name, price, src } = product;
-  const { addToCart, removeFromCart, cartItems } = useContext(ShopContext);
+  const { addToCart, removeFromCart } = useContext(ShopContext);
 
-  const productPrice =  (price * quantity).toFixed(2);
+  const productPrice = (price * quantity).toFixed(2);
 
   return (
     <div className="cardContainerCart">
@@ -15,7 +15,7 @@ function CartCard({ product, quantity }) {
       <div className="cardTextCart">
         <h4>{name}</h4>
         <div className="sizeCart">
-          <p> Taille : </p>
+          <p> Taille : {size} </p>
           <p> Quantité : {quantity} </p>
         </div>
         <div className="priceCart">
@@ -27,7 +27,7 @@ function CartCard({ product, quantity }) {
           {" "}
           -{" "}
         </button>
-        <input value={cartItems[id]} />
+        <input value={quantity} />
         <button type="button" onClick={() => addToCart(id)}>
           {" "}
           +
@@ -41,6 +41,7 @@ export default CartCard;
 
 CartCard.propTypes = {
   quantity: PropTypes.number.isRequired,
+  size: PropTypes.string.isRequired,
   product: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

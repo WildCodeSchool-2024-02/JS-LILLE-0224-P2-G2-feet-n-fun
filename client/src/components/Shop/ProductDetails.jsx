@@ -1,18 +1,22 @@
 import "./ProductDetails.css";
 import PropTypes from "prop-types";
+import { useContext, useState } from "react";
+import { ShopContext } from "../../context/ShopContext";
 import SizeList from "./SizeList";
 
-function ProductDetails({
-  data,
-  colorSection,
-  visible,
-  handleToggle,
-  chooseSize,
-  setChooseSize,
-}) {
-  // Function qui assigne la taille sélectionner au state chooseSize (dans le composant CardContainer) pour transmettre la taille lors de l'ajout au panier.
-  const changeSize = (selectedIndex) => {
-    setChooseSize(data.size[selectedIndex].size);
+function ProductDetails({ data, colorSection, visible, handleToggle }) {
+  const { id } = data;
+  const { addToCart, chooseSize, addToFav } = useContext(ShopContext);
+
+  const [sizeNotValidate, setSizeNotValidate] = useState(false);
+
+  const launchAddToCart = (idSelect) => {
+    if (chooseSize !== "Votre taille") {
+      addToCart(idSelect);
+      setSizeNotValidate(false);
+    } else {
+      setSizeNotValidate(true);
+    }
   };
 
   return (
@@ -32,13 +36,22 @@ function ProductDetails({
           <p>{data.desc}</p>
           <span style={{ color: `${colorSection}` }}>{data.price}€</span>
         </div>
-        <SizeList data={data} chooseSize={chooseSize} changeSize={changeSize} />
+        {sizeNotValidate && (
+          <p style={{ color: "red", paddingBottom: "0.5rem" }}>
+            Veuillez sélectionner une taille
+          </p>
+        )}
+        <SizeList data={data} />
         <div className="product-footer">
-          <button type="button" className="add-to-cart">
+          <button
+            type="button"
+            className="add-to-cart"
+            onClick={() => launchAddToCart(id)}
+          >
             Ajouter au panier
           </button>
-          <button type="button" className="like">
-            ❤️
+          <button type="button" className="like" onClick={() => addToFav(id)}>
+            A
           </button>
         </div>
       </div>
@@ -48,6 +61,7 @@ function ProductDetails({
 
 ProductDetails.propTypes = {
   data: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     size: PropTypes.arrayOf.isRequired,
     price: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
@@ -59,7 +73,5 @@ ProductDetails.propTypes = {
   colorSection: PropTypes.string.isRequired,
   visible: PropTypes.bool.isRequired,
   handleToggle: PropTypes.func.isRequired,
-  chooseSize: PropTypes.string.isRequired,
-  setChooseSize: PropTypes.func.isRequired,
 };
 export default ProductDetails;

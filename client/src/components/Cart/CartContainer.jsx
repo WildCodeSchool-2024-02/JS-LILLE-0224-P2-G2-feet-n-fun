@@ -6,7 +6,7 @@ import CartCard from "./CartCard";
 import { ShopContext } from "../../context/ShopContext";
 
 function CartContainer({ data }) {
-  const { cartItems } = useContext(ShopContext);
+  const { cartItems, finalTotal, setFinalTotal } = useContext(ShopContext);
 
   /* findProductById sert à faire correspondre l'id du produit du panier (cartItems) 
   à l'id d'un produit de notre API (data), afin qu'on puisse récupérer les informations (img, prix etc. ) 
@@ -22,21 +22,21 @@ Sur data :
     [ {cat1 : {produit 1}, {produit 2} ... , {cat2 :{produit 3}, {produit 4} ... }]). 
     - si un produit correspond, on lui dit de retourner le produit. 
      */
- 
-const findProductById = (productId) => {
-let foundProduct = null; 
+
+  const findProductById = (productId) => {
+    let foundProduct = null;
     // eslint-disable-next-line react/prop-types
     data.some((category) => {
       foundProduct = category.products.find(
         (product) => product.id === productId
       );
-      return foundProduct !== undefined; 
+      return foundProduct !== undefined;
     });
 
     return foundProduct; /* Retourner le produit trouvé ou null s'il n'est pas trouvé */
   };
 
-    /* getTotalCartAmount sert à obtenir le total du prix des produits dans le panier. 
+  /* getTotalCartAmount sert à obtenir le total du prix des produits dans le panier. 
     - totalAmount : stock le prix total du panier 
     - la méthode object.keys : permet de retourner un tableau contenant les clés de l'objet sur lequel il est appelé. 
     Il est ici appelé sur cartItems. Pour prendre un exemple pour comprendre la structure de cartItems, si on met dans le panier 
@@ -50,28 +50,28 @@ let foundProduct = null;
      A ce stade, on a les informations provenant de l'API de chacun de nos produits dans le panier (ex : prix, image ...)
 
      - On initie ensuite une condition : si un produit a été trouvé et que la quantité de celui-ci est supérieure à zéro,
-     on ajoute au total la quanité multipliée par le prix (récupéré de l'API, noté product.price)
+     on ajoute au total la quantité multipliée par le prix (récupéré de l'API, noté product.price)
      On a la quantité parce que cartItems.itemId va donner la "valeur" de itemId. Par exemple cartItems.37 est égal à 2. 
 
      - la dernière condition sert à afficher un message : si le total est égal à 0, un message "votre panier est vide" s'affiche. 
      Sinon, on affiche le Total arrondi à 2 chiffres derrière la virgule grace à .toFixed(2)
 
      */
- 
+
+  let totalAmount = 0;
   const getTotalCartAmount = () => {
-  
-    let totalAmount = 0;
     Object.keys(cartItems).forEach((itemId) => {
       const product = findProductById(Number(itemId));
-      if (product && cartItems.itemId > 0) {
-        totalAmount += cartItems.itemId * product.price;
+      if (cartItems[itemId].quantity > 0) {
+        totalAmount += cartItems[itemId].quantity * product.price;
       }
     });
-    if (totalAmount === 0) {
+    if (totalAmount > 0) {
+      totalAmount = `Total ${totalAmount.toFixed(2)} €`;
+      setFinalTotal(totalAmount);
+    } else {
       totalAmount = "Votre panier est vide !";
     }
-    else {
-      totalAmount = `Total ${totalAmount.toFixed(2)} €`;}
     return totalAmount;
   };
 
@@ -82,32 +82,43 @@ let foundProduct = null;
       </button>
       <h2>Panier</h2>
 
-      { /* On va mettre une condition pour afficher les cartes : 
+      {/* On va mettre une condition pour afficher les cartes : 
       - la méthode object.entries() retourne un tableau contenant les paires clé-valeur d'un objet sous forme de tableau. 
       Par exemple si on fait un object.entries sur const obj = { a: 1, b: 2, c: 3 };, cela va renvoyer [ ["a", 1], ["b", 2], ["c", 3] ] 
       Ici on le fait sur cartItems. Si on reprend l'exemple plus haut, on a donc [[37,2], [56,1]] qui est retourné. 
       - on fait une map sur ce tableau, qui prend comme valeur nos deux éléments du tableau (l'id du produit et la quantité). 
       On va executer une fonction sur chacun de ses éléments 
       - on réutilise ici le const product qui a été déclaré localement plutot dans la fonction getTotalAmount 
-      - si product est présent et la quantité est supérieur à 0 alors on affiche une card du produit dans le panier */ }
+      - si product est présent et la quantité est supérieur à 0 alors on affiche une card du produit dans le panier */
+      /* product.size.filter((sizeProduct) => sizeProduct.size.includes(chooseSize)) */}
 
       <div className="cardsContainerCart">
-        {Object.entries(cartItems).map(([productId, quantity]) => {
+        {Object.entries(cartItems).map(([productId, item]) => {
           const product = findProductById(Number(productId));
-          if (product && quantity > 0) {
+          if (product && item.quantity > 0) {
             return (
-              <CartCard key={productId} product={product} quantity={quantity} />
+              <CartCard
+                key={productId}
+                product={product}
+                quantity={item.quantity}
+                size={item.size}
+              />
             );
           }
           return null;
         })}
         <span className="totalCart">{getTotalCartAmount()}</span>
-        <Link to="/livraison">
-          {" "}
-          <button type="button" className="cartValidationButton">
-            Valider
-          </button>
-        </Link>
+
+        {finalTotal !== 0 ? (
+          <Link to="/livraison">
+            {" "}
+            <button type="button" className="cartValidationButton">
+              Valider
+            </button>
+          </Link>
+        ) : (
+          <span />
+        )}
       </div>
     </section>
   );
