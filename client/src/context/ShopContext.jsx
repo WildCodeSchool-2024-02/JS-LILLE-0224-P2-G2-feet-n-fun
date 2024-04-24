@@ -8,10 +8,10 @@ export default function ShopContextProvider({ children }) {
   /* Les states qui contiennent les id des éléments du panier et des favoris */
   const [cartItems, setCartItems] = useState({});
   const [favItems, setFavItems] = useState({});
-  // State qui stock la taille choisit pour l'ajout au panier
+  // State qui stocke la taille choisit pour l'ajout au panier
   const [chooseSize, setChooseSize] = useState("Votre taille");
 
-  // State qui stock l'état Ouvert/Fermé du composant ProductDetails
+  // State qui stocke l'état Ouvert/Fermé du composant ProductDetails
   const [visible, setVisible] = useState(false);
 
   /* Ajout au panier 
@@ -24,17 +24,6 @@ export default function ShopContextProvider({ children }) {
   Si on rajoute une paire 56, cartItems va conserver son état précédent puis ajouter 1 à cartItems[itemsId] donc à cartItems[56]. 
   On aura donc {56:2}
   */
-
-  /* const addToCart = (itemId) => {
-    setCartItems((prev) => {
-      if (prev[itemId]) {
-        return { ...prev, [itemId]: prev[itemId] + 1 , size : chooseSize}
-        ;
-      } 
-      return { ...prev, [itemId]: 1 , "taille" : chooseSize};
-    });
-    console.log(`shop context cartitems:`, [cartItems])
-  }; */
 
   const addToCart = (itemId) => {
     setCartItems((prev) => {
