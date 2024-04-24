@@ -5,6 +5,7 @@
   background-color: #ffff;
   border-radius: 15px;
   padding: 0.3rem 1rem;
+  border: solid 1px black;
 }
 .search-bar input {
   width: 100%;

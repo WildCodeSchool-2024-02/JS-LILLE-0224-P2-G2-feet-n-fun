@@ -33,8 +33,8 @@ function Navbar() {
         Feet <span className="and">&</span> fun
       </h1>
       <div>
-      <button type='button' className="buttonsNavBar searchInNav"><img className="buttonsNavBar" src="../public/assets/images/icons/search.svg" alt="recherche"/></button>
-      <Link  to="/favoris"><img className="buttonsNavBar" src="../public/assets/images/icons/heart4.svg" alt="favoris"/></Link>
+      <button type="button" className="buttonsNavBar searchInNav"><img className="buttonsNavBar" src="../public/assets/images/icons/search.svg" alt="recherche"/></button>
+      <Link to="/favoris"><img className="buttonsNavBar" src="../public/assets/images/icons/heart4.svg" alt="favoris"/></Link>
       <Link to="/panier"><img className="buttonsNavBar" src="../public/assets/images/icons/cart4.svg" alt="panier"/></Link>
       </div>
       </div>
