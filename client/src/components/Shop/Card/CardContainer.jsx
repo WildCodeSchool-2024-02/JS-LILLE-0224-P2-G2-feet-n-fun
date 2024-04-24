@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import Card from "./Card";
 import ProductDetails from "./ProductDetails/ProductDetails";
+import FilterButtonContainer from "./FilterButtonContainer/FilterButtonContainer";
 
-function CardContainer({ data }) {
+function CardContainer({ data }) { 
   // State qui stock l'état Ouvert/Fermé du composant ProductDetails
   const [visible, setVisible] = useState(false);
 
@@ -23,6 +24,7 @@ function CardContainer({ data }) {
 
   return (
     <>
+      <FilterButtonContainer dataCategory={data.id} />
       <div
         className="card-container"
       >
@@ -38,6 +40,7 @@ function CardContainer({ data }) {
         ))}
       </div>
       {/* Ouvre le composant ProductDetails lors ce que visible est true */}
+      
         <ProductDetails
           data={data.products[productSelected]}
           colorSection={data.color}
@@ -53,6 +56,7 @@ function CardContainer({ data }) {
 CardContainer.propTypes = {
   data: PropTypes.shape({
     color: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     products: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,

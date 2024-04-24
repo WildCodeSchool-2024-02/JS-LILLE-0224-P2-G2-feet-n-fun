@@ -9,6 +9,7 @@ import About from "./components/About";
 import Contact from "./pages/Contact";
 import Delivery from "./pages/Delivery";
 import Search from "./pages/Search";
+import Filter from "./pages/Filter";
 
 // Le useEffect fait un appel d'API au démarrage de la page et stock le resultat dans le state "data"
 
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
       { path: "/contact", element: <Contact />, loader: () => getData() },
       { path: "/livraison", element: <Delivery />, loader: () => getData() },
       { path: "/recherche", element: <Search />, loader: () => getData() },
+      { path: "/filtre", element: <Filter />, loader: () => getData() },
     ],
   },
 ]);

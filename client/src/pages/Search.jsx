@@ -2,21 +2,21 @@ import './styles/Search.css'
 import { useLoaderData, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CardContainerSearch from "../components/Shop/Card/CardContainerSearch/CardContainerSearch";
-import SearchBar from "../components/Header/SearchBar/SearchBar";
 
 function Search() {
     const data = useLoaderData();
+    // Stock le resultat du tableau final de recherche
     const [ result, setResult ] = useState([])
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const query = searchParams.get("query");
-
+    // Fonction qui effectue la recherche en fonction de la valeur de l'URL.
     const searchItem = (value) => {
         const searchValue = value.toLowerCase()
         let arrayProducts
         let arrayCombined = []
-        // ici j'obtient un tableau contenant les 5 tableaux products de chaque cat
+        // ici j'obtient un tableau contenant les 5 tableaux products de chaque catégories
         arrayProducts = data.map((category) =>
             category.products
         )
@@ -36,17 +36,13 @@ function Search() {
           setResult([])
         }  
     }
+    // Ici je lance la fonction de recherche dès le chargement de Search.jsx avec en paramètre la valeur de l'URL.
+    useEffect(() => {
+      searchItem(query);
+    }, [query]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    useEffect(
-        () =>  {
-          searchItem(query)
-        }, 
-        [query]
-    );
-
-  return (
+    return (
     <div className="search">
-        <SearchBar data={data} setResult={setResult} result={result} />
         <CardContainerSearch data={result} />
     </div>
   )
