@@ -16,7 +16,7 @@
 }
 .buttonsNavBar:hover {
   cursor: pointer;
-  transform: scale(1.2);
+transform: scale(1.2);
 }
 
 .h1andButtonsContainer {
@@ -82,14 +82,13 @@
 }
 
 .and {
-  color: rgb(243, 241, 192);
-  position: relative;
-  -webkit-transform: rotate(20deg);
-  transform: rotate(20deg);
-  display: inline-block;
-  font-size: 0.8em;
+  color: var(--fourth-color)
 }
 
+.online-shop {text-align: center;
+color:var(--background-color);
+margin-top:-1.5vh;
+}
 .searchInNav {
   display: none;
 }
@@ -122,6 +121,7 @@
     display: inline-block;
     width: 20vw;
     border-radius: 20px;
+    margin-top:5vh
   }
 
   .groupeBoutonsNav {
