@@ -3,14 +3,17 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function FilterMenu({ visible, setVisible, dataCategory }) {
+  // Récupère l'URL actuelle de la page
   const location = useLocation();
+  // Parse les paramètres de recherche de l'URL en utilisant l'API URLSearchParams
   const searchParams = new URLSearchParams(location.search);
+  // Récupère la valeur du paramètre "query" de l'URL, s'il existe
   const query = searchParams.get("query");
 
   const navigate = useNavigate();
 
   // Si l'URL contient all (filtre pour rechercher dans toutes les catégories) l'état est true sinon false.
-  const [allCategory, setAllCategory] = useState(false);
+  const [allCategories, setAllCategories] = useState(false);
   // Stocke la taille sélectionnée pour le filtre
   const [size, setSize] = useState("");
   // Stocke le prix sélectionné pour le filtre (15€ étant le prix max, si "15", pas de filtre de prix selectionné).
@@ -21,9 +24,9 @@ function FilterMenu({ visible, setVisible, dataCategory }) {
   const [isNull, setIsNull] = useState(false);
   // Fonction qui prend en paramètre la couleur sélectionnée pour vérifier si elle est déjà contenue dans le state color.
   // Si la couleur est déjà inclue dans le state : -Copie le contenu du tableau color dans la constante array
-    // -Retourne l'index dans le tableau de la couleur selectionnée. | -Via l'index la couleur est enlevée du tableau array.
-    // -Puis re-assigne array à la place de color.
-    // Sinon array copie le contenu de color et ajoute la couleur sélectionnée, puis re-assigne array à la place de color.
+  // -Retourne l'index dans le tableau de la couleur selectionnée. | -Via l'index la couleur est enlevée du tableau array.
+  // -Puis re-assigne array à la place de color.
+  // Sinon array copie le contenu de color et ajoute la couleur sélectionnée, puis re-assigne array à la place de color.
   const onChangeColor = (colorSelected) => {
     if (color.includes(colorSelected)) {
       const array = [...color];
@@ -37,20 +40,20 @@ function FilterMenu({ visible, setVisible, dataCategory }) {
   };
   // Fonction permettant de vérifier les filtres sélectionnés afin de definir la bonne URL de recherche.
   const filter = () => {
-    switch(true) {
-      case (size !== "" && price !== "15" && color.length > 0):
+    switch (true) {
+      case size !== "" && price !== "15" && color.length > 0:
         return `price*${price}$color=${color},${size}`;
-      case (size !== "" && price !== "15"):
+      case size !== "" && price !== "15":
         return `price*${price}$${size}`;
-      case (size !== "" && color.length > 0):
+      case size !== "" && color.length > 0:
         return `color=${color},${size}`;
-      case (price !== "15" && color.length > 0):
+      case price !== "15" && color.length > 0:
         return `price*${price}$color=${color},`;
-      case (price !== "15"):
+      case price !== "15":
         return `price*${price}$`;
-      case (color.length > 0):
+      case color.length > 0:
         return `color=${color},`;
-      case (size !== ""):
+      case size !== "":
         return `${size}`;
       default:
         return null;
@@ -73,26 +76,29 @@ function FilterMenu({ visible, setVisible, dataCategory }) {
   // via la fonction filter plus haut et vérifie si la recherche est null ou pas, si la recherche est bonne, navigate permet
   // de donner la bonne URL pour effectuer la bonne requête dans Filter.jsx
   const filterItem = (filterValue) => {
-    if(filterValue === null) {
-        setIsNull(true)
+    if (filterValue === null) {
+      setIsNull(true);
     } else {
-        navigate(
-            `/filtre?query=${filterValue}-${queryContain || allCategory ? "all" : dataCategory}`
-          );
+      navigate(
+        `/filtre?query=${filterValue}-${queryContain || allCategories ? "all" : dataCategory}`
+      );
     }
 
-    if(isNull) {
-        handleToggle()
+    if (isNull) {
+      handleToggle();
     }
   };
 
   return (
     <div className={`${isClose} ${isOpen}`}>
-        <button type="button" aria-label="exit" label="exit" className="exit-filter-btn" onClick={handleToggle}>
-        <img
-          src="/public/assets/images/icons/exit-btn-red.svg"
-          alt=""
-        />
+      <button
+        type="button"
+        aria-label="exit"
+        label="exit"
+        className="exit-filter-btn"
+        onClick={handleToggle}
+      >
+        <img src="/public/assets/images/icons/exit-btn-red.svg" alt="" />
       </button>
       <div className="filter-section">
         <div className="filter-price">
@@ -121,7 +127,7 @@ function FilterMenu({ visible, setVisible, dataCategory }) {
               id="size-one"
               value="size-one%"
               onChange={(e) => setSize(e.target.value)}
-            /> 
+            />
           </div>
           <hr />
           <div className="filter">
@@ -223,7 +229,7 @@ function FilterMenu({ visible, setVisible, dataCategory }) {
               type="checkbox"
               className="all-category-yes-no"
               checked={queryContain}
-              onChange={() => setAllCategory(true)}
+              onChange={() => setAllCategories(true)}
             />
           </div>
           <hr className="desktop" />

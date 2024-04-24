@@ -3,12 +3,16 @@ import { useLoaderData, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CardContainerFilter from "../components/Shop/Card/CardContainerFilter/CardContainerFilter";
 
-function Filter() { 
+function Filter() {
   const data = useLoaderData();
 
+  // Récupère l'URL actuelle de la page
   const location = useLocation();
+  // Parse les paramètres de recherche de l'URL en utilisant l'API URLSearchParams
   const searchParams = new URLSearchParams(location.search);
+  // Récupère la valeur du paramètre "query" de l'URL, s'il existe
   const query = searchParams.get("query");
+
   // Stocke la catégorie de la recherche (contenue à la fin de l'URL)
   const [category, setCategory] = useState(query.charAt(query.length - 1) - 1);
   // Stocke le tableau final de la recherche pour afficher le résultat dans CardContainerFilter
@@ -22,12 +26,14 @@ function Filter() {
   const filterItem = (value) => {
     let array;
     let categorySelected = [];
-    const section = query.charAt(query.length - 1) - 1
+    const section = query.charAt(query.length - 1) - 1;
     // Si la valeur de l'URL contient all, je retourne un tableau contenant tous les produits.
     if (value.includes("all")) {
       let arrayCombined = [];
       // ici j'obtiens un tableau contenant les 5 tableaux products de chaque catégorie
-      const arrayProducts = data.map((categorySection) => categorySection.products);
+      const arrayProducts = data.map(
+        (categorySection) => categorySection.products
+      );
       // Ici je boucle sur le tableau contenant tous les tableaux products via forEach, je fusionne le contenu dans arrayCombined
       // Je slice arrayCombined et je stocke son résultat pour retourner seulement les produits de chaque tableau products
       // sort prend en paramètre la fonction mixArray pour mélanger les produits et je réassigne les produits à categorySelected
@@ -62,8 +68,8 @@ function Filter() {
       priceIndexStart = value.indexOf("*");
       priceIndexEnd = value.indexOf("$");
       price = value.slice(priceIndexStart + 1, priceIndexEnd);
-          // Si l'URL contient price et size, j'effectue mon filter sur le tableau array étant déjà passé dans le script qui
-          // filtre les tailles, sinon je filtre sur CategorySelected qui est le tableau d'origine.
+      // Si l'URL contient price et size, j'effectue mon filter sur le tableau array étant déjà passé dans le script qui
+      // filtre les tailles, sinon je filtre sur CategorySelected qui est le tableau d'origine.
       if (value.includes("size") && value.includes("price")) {
         array = array.filter((product) => product.price < price);
       } else {
@@ -79,24 +85,27 @@ function Filter() {
       // Je stocke dans colors toutes les couleurs séparées par une ',' se trouvant à la suite de color= via son index.
 
       if (value.includes("price") && value.includes("color")) {
-  if (colorFilterIndex !== -1) {
-    const colorFilter = value.substring(colorFilterIndex + 6); 
-    const colors = colorFilter.split(",");
-    array = array.filter((product) => colors.some((color) => product.color.includes(color)));
-  }
-
+        if (colorFilterIndex !== -1) {
+          const colorFilter = value.substring(colorFilterIndex + 6);
+          const colors = colorFilter.split(",");
+          array = array.filter((product) =>
+            colors.some((color) => product.color.includes(color))
+          );
+        }
       }
 
       // Sinon je filtre juste la couleur en filtrant sur le tableau d'origine categorySelected.
       else {
-        const colorFilter = value.substring(colorFilterIndex + 6); 
-            const colors = colorFilter.split(",");
-        array = categorySelected.filter((product) => colors.some((color) => product.color.includes(color)));
+        const colorFilter = value.substring(colorFilterIndex + 6);
+        const colors = colorFilter.split(",");
+        array = categorySelected.filter((product) =>
+          colors.some((color) => product.color.includes(color))
+        );
       }
     }
 
     // Selection par odre 'croissant/decroissant/nouveauté'
-    // Pour chaque filtre retourne dans array via slice() un tableau rangé selon le filtre selectionné 
+    // Pour chaque filtre retourne dans array via slice() un tableau rangé selon le filtre selectionné
     setCategory(section + 1);
     if (value.includes("productsFilterAscending")) {
       array = categorySelected.slice().sort((a, b) => a.price - b.price);
