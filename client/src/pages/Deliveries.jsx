@@ -1,4 +1,4 @@
-import Delivery from "../components/Cart/Delivery"
+import Delivery from "../components/Cart/Delivery/Delivery"
 
 
 function Deliveries () {

@@ -41,6 +41,22 @@ export default function ShopContextProvider({ children }) {
     setChooseSize("Votre taille");
   };
 
+  /* Même fonction mais pour les boutons + du panier pour éviter le changement de taille */ 
+  const incrementCart = (itemId, sizeSelect) => {
+    setCartItems((prev) => {
+      if (prev[itemId]) {
+        setVisible(false);
+        return {
+          ...prev,
+          [itemId]: { quantity: prev[itemId].quantity + 1, size: sizeSelect },
+        };
+      }
+      setVisible(false);
+      return { ...prev, [itemId]: { quantity: 1} };
+    });
+  };
+
+
   /* Retirer du panier */
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({
@@ -48,6 +64,16 @@ export default function ShopContextProvider({ children }) {
       [itemId]: { quantity: prev[itemId].quantity - 1, size: chooseSize },
     }));
   };
+
+  /* Même fonction mais pour les boutons - du panier pour éviter le changement de taille */ 
+  const decrementCart = (itemId, sizeSelect) =>{
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: { quantity: prev[itemId].quantity - 1, size: sizeSelect },
+    }));
+  };
+
+
 
   /* Ajout aux fav */
   const addToFav = (itemId) => {
@@ -84,6 +110,8 @@ export default function ShopContextProvider({ children }) {
       removeFromFav,
       visible,
       setVisible,
+      incrementCart,
+      decrementCart
     }),
     [
       finalTotal,
@@ -98,6 +126,8 @@ export default function ShopContextProvider({ children }) {
       removeFromFav,
       visible,
       setVisible,
+      incrementCart,
+      decrementCart
     ]
   );
 

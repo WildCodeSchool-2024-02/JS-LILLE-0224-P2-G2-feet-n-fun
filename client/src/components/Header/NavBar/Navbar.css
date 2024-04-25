@@ -1,0 +1,87 @@
+.buttonsNavBar {
+  background-color: transparent;
+  border: none;
+  height: 10vh;
+}
+.buttonsNavBar:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.h1andButtonsContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+.navbar {
+  width: 100%;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.image_logo {
+  display: none;
+}
+
+.h1FeetAndFun {
+  font-size: 2.5em;
+}
+
+.bouton_menu_burger {
+  background-color: var(--background-color);
+  border: 1px solid var(--background-color);
+  opacity: 0.4;
+}
+
+.and {
+  color: var(--secondary-color);
+  font-size: 1em;
+}
+
+.searchInNav {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding-left: 5vw;
+  }
+  .bouton_menu_burger {
+    display: none;
+  }
+  .searchInNav {
+    display: inline-block;
+  }
+  .h1andButtonsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35vw;
+  }
+
+  .image_logo {
+    display: block;
+    width: 5em;
+    height: 5em;
+    padding: 0.2em;
+    background-color: white;
+    border: none;
+  }
+
+  .navbar {
+    background-color: var(--background-color);
+    height: 20vh;
+  }
+
+  .h1FeetAndFun {
+    font-size: 4em;
+    padding: 0.5em;
+  }
+}

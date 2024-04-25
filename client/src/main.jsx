@@ -1,16 +1,16 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-/* import Home from "./pages/Home"; */
 import Favorites from "./pages/Favorites";
 import Categories from "./pages/Categories";
 import ShoppingCart from "./pages/ShoppingCart";
 import App from "./App";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import About from "./components/About";
 import Contact from "./pages/Contact";
 import Deliveries from "./pages/Deliveries";
-
+import Search from "./pages/Search";
+import Filter from "./pages/Filter";
+// Le useEffect fait un appel d'API au démarrage de la page et stock le resultat dans le state "data"
 const getData = async () => {
   const result = await fetch(
     "https://fantinerudent.github.io/api-feet-n-fun/data.json"
@@ -18,7 +18,6 @@ const getData = async () => {
   const datas = await result.json();
   return datas;
 };
-
 const router = createBrowserRouter([
   {
     element: <App />,
@@ -28,7 +27,6 @@ const router = createBrowserRouter([
         element: <Home />,
         loader: () => getData(),
       },
-
       {
         path: "/categories/:id",
         element: <Categories />,
@@ -42,10 +40,11 @@ const router = createBrowserRouter([
       { path: "/a-propos", element: <About /> },
       { path: "/contact", element: <Contact /> },
       { path: "/livraison", element: <Deliveries /> },
+      { path: "/recherche", element: <Search />, loader: () => getData() },
+      { path: "/filtre", element: <Filter />, loader: () => getData() },
     ],
   },
 ]);
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
 );

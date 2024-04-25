@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import FavoritesContainer from "../components/Cart/FavorisContainer";
+import FavoritesContainer from "../components/Cart/Favoris/FavorisContainer";
 
 function Favorites () {
   const data = useLoaderData();
