@@ -1,4 +1,5 @@
 import EventsCards from "./EventsCards";
+import "./Events.css";
 
 function EventsContainer() {
   const dataAccueil = [
@@ -19,22 +20,24 @@ function EventsContainer() {
   ];
 
   return (
-    <div className="nouveautésSection">
-      <div className="nouveautés">
-        <h2 className="titreNouveautés">Nouveautés</h2>
+ 
+      <div className="nouveautésSection">
+        <div className="nouveautés">
+          <h2 className="titreNouveautés">Nouveautés</h2>
+        </div>
+        <div className="eventCard">
+          {dataAccueil.map(({ id, title, img1, img2, img3 }) => (
+            <EventsCards
+              key={id}
+              title={title}
+              img1={img1}
+              img2={img2}
+              img3={img3}
+            />
+          ))}
+        </div>
       </div>
-      <div className="eventCard">
-        {dataAccueil.map(({ id, title, img1, img2, img3 }) => (
-          <EventsCards
-            key={id}
-            title={title}
-            img1={img1}
-            img2={img2}
-            img3={img3}
-          />
-        ))}
-      </div>
-    </div>
+    
   );
 }
 

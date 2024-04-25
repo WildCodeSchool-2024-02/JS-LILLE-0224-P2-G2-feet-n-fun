@@ -58,6 +58,7 @@
 }
 
 @media screen and (min-width: 992px) {
+  
   /* sections d'évènement */
   .nouveautésSection {
     display: flex;
