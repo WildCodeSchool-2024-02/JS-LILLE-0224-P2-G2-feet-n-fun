@@ -37,7 +37,7 @@ Sur data :
   };
 
   /* getTotalCartAmount sert à obtenir le total du prix des produits dans le panier. 
-    - totalAmount : stock le prix total du panier 
+    - totalAmount : stocke le prix total du panier 
     - la méthode object.keys : permet de retourner un tableau contenant les clés de l'objet sur lequel il est appelé. 
     Il est ici appelé sur cartItems. Pour prendre un exemple pour comprendre la structure de cartItems, si on met dans le panier 
     deux fois la 37e chaussette et une fois la 56e, cartItems ressemblera à {37: 2, 56:1}
@@ -58,8 +58,9 @@ Sur data :
 
      */
 
-  let totalAmount = 0;
+
   const getTotalCartAmount = () => {
+    let totalAmount = 0;
     Object.keys(cartItems).forEach((itemId) => {
       const product = findProductById(Number(itemId));
       if (cartItems[itemId].quantity > 0) {
@@ -110,11 +111,12 @@ Sur data :
         <span className="totalCart">{getTotalCartAmount()}</span>
 
         {finalTotal !== 0 ? (
-          <Link to="/livraison">
+          <Link to="/livraison" className="cartValidationButton">
             {" "}
-            <button type="button" className="cartValidationButton">
+            
+            
               Valider
-            </button>
+           
           </Link>
         ) : (
           <span />

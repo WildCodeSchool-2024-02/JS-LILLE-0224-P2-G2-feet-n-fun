@@ -24,12 +24,10 @@ function CartCard({ product, quantity, size }) {
       </div>
       <div className="cardButtonsCard">
         <button type="button" onClick={() => removeFromCart(id)}>
-          {" "}
-          -{" "}
+          -
         </button>
-        <input value={quantity} />
+        <input  type="number" min="1" value={quantity} />
         <button type="button" onClick={() => addToCart(id)}>
-          {" "}
           +
         </button>
       </div>

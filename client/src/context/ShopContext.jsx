@@ -66,6 +66,10 @@ export default function ShopContextProvider({ children }) {
 
   const [finalTotal, setFinalTotal] = useState(0);
 
+  /* useMemo nous sert à la performance du site. Il est utile lorsque le calcul de la valeur du contexte est coûteux en termes de performances,
+   car useMemo évite de recalculer la valeur du contexte à chaque rendu. useMemo va s'assurer que contextValue est recalculée uniquement 
+   lorsque l'une des dépendances spécifiées change. */ 
+   
   const contextValue = useMemo(
     () => ({
       finalTotal,
