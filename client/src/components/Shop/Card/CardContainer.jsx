@@ -1,14 +1,13 @@
 import "./CardContainer.css";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Card from "./Card";
 import ProductDetails from "./ProductDetails/ProductDetails";
+import { ShopContext } from "../../../context/ShopContext";
 import FilterButtonContainer from "./FilterButtonContainer/FilterButtonContainer";
 
-function CardContainer({ data }) { 
-  // State qui stock l'état Ouvert/Fermé du composant ProductDetails
-  const [visible, setVisible] = useState(false);
-
+function CardContainer({ data }) {
+  const { visible, setVisible } = useContext(ShopContext);
   // State qui stock l'index du produit cliqué
   const [productSelected, setProductSelected] = useState(0);
 
@@ -19,8 +18,6 @@ function CardContainer({ data }) {
     setProductSelected(indexOfProduct);
   }; 
 
-  // State qui stock la taille choisit pour l'ajout au panier
-  const [chooseSize, setChooseSize] = useState("Votre taille");
 
   return (
     <>
@@ -45,9 +42,6 @@ function CardContainer({ data }) {
           data={data.products[productSelected]}
           colorSection={data.color}
           visible={visible}
-          setVisible={setVisible}
-          chooseSize={chooseSize}
-          setChooseSize={setChooseSize}
         />
     </>
   );
@@ -55,6 +49,7 @@ function CardContainer({ data }) {
 
 CardContainer.propTypes = {
   data: PropTypes.shape({
+    name: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     products: PropTypes.arrayOf(PropTypes.shape({

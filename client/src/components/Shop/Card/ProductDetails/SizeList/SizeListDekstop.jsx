@@ -1,7 +1,16 @@
 import "./SizeListDekstop.css";
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { ShopContext } from "../../../../../context/ShopContext";
 
-function SizeListDekstop({ data, chooseSize, changeSize }) {
+function SizeListDekstop({ data }) {
+
+  const {chooseSize, setChooseSize} = useContext(ShopContext)
+
+  const changeSize = (selectedIndex) => {
+    setChooseSize(data.size[selectedIndex].size);
+  };
+
   return (
     <div className="sizelist-desktop">
       Selectionner votre taille :
@@ -27,8 +36,6 @@ SizeListDekstop.propTypes = {
       available: PropTypes.bool.isRequired
     })).isRequired,
   }).isRequired,
-  chooseSize: PropTypes.string.isRequired,
-  changeSize: PropTypes.func.isRequired,
 };
 
 export default SizeListDekstop;

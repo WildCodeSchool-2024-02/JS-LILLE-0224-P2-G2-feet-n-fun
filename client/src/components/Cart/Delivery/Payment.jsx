@@ -3,9 +3,6 @@ import "./deliverypayment.css";
 import PropTypes from "prop-types";
 import Payment2 from "./Payment2";
 
-/* props to add : totalPrice, 
-*/
-
 function Payment({ clientName, clientSurname, clientMail }) {
   const [showFakeCards, setShowFakeCards] = useState(false);
   const displayPaymentCard = () => {
