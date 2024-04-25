@@ -6,7 +6,7 @@ import CartCard from "./CartCard";
 import { ShopContext } from "../../../context/ShopContext";
 
 function CartContainer({ data }) {
-  const { cartItems,  setFinalTotal } = useContext(ShopContext);
+  const { cartItems, setFinalTotal } = useContext(ShopContext);
   /* findProductById sert à faire correspondre l'id du produit du panier (cartItems) 
   à l'id d'un produit de notre API (data), afin qu'on puisse récupérer les informations (img, prix etc. ) 
   
@@ -21,19 +21,11 @@ Sur data :
     [ {cat1 : {produit 1}, {produit 2} ... , {cat2 :{produit 3}, {produit 4} ... }]). 
     - si un produit correspond, on lui dit de retourner le produit. 
      */
-
-  const findProductById = (productId) => {
-    let foundProduct = null;
-    // eslint-disable-next-line react/prop-types
-    data.some((category) => {
-      foundProduct = category.products.find(
-        (product) => product.id === productId
-      );
-      return foundProduct !== undefined;
-    });
-
-    return foundProduct; /* Retourner le produit trouvé ou null s'il n'est pas trouvé */
-  };
+  const findProductById = (productId) => 
+    data
+      .flatMap((category) => category.products)
+      .find((product) => product.id === productId);
+  
 
   /* getTotalCartAmount sert à obtenir le total du prix des produits dans le panier. 
     - totalAmount : stocke le prix total du panier 
@@ -56,10 +48,9 @@ Sur data :
      Sinon, on affiche le Total arrondi à 2 chiffres derrière la virgule grace à .toFixed(2)
 
      */
-     let totalAmount = 0;
-    
-  const getTotalCartAmount = () => {
+  let totalAmount = 0;
 
+  const getTotalCartAmount = () => {
     Object.keys(cartItems).forEach((itemId) => {
       const product = findProductById(Number(itemId));
       if (cartItems[itemId].quantity > 0) {
@@ -109,7 +100,7 @@ Sur data :
         })}
         <span className="totalCart">{getTotalCartAmount()}</span>
 
-        {totalAmount !==  "Votre panier est vide !" ? (
+        {totalAmount !== "Votre panier est vide !" ? (
           <Link to="/livraison" className="cartValidationButton">
             <p>Valider</p>
           </Link>
@@ -124,15 +115,16 @@ Sur data :
 export default CartContainer;
 
 CartContainer.propTypes = {
-  data: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
-    products: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-  }).isRequired,
-  some: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      color: PropTypes.string.isRequired,
+      products: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number.isRequired,
+          name: PropTypes.string.isRequired,
+        })
+      ).isRequired,
+    })
+  ).isRequired
 };
