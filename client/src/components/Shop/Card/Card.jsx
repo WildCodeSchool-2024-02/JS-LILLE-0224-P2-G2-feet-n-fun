@@ -3,13 +3,12 @@ import PropTypes from "prop-types";
 
 function Card({ data, openProduct, colorSection }) {
   return (
-    // ENLEVER LE ROLE BUTTON ET TABINDEX UNE FOIS QUE LE ONCLICK SERA SUR LES ELEMENTS QUI IRONS VERS LE PRODUCTDETAILS
     <div className="card">
       <div className="card-header">
-      <div className='eye-container' role='button' tabIndex={0} onClick={openProduct} onKeyDown={openProduct}>
-        <img className='eye-img' src="../assets/images/icons/eye-hover.svg" alt="Clique ici pour plus de détails sur le produit"/>
+      <div className={data.new ? "eye-container new" : "eye-container"} role='button' tabIndex={0} onClick={openProduct} onKeyDown={openProduct}>
+        <img className='eye-img' src="../assets/images/icons/eye-hover.svg" alt="Clique ici pour plus de détails sur le produit" />
       </div>
-        <img className="product-img" src={data.src} alt="" />
+      <img className={data.new ? "product-img new" : "product-img"} src={data.src} alt="" />
         {/* REMPLACER ICI LE BOUTON LIKE QUI APPARAIT DANS L'IMAGE */}
         <button type="button">
           <img
@@ -17,6 +16,7 @@ function Card({ data, openProduct, colorSection }) {
             alt="Bouton d'ajout à la liste d'envie"
           />
         </button>
+        {data.new && <img src="/public/assets/images/icons/new.png" alt="Nouveauté" id="new"/>}
       </div>
       <div className="card-content">
         <div role='button' tabIndex={0} onClick={openProduct} onKeyDown={openProduct}>
@@ -42,6 +42,7 @@ Card.propTypes = {
     src: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
+    new: PropTypes.bool.isRequired,
   }).isRequired,
   openProduct: PropTypes.func.isRequired,
   colorSection: PropTypes.string.isRequired,
