@@ -1,13 +1,11 @@
-import "./CardContainer.css";
+import "../CardContainer.css";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import Card from "./Card";
-import ProductDetails from "./ProductDetails/ProductDetails";
-import CategoryBar from "../../Header/CategoryBar/CategoryBar";
-import FilterButtonContainer from "./FilterButtonContainer/FilterButtonContainer";
+import Card from "../Card";
+import ProductDetails from "../ProductDetails/ProductDetails";
+import FilterButtonContainer from "../FilterButtonContainer/FilterButtonContainer";
 
-
-function CardContainer({ data }) { 
+function CardContainerFilter({ data, category }) {
   // State qui stock l'état Ouvert/Fermé du composant ProductDetails
   const [visible, setVisible] = useState(false);
 
@@ -19,22 +17,20 @@ function CardContainer({ data }) {
   const openProduct = (indexOfProduct) => {
     setVisible(true);
     setProductSelected(indexOfProduct);
-  };
+  }; 
 
   // State qui stock la taille choisit pour l'ajout au panier
   const [chooseSize, setChooseSize] = useState("Votre taille");
 
   return (
     <>
-
-      <CategoryBar />
-      <FilterButtonContainer dataCategory={data.id} />
+    <FilterButtonContainer dataCategory={category} />
       <div
         className="card-container"
       >
-
         {/* .map() Pour générer toutes les cards d'une section */}
-        {data.products.map((product, index) => (
+        {/* eslint-disable-next-line react/prop-types */}
+        {data.length > 0 ? data.map((product, index) => (
           <Card
             key={`${product.id}.${product.name}`}
             data={product}
@@ -42,30 +38,31 @@ function CardContainer({ data }) {
             openProduct={() => openProduct(index)}
             setVisible={setVisible}
           />
-        ))}
+        )) : <h2>Aucun résultat correspondant</h2>}
       </div>
       {/* Ouvre le composant ProductDetails lors ce que visible est true */}
+      {/* eslint-disable-next-line react/prop-types */}
+      {data.length > 0 &&
         <ProductDetails
-          data={data.products[productSelected]}
+          data={data[productSelected]}
           colorSection={data.color}
           visible={visible}
           setVisible={setVisible}
           chooseSize={chooseSize}
           setChooseSize={setChooseSize}
-        />
-
+        />}
     </>
   );
 }
 
-CardContainer.propTypes = {
+CardContainerFilter.propTypes = {
   data: PropTypes.shape({
     color: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
     products: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
     })).isRequired
   }).isRequired,
+  category: PropTypes.number.isRequired,
 };
-export default CardContainer;
+export default CardContainerFilter;

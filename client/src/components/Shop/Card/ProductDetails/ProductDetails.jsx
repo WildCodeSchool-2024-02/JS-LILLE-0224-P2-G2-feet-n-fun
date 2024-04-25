@@ -1,6 +1,6 @@
 import "./ProductDetails.css";
-import { useState } from "react";
 import PropTypes from "prop-types";
+import { useState } from "react";
 import SizeListMobile from "./SizeList/SizeListMobile";
 import SizeListDekstop from "./SizeList/SizeListDekstop";
 /* à ajouter pour la dernière version onClick={() => addToFav(id)} avec useContext */
@@ -63,6 +63,7 @@ function ProductDetails({
             <button type="button" className="add-to-cart">
               Ajouter au panier
             </button>
+
             <button type="button" className="add-to-fav">
               <img
                 src="../assets/images/icons/add-heart.svg"

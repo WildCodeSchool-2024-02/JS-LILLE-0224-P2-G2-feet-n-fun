@@ -67,12 +67,6 @@ function Navbar() {
         </Link>
         <p className="online-shop">ONLINE SHOP</p>
       </div>
-
-      {/* <img
-        src="/assets/images/logo.svg"
-        className="image_logo"
-        alt="picture_not_found"
-      /> */}
     </nav>
   );
 }
