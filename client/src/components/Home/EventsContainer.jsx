@@ -5,7 +5,7 @@ function EventsContainer() {
   const dataAccueil = [
     {
       id: 0,
-      title: "Soldes Pokémon !",
+      title: "Collection Pokémon",
       img1: "./public/assets/images/bulbi.jpeg",
       img2: "./public/assets/images/pokemonbannière.webp",
       img3: "../public/assets/images/pika.jpeg",
@@ -13,7 +13,7 @@ function EventsContainer() {
     },
     {
       id: 1,
-      title: "New: collection 'Art contemporain'",
+      title: "Collection 'Art contemporain'",
       img1: "./public/assets/images/mondrian2.jpg",
       img2: "./public/assets/images/artcontempo.jpg",
       img3: "./public/assets/images/pollock1.jpeg",
