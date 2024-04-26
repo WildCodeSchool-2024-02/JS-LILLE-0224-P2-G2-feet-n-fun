@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useState, useContext } from "react";
 import { ShopContext } from "../../../context/ShopContext";
 import Card from "./Card";
-import ProductDetails from "./ProductDetails/ProductDetails";
+import ProductDetails from "./ProductDetails/ProductDetails"
 import FilterButtonContainer from "./FilterButtonContainer/FilterButtonContainer";
 import CategoryBar from "../../Header/CategoryBar/CategoryBar";
 
