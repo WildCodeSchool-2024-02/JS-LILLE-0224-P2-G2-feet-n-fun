@@ -25,6 +25,19 @@
   z-index: 998;
 }
 
+#new {
+  position: absolute;
+  top: -0.3rem;
+  left: -0.3rem;
+  width: 50px;
+  z-index: 998;
+  height: auto;
+}
+
+.new {
+  border-top-left-radius: 10%;
+}
+
 .eye-container {
   position: absolute;
   top: 0;
@@ -164,6 +177,10 @@
   .iconCartCard {
     width: 50px;
     height: 50px;
+  }
+
+  #new {
+    width: 70px;
   }
 }
 
