@@ -3,8 +3,6 @@
   color: var(--text-color);
 }
 
-
-
 .Section-histoire,
 .Section-philosophie,
 .Section-équipe {
@@ -46,37 +44,37 @@
 
 .History {
   margin-top: 1em;
-  margin-bottom:1em
+  margin-bottom: 1em;
 }
 @media screen and (min-width: 750px) {
-.About {margin-bottom:2em}
-.Section-histoire,
-.Section-philosophie,
-.Section-équipe {
-  display: block;
-  color: var(--text-color);
-  width:fit-content;
-  padding-bottom:0px;
-  margin-bottom: 0px;
-  height:30vh;
-  padding-right:2em;
-  border-radius : 0px 20px 20px 0px
-}
-.Section-histoire{position:relative;
-  left:10vw;
+  .About {
+    margin-bottom: 2em;
+  }
+  .Section-histoire,
+  .Section-philosophie,
+  .Section-équipe {
+    display: block;
+    color: var(--text-color);
+    width: fit-content;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    height: 30vh;
+    padding-right: 2em;
+    border-radius: 0px 20px 20px 0px;
+  }
+  .Section-histoire {
+    position: relative;
+    left: 10vw;
+  }
+  .Section-philosophie {
+    position: relative;
+    left: 20vw;
+  }
 
-
-}
-.Section-philosophie{position:relative;
-  left:20vw;
-
-}
-
-.Section-équipe{position:relative;
-  left:30vw;
-
-}
-
+  .Section-équipe {
+    position: relative;
+    left: 30vw;
+  }
 
   .equipeContent,
   .histoireContent {
@@ -85,34 +83,32 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap:3vw
-}
-    .philoContent {
-      display: flex;
-      margin-top: 1em;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap :3vw
-  
+    gap: 3vw;
+  }
+  .philoContent {
+    display: flex;
+    margin-top: 1em;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
   }
 
   .Text {
     text-align: justify;
     padding-top: 0.5em;
     width: 40vw;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height:30vh;
+    height: 30vh;
   }
- 
+
   .Img-history {
     height: 30vh;
     width: 30vh;
   }
 
-  
   .About-h1 {
     font-size: 3em;
     text-align: center;
