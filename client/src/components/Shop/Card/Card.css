@@ -115,17 +115,22 @@
 }
 
 .card button {
-  background-color: white;
-  border-radius:50px;
+  background-color: var(--background-color);
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 4px;
-  border:none;
+  border: none;
 }
 
 .card button:hover {
   transform: scale(1.1);
+  cursor: pointer;
+}
+.card button:active {
+  transform: translate(0px, 2px);
+  -webkit-transform: translate(0px, 2px);
 }
 
 .iconFavCard {
@@ -134,8 +139,8 @@
 }
 
 .iconCartCard {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
 }
 @media screen and (min-width: 500px) {
   .card {
@@ -166,8 +171,6 @@
   .card {
     font-size: 1.5rem;
   }
-
- 
   .iconCartCard {
     width: 40px;
     height: 40px;

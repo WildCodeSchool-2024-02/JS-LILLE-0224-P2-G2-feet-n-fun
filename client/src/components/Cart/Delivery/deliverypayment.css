@@ -91,9 +91,9 @@ body {
   align-items: flex-start;
 }
 
-.totalAffichage {
-  font-size: 2em;
-  margin-bottom: 1em;
+.affichageTotal {
+  color: var(--primary-color);
+  padding: 1em;
 }
 
 .deliveryFormContainer > input {
@@ -163,11 +163,11 @@ body {
   .deliveryFormContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+    width: 50vw;
     padding-top: 2vh;
     padding-bottom: 2vh;
-    width: 55vw;
   }
 
   .deliveryForm {

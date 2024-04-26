@@ -16,7 +16,7 @@
 }
 .buttonsNavBar:hover {
   cursor: pointer;
-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .h1andButtonsContainer {
@@ -59,9 +59,6 @@ transform: scale(1.2);
   display: none;
 }
 
-.shopNavBar {
-  display: block;
-}
 .h1FeetAndFun {
   font-size: 3em;
   text-align: center;
@@ -82,12 +79,14 @@ transform: scale(1.2);
 }
 
 .and {
-  color: var(--fourth-color)
+  color: var(--fourth-color);
 }
 
-.online-shop {text-align: center;
-color:var(--background-color);
-margin-top:-1.5vh;
+.online-shop {
+  text-align: center;
+  color: var(--background-color);
+  margin-top: -1.5vh;
+  padding-bottom: 1em;
 }
 .searchInNav {
   display: none;
@@ -109,9 +108,16 @@ margin-top:-1.5vh;
     justify-content: space-around;
     align-items: center;
   }
-
+  .shopNavBar {
+    display: block;
+  }
   .buttonsNavBar {
     height: 6vh;
+  }
+
+  .buttonsNavBar:active {
+    transform: translate(0px, 3px);
+    -webkit-transform: translate(0px, 3px);
   }
 
   .bouton_menu_burger {
@@ -121,7 +127,7 @@ margin-top:-1.5vh;
     display: inline-block;
     width: 20vw;
     border-radius: 20px;
-    margin-top:5vh
+    margin-top: 5vh;
   }
 
   .groupeBoutonsNav {

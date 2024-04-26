@@ -1,5 +1,4 @@
 .product-details {
-  display: none;
   height: 100vh;
   width: 100%;
   background-color: var(--background-color);
@@ -14,7 +13,6 @@
 }
 
 .product-details.open {
-  display: block;
   animation-name: slideTop;
   animation-duration: 1.5s;
   animation-iteration-count: 1;
@@ -22,7 +20,6 @@
 }
 
 .product-details.close {
-  display: block;
   animation-name: slideBottom;
   animation-duration: 1.5s;
   animation-iteration-count: 1;
@@ -36,6 +33,11 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+.addToFav {
+  border: none;
+  width: 3vw;
+  height: 3vw;
 }
 
 .product-details .product-picture img {
@@ -71,16 +73,6 @@
   font-size: 1.5rem;
 }
 
-.product-footer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.product-details .product-footer {
-  display: flex;
-  flex-direction: column;
-}
-
 .product-details .product-cart {
   display: flex;
 }
@@ -89,9 +81,10 @@
   color: var(--background-color);
   font-size: 1.2em;
 }
-.product-details .add-to-cart {
-  width: 100%;
-  padding: 0.3rem;
+.product-details .add-to-cart,
+.size-button .add-to-cart {
+  width: 80%;
+  padding: 0.5rem;
   font-size: 1rem;
   margin-top: 0.5rem;
   margin-right: 0.1rem;
@@ -104,27 +97,37 @@
   cursor: pointer;
 }
 
-.product-details .add-to-fav {
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  margin-left: 0.3rem;
-  border-radius: 3px;
-  cursor: pointer;
-  border: 2px solid var(--fourth-color);
-  border-radius: 25px;
-  width: 16vw;
-  height: 15vw;
-}
-
-.product-details .iconFavCard {
-  width: 8vw;
-  height: 8vw;
+.size-button .add-to-cart {
+  width: 100%;
 }
 
 .product-details .product-cart button:active {
   box-shadow: none;
 }
 
+.product-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 1em;
+}
+
+.button-addToFav {
+  border: solid 1px var(--fourth-color);
+  box-shadow: rgba(168, 132, 132, 0.5) 1.95px 1.95px 2.6px;
+  border-radius: 100px;
+  background-color: var(--background-color);
+  height: 3em;
+  width: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-addToFav {
+  height: 2em;
+  width: 2em;
+}
 /* ANIMATION OUVERTURE DU COMPOSANT */
 @keyframes slideTop {
   from {
@@ -148,13 +151,48 @@
 }
 
 @media screen and (min-width: 992px) {
+  .product-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
   .product-details {
     height: 50vh;
     overflow-y: visible;
     display: flex;
     border-top: solid 1px black;
   }
+  .button-addToFav {
+    border: solid 1px var(--fourth-color);
+    box-shadow: rgba(168, 132, 132, 0.5) 1.95px 1.95px 2.6px;
+    border-radius: 100px;
+    background-color: var(--background-color);
+    height: 4em;
+    width: 4em;
+  }
 
+  .icon-addToFav {
+    height: 2.5em;
+    width: 2.5em;
+  }
+  .product-details .add-to-cart {
+    width: 80%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-right: 0.1rem;
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+    border: solid 1px black;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+  }
+  .product-details .add-to-cart:active {
+    transform: translate(0px, 3px);
+    -webkit-transform: translate(0px, 3px);
+  }
   .product-details .exit-btn {
     top: 0.4rem;
   }

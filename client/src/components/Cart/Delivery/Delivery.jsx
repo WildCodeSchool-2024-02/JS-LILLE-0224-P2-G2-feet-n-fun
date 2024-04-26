@@ -1,9 +1,12 @@
 /* props : totalPrice */
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./deliverypayment.css";
 import Payment from "./Payment";
+import { ShopContext } from "../../../context/ShopContext";
 
 function Delivery() {
+  const { finalTotal } = useContext(ShopContext);
+
   /* display payment form once form is completed */
   const [showPayment, setShowPayment] = useState(false);
   const displayPayment = (event) => {
@@ -33,7 +36,11 @@ function Delivery() {
       <p className="deliveryDate">Délais de livraison : 3 à 5 jours ouvrés</p>
       <section className="deliverySection">
         <form className="deliveryForm">
-          <h3 className="affichageTotal">TOTAL : €</h3>
+      
+            <h3 className="affichageTotal">
+              {finalTotal !== "Votre panier est vide !" && finalTotal}
+            </h3>
+
           <div className="deliveryFormContainer">
             <div className="contactContainer">
               <h3 className="contactTitle">Contact</h3>
@@ -86,7 +93,7 @@ function Delivery() {
               </label>
               <br />
             </div>
-            <div className="contactContainer">
+            <div className="adressContainer">
               <h3 className="contactTitle">Adresse de livraison</h3>
               <label>
                 N°

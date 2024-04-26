@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import PropTypes from "prop-types";
+import { ShopContext } from "../../../context/ShopContext";
 import ConfirmationPayment from "./ConfirmationPayment";
 import "./deliverypayment.css";
 
@@ -9,10 +10,11 @@ function Payment2({ clientName, clientSurname, clientMail }) {
     event.preventDefault();
     setConfirmationMessage(!showConfirmationMessage);
   };
+  const { finalTotal } = useContext(ShopContext);
 
   return (
     <>
-      <h3 className="totalAffichage">TOTAL : €</h3>
+      <h3 className="totalAffichage">{finalTotal}</h3>
       <form className="paymentForm">
         <label>
           Numéro de Carte{" "}

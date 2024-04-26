@@ -1,10 +1,13 @@
 import "./Navbar.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import SearchBar from "../SearchBar/SearchBar";
+import { ShopContext } from "../../../context/ShopContext";
 
 function Navbar() {
+
+  const {countCart} = useContext(ShopContext)
   const [visible, setVisible] = useState(false);
   const handleToggle = () => {
     setVisible(!visible);
@@ -35,7 +38,7 @@ function Navbar() {
 
             <Link to="/categories/4">
               <img
-                className="buttonsNavBar shopNavBar "
+                className="buttonsNavBar shopNavBar"
                 src="../public/assets/images/icons/shopicon.svg"
                 alt="recherche"
               />
@@ -56,7 +59,7 @@ function Navbar() {
               />{" "}
             </Link>
           </div>
-          <div className="itemsCountContainer">0</div>
+          <div className="itemsCountContainer">{countCart}</div>
         </div>
       </div>
       <div>
@@ -67,12 +70,6 @@ function Navbar() {
         </Link>
         <p className="online-shop">ONLINE SHOP</p>
       </div>
-
-      {/* <img
-        src="/assets/images/logo.svg"
-        className="image_logo"
-        alt="picture_not_found"
-      /> */}
     </nav>
   );
 }

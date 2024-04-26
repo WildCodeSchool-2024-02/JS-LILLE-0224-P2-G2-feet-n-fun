@@ -4,28 +4,32 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  min-height: 55vh;
 }
 
-
-.headerCategorie{height:30vh;
-  margin:auto;
-  margin-top  :2vh;
+.headerCategorie {
+  height: 30vh;
+  margin: auto;
+  margin-top: 2vh;
   background-color: var(--primary-color);
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.titreHeaderCategorie, .descHeaderCategorie {
-  color :var(--background-color)
+.titreHeaderCategorie,
+.descHeaderCategorie {
+  color: var(--background-color);
 }
 
-.titreHeaderCategorie{
+.titreHeaderCategorie {
   font-size: 2em;
 }
 
-.descHeaderCategorie {width:60vw;
-  font-size:1.2em;
-text-align: center;
-margin-top:2vh;}
+.descHeaderCategorie {
+  width: 60vw;
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 2vh;
+}

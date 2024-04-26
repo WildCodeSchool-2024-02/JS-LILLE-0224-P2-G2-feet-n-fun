@@ -1,18 +1,27 @@
 import "./SizeListMobile.css";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ShopContext } from "../../../../../context/ShopContext";
 
-function SizeListMobile({ data, chooseSize, changeSize }) {
+
+function SizeListMobile({ data }) {
   // State qui stock l'état Ouvert/Fermé de la liste des tailles
   const [isOpen, setIsOpen] = useState(false);
-
   const [isTheFirstOpening, setisTheFirstOpening] = useState(true);
+  
+  const {chooseSize, setChooseSize} = useContext(ShopContext)
 
   // Fonction qui change l'état de isOpen true/false (Ouvre/Ferme la liste des tailles)
   const handleClick = () => {
     setIsOpen(!isOpen);
     setisTheFirstOpening(true);
   };
+
+  // Function qui assigne la taille sélectionner au state chooseSize (dans le composant CardContainer) pour transmettre la taille lors de l'ajout au panier.
+  const changeSize = (selectedIndex) => {
+    setChooseSize(data.size[selectedIndex].size);
+  };
+
 
   const listIsClose = (isTheFirstOpening && !isOpen) ? "size-list close-list" : "";
   const listIsOpen = isOpen ? "size-list open-list" : "";
@@ -63,7 +72,5 @@ SizeListMobile.propTypes = {
       available: PropTypes.bool.isRequired
     })).isRequired,
   }).isRequired,
-  chooseSize: PropTypes.string.isRequired,
-  changeSize: PropTypes.func.isRequired,
 };
 export default SizeListMobile;

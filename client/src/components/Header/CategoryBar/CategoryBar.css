@@ -44,6 +44,8 @@
     margin: auto;
     height: 4em;
     background-color: var(--card-background);
+    border-bottom: 2px solid var(--text-color);
+    border-top: 2px solid var(--text-color);
   }
 
   .ulCategories {

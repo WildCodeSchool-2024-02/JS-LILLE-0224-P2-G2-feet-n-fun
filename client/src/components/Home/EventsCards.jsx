@@ -1,7 +1,8 @@
 import "./Events.css";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-function EventsCards({ title, img1, img2, img3 }) {
+function EventsCards({ title, img1, img2, img3, link }) {
   return (
     <div className="cardAccueil">
       <div className="ContainerAccueil">
@@ -13,9 +14,9 @@ function EventsCards({ title, img1, img2, img3 }) {
 
         <div className="eventContent">
           <h4 className="eventTitle">{title}</h4>
-          <button type="button" className="eventButton">
+          <Link to ={link}> <button type="button" className="eventButton">
             Découvrir
-          </button>
+          </button></Link>
         </div>
       </div>
     </div>
@@ -27,6 +28,7 @@ EventsCards.propTypes = {
   img1: PropTypes.string.isRequired,
   img2: PropTypes.string.isRequired,
   img3: PropTypes.string.isRequired,
+  link : PropTypes.string.isRequired
 };
 
 export default EventsCards;
