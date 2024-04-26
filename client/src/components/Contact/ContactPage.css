@@ -13,7 +13,7 @@
 }
 .frmContact {
   display: flex;
-  width: 80%;
+  width: 92%;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -68,8 +68,6 @@ label {
   transition: 0.2s ease-in-out;
   cursor: pointer;
   overflow: hidden;
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 .icon {
@@ -101,7 +99,7 @@ textarea {
   flex-direction: column;
   justify-content: space-around;
   gap: 1rem;
-  width: 80%;
+  width: 92%;
   font-weight: bold;
 }
 

@@ -1,36 +1,38 @@
-import { useRef,useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./ContactPage.css";
 
-function ContactUs  ()  {
+function ContactUs() {
   const form = useRef();
 
-  // START
-  const [showConfirmation, setShowConfirmation] = useState();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
+  const [formName, setFormName] = useState("");
+
+  const [formMail, setFormMail] = useState("");
+
+  const [formMsg, setFormMsg] = useState("");
 
   const displayConfirmation = () => {
-    if (
-      formData.name === "" ||
-      formData.email === "" ||
-      formData.message === ""
-    ) {
-      setShowConfirmation(false);
-    } else {
+    if (formName !== "" || formMail !== "" || formMsg !== "") {
       setShowConfirmation(true);
+      setFormName("");
+      setFormMail("");
+      setFormMsg("");
+    } else {
+      setShowConfirmation(false);
     }
   };
+  const handleChangeName = (e) => {
+    setFormName(e.target.value);
+  };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+  const handleChangeMail = (e) => {
+    setFormMail(e.target.value);
+  };
+
+  const handleChangeMsg = (e) => {
+    setFormMsg(e.target.value);
   };
   const sendEmail = (e) => {
     e.preventDefault();
@@ -40,13 +42,10 @@ function ContactUs  ()  {
         publicKey: "7aPbsdkTmDMMrOxsJ",
       })
       .then(
-        () => {
-          
-        },
-        () => {
-          
-        }
+        () => {},
+        () => {}
       );
+    displayConfirmation();
   };
 
   return (
@@ -87,38 +86,44 @@ function ContactUs  ()  {
         <div className="separationBar" />
         <div className="frmContact">
           <div className="frmName">
-            <label>Name
-            <input
-              onChange={handleChange}
-              required
-              type="text"
-              name="from_name"
-            /></label>
-          </div>
-          <div className="frmName">
-            <label>Email
-            <input
-              onChange={handleChange}
-              required
-              type="email"
-              name="from_email"
-            />
+            <label>
+              Name
+              <input
+                value={formName}
+                onChange={handleChangeName}
+                required
+                type="text"
+                name="from_name"
+              />
             </label>
           </div>
           <div className="frmName">
-            <label>Message
-            <textarea name="message" onChange={handleChange} /></label>
+            <label>
+              Email
+              <input
+                value={formMail}
+                onChange={handleChangeMail}
+                required
+                type="email"
+                name="from_email"
+              />
+            </label>
           </div>
-          <input
-            className="btnSend"
-            onClick={displayConfirmation}
-            type="submit"
-            value="Envoyer"
-          />
+          <div className="frmName">
+            <label>
+              Message
+              <textarea
+                name="message"
+                value={formMsg}
+                onChange={handleChangeMsg}
+              />
+            </label>
+          </div>
+          <input className="btnSend" type="submit" value="Envoyer" />
           <div className="centreMsg">
             {showConfirmation && (
               <div className="msgConfirmation">
-                Votre message a bien été envoyé !
+                Merci ! Votre message a bien été envoyé !
               </div>
             )}
           </div>
@@ -126,5 +131,5 @@ function ContactUs  ()  {
       </form>
     </div>
   );
-};
-export default ContactUs ;
+}
+export default ContactUs;
