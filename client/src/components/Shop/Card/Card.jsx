@@ -8,6 +8,7 @@ function Card({ data, openProduct, colorSection }) {
   const { addToFav } = useContext(ShopContext);
   return (
     <div className="card">
+      
       <div className="card-header">
       <div className={data.new ? "eye-container new" : "eye-container"} role='button' tabIndex={0} onClick={openProduct} onKeyDown={openProduct}>
         <img className='eye-img' src="../assets/images/icons/eye-hover.svg" alt="Clique ici pour plus de détails sur le produit" />
