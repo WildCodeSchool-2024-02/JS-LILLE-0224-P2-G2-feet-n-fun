@@ -4,7 +4,6 @@ import "./App.css";
 import Navbar from "./components/Header/NavBar/Navbar";
 import Footer from "./components/Footer/Footer"
 import InformationBar from "./components/Header/InformationBar/InformationBar";
-import Footer from "./components/Footer/Footer";
 import ShopContextProvider from "./context/ShopContext";
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
 
   return (
     <ShopContextProvider>
-      <InformationBar/>
+      <InformationBar />
       <Navbar />
       <main>{data && <Outlet data={data} />}</main>
       <Footer/>
