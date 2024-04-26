@@ -1,14 +1,14 @@
 import "./CardContainer.css";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ShopContext } from "../../../context/ShopContext";
 import Card from "./Card";
-import ProductDetails from "./ProductDetails/ProductDetails";
+import ProductDetails from "./ProductDetails/ProductDetails"
 import FilterButtonContainer from "./FilterButtonContainer/FilterButtonContainer";
+import CategoryBar from "../../Header/CategoryBar/CategoryBar";
 
-function CardContainer({ data }) { 
-  // State qui stock l'état Ouvert/Fermé du composant ProductDetails
-  const [visible, setVisible] = useState(false);
-
+function CardContainer({ data }) {
+  const { setVisible} = useContext(ShopContext);
   // State qui stock l'index du produit cliqué
   const [productSelected, setProductSelected] = useState(0);
 
@@ -17,14 +17,13 @@ function CardContainer({ data }) {
   const openProduct = (indexOfProduct) => {
     setVisible(true);
     setProductSelected(indexOfProduct);
-  }; 
+  };
 
-  // State qui stock la taille choisit pour l'ajout au panier
-  const [chooseSize, setChooseSize] = useState("Votre taille");
 
   return (
     <>
-      <FilterButtonContainer dataCategory={data.id} />
+    <CategoryBar/>
+    <FilterButtonContainer dataCategory={data.id}/>
       <div
         className="card-container"
       >
@@ -40,14 +39,9 @@ function CardContainer({ data }) {
         ))}
       </div>
       {/* Ouvre le composant ProductDetails lors ce que visible est true */}
-      
         <ProductDetails
           data={data.products[productSelected]}
           colorSection={data.color}
-          visible={visible}
-          setVisible={setVisible}
-          chooseSize={chooseSize}
-          setChooseSize={setChooseSize}
         />
     </>
   );
@@ -55,8 +49,9 @@ function CardContainer({ data }) {
 
 CardContainer.propTypes = {
   data: PropTypes.shape({
-    color: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
     products: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,

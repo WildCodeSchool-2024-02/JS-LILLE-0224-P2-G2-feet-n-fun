@@ -1,7 +1,11 @@
 import "./Card.css";
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { ShopContext } from "../../../context/ShopContext";
 
 function Card({ data, openProduct, colorSection }) {
+  const { id } = data;
+  const { addToFav } = useContext(ShopContext);
   return (
     <div className="card">
       
@@ -10,11 +14,11 @@ function Card({ data, openProduct, colorSection }) {
         <img className='eye-img' src="../assets/images/icons/eye-hover.svg" alt="Clique ici pour plus de détails sur le produit" />
       </div>
       <img className={data.new ? "product-img new" : "product-img"} src={data.src} alt="" />
-        {/* REMPLACER ICI LE BOUTON LIKE QUI APPARAIT DANS L'IMAGE */}
-        <button type="button">
+        <button type="button" onClick={() => addToFav(id)}>
           <img
             src="../assets/images/icons/add-heart.svg"
             alt="Bouton d'ajout à la liste d'envie"
+            className="iconFavCard"
           />
         </button>
         {data.new && <img src="/public/assets/images/icons/new.png" alt="Nouveauté" id="new"/>}
@@ -25,11 +29,11 @@ function Card({ data, openProduct, colorSection }) {
         </div>
         <div className="card-footer">
           <span style={{ color: `${colorSection}` }}>{data.price} €</span>
-          {/* REMPLACER ICI LE BOUTON D'AJOUT RAPIDE AU PANIER */}
-          <button type="button">
+          <button type="button" className="buttonCardCart" onClick={openProduct}>
             <img
               src="../assets/images/icons/add-cart.svg"
               alt="Bouton d'ajout au panier"
+              className="iconCartCard"
             />
           </button>
         </div>
@@ -37,15 +41,15 @@ function Card({ data, openProduct, colorSection }) {
     </div>
   );
 }
-
 Card.propTypes = {
   data: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     src: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     new: PropTypes.bool.isRequired,
   }).isRequired,
-  openProduct: PropTypes.func.isRequired,
   colorSection: PropTypes.string.isRequired,
+  openProduct: PropTypes.func.isRequired,
 };
 export default Card;

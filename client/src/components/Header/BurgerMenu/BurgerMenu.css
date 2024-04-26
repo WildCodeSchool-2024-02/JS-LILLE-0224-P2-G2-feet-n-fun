@@ -1,5 +1,5 @@
 .burgerMenu {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: var(--primary-color);
   width: 80%;
   height: 100vh;
   position: fixed;
@@ -9,6 +9,7 @@
   bottom: 0;
   z-index: 999;
   transform: translateX(-100%);
+  border-right: solid 3px white;
 }
 
 .burgerMenu.open {

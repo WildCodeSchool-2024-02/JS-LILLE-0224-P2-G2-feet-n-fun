@@ -1,20 +1,25 @@
 import "./ProductDetails.css";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ShopContext } from "../../../../context/ShopContext";
 import SizeListMobile from "./SizeList/SizeListMobile";
 import SizeListDekstop from "./SizeList/SizeListDekstop";
+/* à ajouter pour la dernière version onClick={() => addToFav(id)} avec useContext */
+function ProductDetails({data, colorSection}) {
 
-function ProductDetails({
-  data,
-  colorSection,
-  visible,
-  setVisible,
-  chooseSize,
-  setChooseSize,
-}) {
-  // Function qui assigne la taille sélectionner au state chooseSize (dans le composant CardContainer) pour transmettre la taille lors de l'ajout au panier.
-  const changeSize = (selectedIndex) => {
-    setChooseSize(data.size[selectedIndex].size);
+  const { id } = data;
+  const { addToCart, visible, setVisible, chooseSize, addToFav } = useContext(ShopContext);
+  // Function qui assigne la taille sélectionnéé au state chooseSize (dans le composant CardContainer) pour transmettre la taille lors de l'ajout au panier.
+
+  const [sizeNotValidate, setSizeNotValidate] = useState(false);
+
+  const launchAddToCart = (idSelect) => {
+    if (chooseSize !== "Votre taille") {
+      addToCart(idSelect);
+      setSizeNotValidate(false);
+    } else {
+      setSizeNotValidate(true);
+    }
   };
 
   const [isTheFirstOpening, setisTheFirstOpening] = useState(false);
@@ -40,33 +45,36 @@ function ProductDetails({
       </div>
       <div className="product-content">
         <div className="product-desc">
-          <h3>{data.name}</h3>
+          <h3 className="title-product">{data.name}</h3>
           <p>{data.desc}</p>
         </div>
         <div className="price">
           <span id="price" style={{ color: `${colorSection}` }}>
             {data.price}€
           </span>
+          {sizeNotValidate && (
+          <p style={{ color: "red", paddingBottom: "0.5rem" }}>
+            Veuillez sélectionner une taille
+          </p>
+        )}
           <SizeListDekstop
             data={data}
-            chooseSize={chooseSize}
-            changeSize={changeSize}
           />
         </div>
+        <SizeListMobile data={data} />
         <div className="product-footer">
-          <SizeListMobile
-            data={data}
-            chooseSize={chooseSize}
-            changeSize={changeSize}
-          />
-          <div className="product-cart">
-            <button type="button" className="add-to-cart">
-              Ajouter au panier
-            </button>
-            <button type="button" className="like">
-              ❤️
-            </button>
-          </div>
+          <button
+            type="button"
+            className="add-to-cart"
+            onClick={() => launchAddToCart(id)}
+          >
+            Ajouter au panier
+          </button>
+          <button className="button-addToFav" type="button" onClick={() => addToFav(id)}>
+
+            <img className="icon-addToFav" src="../assets/images/icons/add-heart.svg" alt="ajout aux favoris"/>
+          </button>
+        
         </div>
       </div>
     </div>
@@ -75,6 +83,7 @@ function ProductDetails({
 
 ProductDetails.propTypes = {
   data: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     size: PropTypes.arrayOf(
       PropTypes.shape({
         size: PropTypes.string.isRequired,
@@ -88,9 +97,5 @@ ProductDetails.propTypes = {
     color: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   colorSection: PropTypes.string.isRequired,
-  visible: PropTypes.bool.isRequired,
-  setVisible: PropTypes.func.isRequired,
-  chooseSize: PropTypes.string.isRequired,
-  setChooseSize: PropTypes.func.isRequired,
 };
 export default ProductDetails;

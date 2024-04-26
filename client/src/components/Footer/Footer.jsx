@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="footer-box"> 
+    <div className="footer-box">
       <div className="social-icon">
         <a href="www.facebook.com">
           <img
@@ -27,21 +27,12 @@ function Footer() {
           />
         </a>
       </div>
-      <div className="end-navigation navigation-footer">
-        <Link to="/categories/4" className="art-font  color-nav">
-          ART
+      <div className="navigation-footer">
+        <Link to="/a-propos" className="links-footer">
+          À propos
         </Link>
-        <Link to="/categories/1" className="sports-font  color-nav">
-          SPORTS
-        </Link>
-        <Link to="/categories/3" className="geek-font color-nav">
-          GEEK
-        </Link>
-        <Link to="/categories/2" className="anime-font color-nav">
-          ANIME{" "}
-        </Link>
-        <Link to="/categories/5" className="festif-font color-nav">
-          FESTIF{" "}
+        <Link to="/contact" className="links-footer">
+          Contact
         </Link>
       </div>
       <div className=" center copieright">
