@@ -115,24 +115,33 @@
 }
 
 .card button {
-  background-color: #ffffff;
+  background-color: var(--background-color);
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 4px;
-  border: solid black 1px;
-  border-radius: 3px;
+  border: none;
 }
 
 .card button:hover {
   transform: scale(1.1);
+  cursor: pointer;
+}
+.card button:active {
+  transform: translate(0px, 2px);
+  -webkit-transform: translate(0px, 2px);
 }
 
-.card button img {
+.iconFavCard {
   width: 15px;
   height: 15px;
 }
 
+.iconCartCard {
+  width: 30px;
+  height: 30px;
+}
 @media screen and (min-width: 500px) {
   .card {
     font-size: 1rem;
@@ -148,14 +157,22 @@
     font-size: 1.2rem;
   }
 
-  .card button img {
-    width: 25px;
-    height: 25px;
+  .iconFavCard {
+    width: 20px;
+    height: 20px;
+  }
+  .iconCartCard {
+    width: 50px;
+    height: 50px;
   }
 }
 
 @media screen and (min-width: 1500px) {
   .card {
     font-size: 1.5rem;
+  }
+  .iconCartCard {
+    width: 40px;
+    height: 40px;
   }
 }

@@ -11,13 +11,10 @@ function Payment({ clientName, clientSurname, clientMail }) {
 
   return (
     <>
-      <button type="button" className="buttonCloseDeliveryPayment">
-        <img src="./public/assets/images/icons/exit-btn-red.svg" alt="croix" />
-      </button>
-      <h2>Paiement</h2>
+      <h2 className="titleRubrique">Paiement</h2>
       <section className="paymentSection">
         <div className="paymentForm">
-          <h3>Choisissez une méthode de paiement</h3>
+          <h3 className="choixpaiement">Choisissez une méthode de paiement</h3>
           <div className="creditCards">
             <button
               className="buttonFakeCards"

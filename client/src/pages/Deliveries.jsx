@@ -1,9 +1,7 @@
-import Delivery from "../components/Cart/Delivery/Delivery"
+import Delivery from "../components/Cart/Delivery/Delivery";
 
-
-function Deliveries () {
-
-    return (<Delivery/>)
+function Deliveries() {
+  return <Delivery />;
 }
 
-export default Deliveries; 
+export default Deliveries;

@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Header/NavBar/Navbar";
-import CategoryBar from "./components/Header/CategoryBar/CategoryBar";
+import Footer from "./components/Footer/Footer";
 import ShopContextProvider from "./context/ShopContext";
 
 function App() {
@@ -23,9 +23,10 @@ function App() {
   return (
     <ShopContextProvider>
       <Navbar />
-      <CategoryBar />
       <main>{data && <Outlet data={data} />}</main>
+      <Footer/>
     </ShopContextProvider>
+
   );
 }
 

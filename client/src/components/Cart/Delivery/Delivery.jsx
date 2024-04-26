@@ -32,18 +32,23 @@ function Delivery() {
 
   return (
     <>
-      <h2>Livraison</h2>
+      <h2 className="titleRubrique">Livraison</h2>
       <p className="deliveryDate">Délais de livraison : 3 à 5 jours ouvrés</p>
       <section className="deliverySection">
         <form className="deliveryForm">
-          {finalTotal !== 0 && <h3> {finalTotal} </h3>}
+      
+            <h3 className="affichageTotal">
+              {finalTotal !== "Votre panier est vide !" && finalTotal}
+            </h3>
+
           <div className="deliveryFormContainer">
-            <div>
-              <h3>Contact</h3>
+            <div className="contactContainer">
+              <h3 className="contactTitle">Contact</h3>
               <label>
                 Prénom
                 <div>
                   <input
+                    className="inputDelivery"
                     type="text"
                     name="name"
                     onChange={changeClientName}
@@ -55,6 +60,7 @@ function Delivery() {
                 Nom
                 <div>
                   <input
+                    className="inputDelivery"
                     type="text"
                     name="surname"
                     onChange={changeClientSurname}
@@ -66,6 +72,7 @@ function Delivery() {
                 Adresse e-mail
                 <div>
                   <input
+                    className="inputDelivery"
                     type="email"
                     name="email"
                     onChange={changeClientMail}
@@ -76,13 +83,18 @@ function Delivery() {
               <label>
                 Numéro de téléphone
                 <div>
-                  <input type="tel" name="phone" required />
+                  <input
+                    className="inputDelivery"
+                    type="tel"
+                    name="phone"
+                    required
+                  />
                 </div>
               </label>
               <br />
             </div>
-            <div>
-              <h3>Adresse de livraison</h3>
+            <div className="adressContainer">
+              <h3 className="contactTitle">Adresse de livraison</h3>
               <label>
                 N°
                 <div>
@@ -97,25 +109,45 @@ function Delivery() {
               <label>
                 Voie
                 <div>
-                  <input type="text" name="street" required />
+                  <input
+                    className="inputDelivery"
+                    type="text"
+                    name="street"
+                    required
+                  />
                 </div>
               </label>
               <label>
                 Code Postal
                 <div>
-                  <input type="number" name="postalcode" required />
+                  <input
+                    className="inputDelivery"
+                    type="number"
+                    name="postalcode"
+                    required
+                  />
                 </div>
               </label>
               <label>
                 Ville
                 <div>
-                  <input type="text" name="postalcode" required />
+                  <input
+                    className="inputDelivery"
+                    type="text"
+                    name="postalcode"
+                    required
+                  />
                 </div>
               </label>
               <label>
                 Pays
                 <div>
-                  <input type="text" name="postalcode" required />
+                  <input
+                    className="inputDelivery"
+                    type="text"
+                    name="postalcode"
+                    required
+                  />
                 </div>
               </label>
             </div>

@@ -2,7 +2,7 @@ import "./favoris.css";
 import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import { ShopContext } from "../../../context/ShopContext";
-import SizeListMobile from "../../Shop/Card/ProductDetails/SizeList/SizeListMobile";
+import SizeListDekstop from "../../Shop/Card/ProductDetails/SizeList/SizeListDekstop";
 
 function FavoritesCard({ product }) {
   const { id, name, price, src } = product;
@@ -18,7 +18,6 @@ function FavoritesCard({ product }) {
       setSizeNotValidate(true);
     }
   };
-
   return (
     <>
       <div className="cardContainerFav">
@@ -53,14 +52,20 @@ function FavoritesCard({ product }) {
         </div>
       </div>
       {sizeNotValidate && (
-        <>
-          {" "}
-          <p style={{ color: "red", paddingBottom: "0.5rem" }}>
-            Veuillez sélectionner une taille
-          </p>{" "}
-          <SizeListMobile data={product} />{" "}
-        </>
-      )}
+        <div className="chooze-sizes">
+          <SizeListDekstop data={product} />{" "}
+          <div className="size-button">
+          <button
+            label="ajoutePanier"
+            type="button"
+            className="add-to-cart"
+            onClick={() => launchAddToCart(id)}
+          >
+           Ajouter au panier
+          </button>
+          </div>
+          </div>
+      )} 
     </>
   );
 }

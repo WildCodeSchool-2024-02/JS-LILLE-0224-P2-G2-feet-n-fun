@@ -1,13 +1,14 @@
 import "./CardContainer.css";
 import PropTypes from "prop-types";
 import { useState, useContext } from "react";
-import Card from "./Card";
-import ProductDetails from "./ProductDetails/ProductDetails";
 import { ShopContext } from "../../../context/ShopContext";
+import Card from "./Card";
+import ProductDetails from "./ProductDetails/ProductDetails"
 import FilterButtonContainer from "./FilterButtonContainer/FilterButtonContainer";
+import CategoryBar from "../../Header/CategoryBar/CategoryBar";
 
 function CardContainer({ data }) {
-  const { visible, setVisible } = useContext(ShopContext);
+  const { setVisible} = useContext(ShopContext);
   // State qui stock l'index du produit cliqué
   const [productSelected, setProductSelected] = useState(0);
 
@@ -16,12 +17,13 @@ function CardContainer({ data }) {
   const openProduct = (indexOfProduct) => {
     setVisible(true);
     setProductSelected(indexOfProduct);
-  }; 
+  };
 
 
   return (
     <>
-      <FilterButtonContainer dataCategory={data.id} />
+    <CategoryBar/>
+    <FilterButtonContainer dataCategory={data.id}/>
       <div
         className="card-container"
       >
@@ -37,11 +39,9 @@ function CardContainer({ data }) {
         ))}
       </div>
       {/* Ouvre le composant ProductDetails lors ce que visible est true */}
-      
         <ProductDetails
           data={data.products[productSelected]}
           colorSection={data.color}
-          visible={visible}
         />
     </>
   );
@@ -49,9 +49,9 @@ function CardContainer({ data }) {
 
 CardContainer.propTypes = {
   data: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
     products: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,

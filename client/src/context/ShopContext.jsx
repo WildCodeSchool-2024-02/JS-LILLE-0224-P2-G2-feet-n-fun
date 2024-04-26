@@ -14,6 +14,7 @@ export default function ShopContextProvider({ children }) {
   // State qui stocke l'état Ouvert/Fermé du composant ProductDetails
   const [visible, setVisible] = useState(false);
 
+  const [countCart, setCountCart] = useState(0)
   /* Ajout au panier 
   Cette fonction prend l'id d'un article en paramètre (on l'appelera dans les composants avec addToCart(id)) 
   Elle change l'état de notre cartItems (qui contient les produits du panier). 
@@ -39,6 +40,7 @@ export default function ShopContextProvider({ children }) {
     });
 
     setChooseSize("Votre taille");
+    setCountCart(countCart+1)
   };
 
   /* Même fonction mais pour les boutons + du panier pour éviter le changement de taille */ 
@@ -52,6 +54,7 @@ export default function ShopContextProvider({ children }) {
         };
       }
       setVisible(false);
+      setCountCart(countCart+1)
       return { ...prev, [itemId]: { quantity: 1} };
     });
   };
@@ -63,6 +66,7 @@ export default function ShopContextProvider({ children }) {
       ...prev,
       [itemId]: { quantity: prev[itemId].quantity - 1, size: chooseSize },
     }));
+    setCountCart(countCart-1)
   };
 
   /* Même fonction mais pour les boutons - du panier pour éviter le changement de taille */ 
@@ -98,6 +102,8 @@ export default function ShopContextProvider({ children }) {
    
   const contextValue = useMemo(
     () => ({
+      countCart,
+      setCountCart,
       finalTotal,
       setFinalTotal,
       chooseSize,
@@ -113,7 +119,8 @@ export default function ShopContextProvider({ children }) {
       incrementCart,
       decrementCart
     }),
-    [
+    [countCart,
+      setCountCart,
       finalTotal,
       setFinalTotal,
       chooseSize,

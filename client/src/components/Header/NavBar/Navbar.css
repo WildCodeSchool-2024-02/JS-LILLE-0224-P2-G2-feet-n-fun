@@ -1,7 +1,18 @@
+.navigation {
+  background-color: var(--primary-color);
+}
+
 .buttonsNavBar {
-  background-color: transparent;
-  border: none;
-  height: 10vh;
+  background-color: var(--background-color);
+  border-radius: 50%;
+  height: 7vh;
+  margin-top: 5vh;
+  margin-right: 0.5em;
+  padding: 0.8em;
+}
+
+.shopNavBar {
+  display: none;
 }
 .buttonsNavBar:hover {
   cursor: pointer;
@@ -10,78 +21,142 @@
 
 .h1andButtonsContainer {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: flex-end;
+  justify-content: space-between;
 }
-.navbar {
-  width: 100%;
-  background-color: var(--background-color);
+.h1andButtonsContainer a {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  font-size: 0.8em;
 }
 
+.textlabelnav {
+  font-size: 0px;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+.itemsCountContainer {
+  background-color: var(--secondary-color);
+  height: 3vh;
+  width: 3vh;
+  border-radius: 10px;
+  position: relative;
+  bottom: 10px;
+  right: 5px;
+  color: var(--background-color);
+
+  text-align: center;
+}
 .image_logo {
   display: none;
 }
 
 .h1FeetAndFun {
-  font-size: 2.5em;
+  font-size: 3em;
+  text-align: center;
+  color: var(--background-color);
 }
 
+.imagetraitsburger {
+  width: 30px;
+  margin-top: 0.5em;
+}
 .bouton_menu_burger {
-  background-color: var(--background-color);
-  border: 1px solid var(--background-color);
-  opacity: 0.4;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  border: none;
 }
 
 .and {
-  color: var(--secondary-color);
-  font-size: 1em;
+  color: var(--fourth-color);
 }
 
+.online-shop {
+  text-align: center;
+  color: var(--background-color);
+  margin-top: -1.5vh;
+  padding-bottom: 1em;
+}
 .searchInNav {
   display: none;
 }
 
+.groupeBoutonsNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (min-width: 992px) {
-  .navbar {
-    flex-direction: row;
-    justify-content: start;
+  .navigation {
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
     align-items: center;
-    padding-left: 5vw;
   }
+  .shopNavBar {
+    display: block;
+  }
+  .buttonsNavBar {
+    height: 6vh;
+  }
+
+  .buttonsNavBar:active {
+    transform: translate(0px, 3px);
+    -webkit-transform: translate(0px, 3px);
+  }
+
   .bouton_menu_burger {
     display: none;
   }
   .searchInNav {
     display: inline-block;
-  }
-  .h1andButtonsContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 35vw;
+    width: 20vw;
+    border-radius: 20px;
+    margin-top: 5vh;
   }
 
+  .groupeBoutonsNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+  }
   .image_logo {
     display: block;
-    width: 5em;
-    height: 5em;
+    width: 3em;
+    height: 3em;
     padding: 0.2em;
-    background-color: white;
     border: none;
   }
 
-  .navbar {
-    background-color: var(--background-color);
-    height: 20vh;
+  .h1FeetAndFun {
+    font-size: 3em;
   }
 
-  .h1FeetAndFun {
-    font-size: 4em;
-    padding: 0.5em;
+  .itemsCountContainer {
+    background-color: var(--secondary-color);
+    height: 3vh;
+    width: 3vh;
+    border-radius: 10px;
+    position: relative;
+    bottom: 10px;
+    color: var(--background-color);
+    text-align: center;
   }
 }

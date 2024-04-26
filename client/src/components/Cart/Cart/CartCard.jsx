@@ -1,13 +1,20 @@
 import "./Cart.css";
 import PropTypes from "prop-types";
-import { useContext } from "react";
+import { useContext} from "react";
 import { ShopContext } from "../../../context/ShopContext";
 
 function CartCard({ product, quantity, size }) {
   const { id, name, price, src } = product;
-  const {incrementCart, decrementCart } = useContext(ShopContext);
+  const {incrementCart, decrementCart, addToFav, setCountCart, countCart } = useContext(ShopContext);
 
   const productPrice = (price * quantity).toFixed(2);
+
+  const itsTheLastProduct = () => {
+    if (quantity === 1) {
+      setCountCart(countCart -1)
+    }
+    decrementCart(id, size)
+  }
 
   return (
     <div className="cardContainerCart">
@@ -23,15 +30,24 @@ function CartCard({ product, quantity, size }) {
         </div>
       </div>
       <div className="cardButtonsCard">
-        <button type="button" onClick={() => decrementCart(id, size)}>
+  <div className="buttonsAddAndDelete">
+        <button label="Ajout Favoris" type="button" onClick={()=> addToFav(id)}>
+          <img
+            alt="ajoutFav"
+            src="./public/assets/images/icons/add-heart.svg"
+          /> </button></div>
+          <div className="quantityCart">
+        <button type="button" onClick={() => itsTheLastProduct()}>
           -
         </button>
-        <input  type="number" min="1" value={quantity} />
+        <input value={quantity}/>
         <button type="button" onClick={() => incrementCart(id,size)}>
           +
-        </button>
+          </button>
+          </div>
       </div>
     </div>
+    
   );
 }
 

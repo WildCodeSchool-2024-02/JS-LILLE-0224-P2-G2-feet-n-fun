@@ -1,8 +1,9 @@
 import "./favoris.css";
 import { useContext } from "react";
 import PropTypes from "prop-types";
-import FavorisCard from "./FavorisCard";
 import { ShopContext } from "../../../context/ShopContext";
+import FavoritesCard from "./FavoritesCard"
+
 
 function FavoritesContainer({ data }) {
   const { favItems } = useContext(ShopContext);
@@ -23,27 +24,20 @@ Sur data :
     - si un produit correspond, on lui dit de retourner le produit. 
      */
 
-  const findProductById = (productId) => {
-    let foundProduct = null;
-    // eslint-disable-next-line react/prop-types
-    data.some((category) => {
-      foundProduct = category.products.find(
-        (product) => product.id === productId
-      );
-      return foundProduct !== undefined;
-    });
-    return foundProduct;
-  };
-
+    const findProductById = (productId) => 
+    data
+      .flatMap((category) => category.products)
+      .find((product) => product.id === productId);
+  
   return (
     <>
-      <h2>Favoris</h2>
+      <h2 className="titleRubrique" >Favoris</h2>
       <div className="cardsContainerFav">
         {Object.entries(favItems).map(([productId, quantity]) => {
-          const product = findProductById(parseInt(productId, 10));
+          const product = findProductById(Number(productId));
           if (product && quantity > 0) {
             return (
-              <FavorisCard
+              <FavoritesCard
                 key={productId}
                 product={product}
                 quantity={quantity}
@@ -56,18 +50,21 @@ Sur data :
     </>
   );
 }
-FavoritesContainer.propTypes = {
-  data: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
-    products: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-  }).isRequired,
-  some: PropTypes.func.isRequired,
+FavoritesContainer
+.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      color: PropTypes.string.isRequired,
+      products: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number.isRequired,
+          name: PropTypes.string.isRequired,
+        })
+      ).isRequired,
+    })
+  ).isRequired,
 };
+
 
 export default FavoritesContainer;

@@ -21,11 +21,10 @@ Sur data :
     [ {cat1 : {produit 1}, {produit 2} ... , {cat2 :{produit 3}, {produit 4} ... }]). 
     - si un produit correspond, on lui dit de retourner le produit. 
      */
-  const findProductById = (productId) => 
+  const findProductById = (productId) =>
     data
       .flatMap((category) => category.products)
       .find((product) => product.id === productId);
-  
 
   /* getTotalCartAmount sert à obtenir le total du prix des produits dans le panier. 
     - totalAmount : stocke le prix total du panier 
@@ -58,7 +57,7 @@ Sur data :
       }
     });
     if (totalAmount > 0) {
-      totalAmount = `Total ${totalAmount.toFixed(2)} €`;
+      totalAmount = `Total : ${totalAmount.toFixed(2)} €`;
       setFinalTotal(totalAmount);
     } else {
       totalAmount = "Votre panier est vide !";
@@ -67,13 +66,10 @@ Sur data :
   };
 
   return (
-    <section className="sectionCart">
-      <button type="button" className="buttonCloseDeliveryPayment">
-        <img src="./public/assets/images/icons/exit-btn-red.svg" alt="croix" />
-      </button>
-      <h2>Panier</h2>
-
-      {/* On va mettre une condition pour afficher les cartes : 
+    <>
+      <h2 className="titleRubrique">Panier</h2>
+      <section className="sectionCart">
+        {/* On va mettre une condition pour afficher les cartes : 
       - la méthode object.entries() retourne un tableau contenant les paires clé-valeur d'un objet sous forme de tableau. 
       Par exemple si on fait un object.entries sur const obj = { a: 1, b: 2, c: 3 };, cela va renvoyer [ ["a", 1], ["b", 2], ["c", 3] ] 
       Ici on le fait sur cartItems. Si on reprend l'exemple plus haut, on a donc [[37,2], [56,1]] qui est retourné. 
@@ -81,34 +77,44 @@ Sur data :
       On va executer une fonction sur chacun de ses éléments 
       - on réutilise ici le const product qui a été déclaré localement plutot dans la fonction getTotalAmount 
       - si product est présent et la quantité est supérieur à 0 alors on affiche une card du produit dans le panier */
-      /* product.size.filter((sizeProduct) => sizeProduct.size.includes(chooseSize)) */}
+        /* product.size.filter((sizeProduct) => sizeProduct.size.includes(chooseSize)) */}
 
-      <div className="cardsContainerCart">
-        {Object.entries(cartItems).map(([productId, item]) => {
-          const product = findProductById(Number(productId));
-          if (product && item.quantity > 0) {
-            return (
-              <CartCard
-                key={productId}
-                product={product}
-                quantity={item.quantity}
-                size={item.size}
-              />
-            );
-          }
-          return null;
-        })}
-        <span className="totalCart">{getTotalCartAmount()}</span>
+        <div className="totalCart">
+          {" "}
+          <span className="totalAmount">{getTotalCartAmount()}</span>
+          <div className="buttonsContainerCart">
+            {totalAmount !== "Votre panier est vide !" ? (
+              <Link to="/livraison" className="cartValidationButton">
+                <p>Passer à la livraison</p>
+              </Link>
+            ) : (
+              <span />
+            )}
 
-        {totalAmount !== "Votre panier est vide !" ? (
-          <Link to="/livraison" className="cartValidationButton">
-            <p>Valider</p>
-          </Link>
-        ) : (
-          <span />
-        )}
-      </div>
-    </section>
+            <Link to="/categories/3" className="cartKeepShoppingButton">
+              <p>Continuer mes achats</p>
+            </Link>
+          </div>
+        </div>
+        {totalAmount !== "Votre panier est vide !" && <div className="cardsContainerCart">
+          {Object.entries(cartItems).map(([productId, item]) => {
+            const product = findProductById(Number(productId));
+            if (product && item.quantity > 0) {
+              return (
+                <CartCard
+                  key={productId}
+                  product={product}
+                  quantity={item.quantity}
+                  size={item.size}
+                />
+              );
+            }
+            return null;
+          })}
+        </div> }
+        
+      </section>
+    </>
   );
 }
 
@@ -126,5 +132,5 @@ CartContainer.propTypes = {
         })
       ).isRequired,
     })
-  ).isRequired
+  ).isRequired,
 };

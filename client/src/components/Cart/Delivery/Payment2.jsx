@@ -1,10 +1,8 @@
 import { useState, useContext } from "react";
 import PropTypes from "prop-types";
+import { ShopContext } from "../../../context/ShopContext";
 import ConfirmationPayment from "./ConfirmationPayment";
 import "./deliverypayment.css";
-import { ShopContext } from "../../../context/ShopContext";
-
-
 
 function Payment2({ clientName, clientSurname, clientMail }) {
   const [showConfirmationMessage, setConfirmationMessage] = useState(false);
@@ -16,12 +14,12 @@ function Payment2({ clientName, clientSurname, clientMail }) {
 
   return (
     <>
-      <h3>TOTAL:{finalTotal}</h3>
+      <h3 className="totalAffichage">{finalTotal}</h3>
       <form className="paymentForm">
         <label>
           Numéro de Carte{" "}
           <div>
-            <input type="number" name="cardnumber" />
+            <input className="inputDelivery" type="number" name="cardnumber" />
           </div>
         </label>
         <label>

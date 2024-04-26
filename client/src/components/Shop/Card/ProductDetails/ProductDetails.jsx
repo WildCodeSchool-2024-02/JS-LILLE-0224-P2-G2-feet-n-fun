@@ -4,14 +4,12 @@ import { useState, useContext } from "react";
 import { ShopContext } from "../../../../context/ShopContext";
 import SizeListMobile from "./SizeList/SizeListMobile";
 import SizeListDekstop from "./SizeList/SizeListDekstop";
-
-function ProductDetails({
-  data, colorSection
-}) {
+/* à ajouter pour la dernière version onClick={() => addToFav(id)} avec useContext */
+function ProductDetails({data, colorSection}) {
 
   const { id } = data;
   const { addToCart, visible, setVisible, chooseSize, addToFav } = useContext(ShopContext);
-  // Function qui assigne la taille sélectionner au state chooseSize (dans le composant CardContainer) pour transmettre la taille lors de l'ajout au panier.
+  // Function qui assigne la taille sélectionnéé au state chooseSize (dans le composant CardContainer) pour transmettre la taille lors de l'ajout au panier.
 
   const [sizeNotValidate, setSizeNotValidate] = useState(false);
 
@@ -47,7 +45,7 @@ function ProductDetails({
       </div>
       <div className="product-content">
         <div className="product-desc">
-          <h3>{data.name}</h3>
+          <h3 className="title-product">{data.name}</h3>
           <p>{data.desc}</p>
         </div>
         <div className="price">
@@ -63,7 +61,6 @@ function ProductDetails({
             data={data}
           />
         </div>
-        <div className="product-footer">
         <SizeListMobile data={data} />
         <div className="product-footer">
           <button
@@ -73,10 +70,11 @@ function ProductDetails({
           >
             Ajouter au panier
           </button>
-          <button type="button" className="like" onClick={() => addToFav(id)}>
-            A
+          <button className="button-addToFav" type="button" onClick={() => addToFav(id)}>
+
+            <img className="icon-addToFav" src="../assets/images/icons/add-heart.svg" alt="ajout aux favoris"/>
           </button>
-        </div>
+        
         </div>
       </div>
     </div>

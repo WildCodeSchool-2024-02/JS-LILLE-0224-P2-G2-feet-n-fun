@@ -13,11 +13,11 @@ function Card({ data, openProduct, colorSection }) {
         <img className='eye-img' src="../assets/images/icons/eye-hover.svg" alt="Clique ici pour plus de détails sur le produit"/>
       </div>
         <img className="product-img" src={data.src} alt="" />
-        {/* REMPLACER ICI LE BOUTON LIKE QUI APPARAIT DANS L'IMAGE */}
         <button type="button" onClick={() => addToFav(id)}>
           <img
             src="../assets/images/icons/add-heart.svg"
             alt="Bouton d'ajout à la liste d'envie"
+            className="iconFavCard"
           />
         </button>
         </div>
@@ -27,10 +27,11 @@ function Card({ data, openProduct, colorSection }) {
         </div>
         <div className="card-footer">
           <span style={{ color: `${colorSection}` }}>{data.price} €</span>
-          <button type="button" className="buttonsNavBar searchInNav" onClick={openProduct}>
+          <button type="button" className="buttonCardCart" onClick={openProduct}>
             <img
               src="../assets/images/icons/add-cart.svg"
               alt="Bouton d'ajout au panier"
+              className="iconCartCard"
             />
           </button>
         </div>

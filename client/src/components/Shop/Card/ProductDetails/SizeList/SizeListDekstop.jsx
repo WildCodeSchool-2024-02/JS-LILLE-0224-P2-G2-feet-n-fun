@@ -13,13 +13,16 @@ function SizeListDekstop({ data }) {
 
   return (
     <div className="sizelist-desktop">
-      Selectionner votre taille :
+      Sélectionnez votre taille :
       {data.size.map((size, index) => (
         <button
           type="button"
           key={size.size}
           onClick={() => changeSize(index)}
-          id={(chooseSize === size.size && "active") || (!size.available && "disabled")}
+          id={
+            (chooseSize === size.size && "active") ||
+            (!size.available && "disabled")
+          }
           disabled={!size.available}
         >
           {size.size}
@@ -31,10 +34,12 @@ function SizeListDekstop({ data }) {
 
 SizeListDekstop.propTypes = {
   data: PropTypes.shape({
-    size: PropTypes.arrayOf(PropTypes.shape({
-      size: PropTypes.string.isRequired,
-      available: PropTypes.bool.isRequired
-    })).isRequired,
+    size: PropTypes.arrayOf(
+      PropTypes.shape({
+        size: PropTypes.string.isRequired,
+        available: PropTypes.bool.isRequired,
+      })
+    ).isRequired,
   }).isRequired,
 };
 
