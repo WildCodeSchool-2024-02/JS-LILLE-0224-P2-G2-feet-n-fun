@@ -1,21 +1,27 @@
 /*General*/
 body {
   color: var(--text-color);
-  text-align: right;
   font-size: 1em;
 }
 
-h2 {
+.sectionCart {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  margin: auto;
+  width: 90vw;
+  padding-bottom: 5vh;
+}
+
+.titleFavoris {
   font-family: var(--titlesfont);
   font-size: 3em;
   font-weight: lighter;
   text-align: center;
 }
-h3 {
-  text-align: center;
-}
+
 .totalCart {
-  font-size: 2em;
+  font-size: 1.5em;
   padding-top: 1em;
 }
 
@@ -25,21 +31,21 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(253, 245, 233);
+  background-color: var(--background-color);
   gap: 0.5em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  width: 85vw;
+  width: 90vw;
   margin: auto;
   border-radius: 15px;
+  margin-bottom: 2em;
 }
 
 /* une seule card*/
 .cardContainerCart {
   background-color: white;
   font-family: var(--primaryfont);
-  border-radius: 5px;
-  width: 80vw;
+  width: 85vw;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -78,56 +84,90 @@ h3 {
 
 /* buttons */
 
-.buttonCloseDeliveryPayment {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  box-sizing: border-box;
-  color: var(--third-color);
-  cursor: pointer;
-}
-
 .cardButtonsCard {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
   padding-left: 5vw;
 }
 
-.cardButtonsCard > button {
+.buttonsAddAndDelete > button {
   background-color: transparent;
   border: none;
 }
 
-.cardButtonsCard > button:hover {
-  cursor: pointer;
+.buttonsAddAndDelete > button > img {
+  height: 4vh;
+}
+.quantityCart > button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
 }
 
-.cardButtonsCard > button > img {
-  height: 3vh;
+.quantityCart {
+  display: flex;
+  flex-direction: row;
 }
 
-.cartValidationButton {
-  margin-top: 1em;
+.quantityCart > input {
+  width: 7vw;
+  text-align: center;
+  font-size: 0.8em;
+}
+.cartValidationButton,
+.cartKeepShoppingButton {
   background-color: var(--secondary-color);
   border-radius: 0.5rem;
   text-align: center;
   color: var(--background-color);
+  border: 2px var(--text-color) solid;
+  box-shadow: 1px 2px 1px black;
   cursor: pointer;
-  font-family: var(--primaryfont);
-  font-size: 1.1em;
+  height: fit-content;
+  font-size: 0.6em;
   font-weight: bolder;
   width: fit-content;
   padding: 0.5em;
+  margin: 0.5em;
+}
+
+.totalCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 2px solid var(--fourth-color);
+  padding: 0.5em;
+}
+
+.buttonsContainerCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  padding-bottom: 0;
 }
 
 @media screen and (min-width: 992px) {
-  .buttonCloseDeliveryPayment {
-    display: none;
+  .sectionCart {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    margin: auto;
+    width: 90vw;
+    padding-bottom: 5vh;
+  }
+  .imgSocksCart {
+    height: 6em;
+    width: 6em;
+    border-radius: 5px 0 0 5px;
   }
 
   .cardContainerCart {
-    width: 70vw;
+    width: 40vw;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -139,20 +179,72 @@ h3 {
     flex-direction: column;
     justify-content: space-between;
     padding-left: 2vw;
-    width: 80vw;
+    width: 30vw;
+    font-size: 1.5em;
   }
 
   .cardsContainerCart {
     display: flex;
+    width: 40vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(253, 245, 233);
+    background-color: var(--background-color);
     gap: 0.5em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    width: 72vw;
-    margin: auto;
     border-radius: 15px;
+  }
+
+  .cartSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .totalCart {
+    height: 30vh;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid var(--fourth-color);
+    padding: 4vh;
+    font-size: 2em;
+  }
+  .buttonsContainerCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4vh;
+  }
+
+  .cartValidationButton,
+  .cartKeepShoppingButton {
+    background-color: var(--secondary-color);
+    border-radius: 0.5rem;
+    text-align: center;
+    color: var(--background-color);
+    border: 2px var(--text-color) solid;
+    box-shadow: 1px 2px 1px black;
+    cursor: pointer;
+    height: fit-content;
+    font-size: 0.6em;
+    font-weight: bolder;
+    width: fit-content;
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+
+  .cartValidationButton:hover,
+  .cartKeepShoppingButton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .cartKeepShoppingButton {
+    font-size: 0.4em;
   }
 }

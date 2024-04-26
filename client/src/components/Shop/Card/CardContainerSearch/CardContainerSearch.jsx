@@ -1,12 +1,15 @@
 import "../CardContainer.css";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ShopContext } from "../../../../context/ShopContext";
 import Card from "../Card";
 import ProductDetails from "../ProductDetails/ProductDetails";
+import CategoryBar from "../../../Header/CategoryBar/CategoryBar";
 
 function CardContainerSearch({ data }) {
+
   // State qui stock l'état Ouvert/Fermé du composant ProductDetails
-  const [visible, setVisible] = useState(false);
+  const { setVisible} = useContext(ShopContext);
 
   // State qui stock l'index du produit cliqué
   const [productSelected, setProductSelected] = useState(0);
@@ -18,10 +21,9 @@ function CardContainerSearch({ data }) {
     setProductSelected(indexOfProduct);
   }; 
 
-  // State qui stock la taille choisit pour l'ajout au panier
-  const [chooseSize, setChooseSize] = useState("Votre taille");
   return (
     <>
+      <CategoryBar/>
       <div 
         className="card-container"
       >
@@ -42,10 +44,6 @@ function CardContainerSearch({ data }) {
         {data.length > 0 && <ProductDetails
           data={data[productSelected]}
           colorSection={data.color}
-          visible={visible}
-          setVisible={setVisible}
-          chooseSize={chooseSize}
-          setChooseSize={setChooseSize}
         />}
     </>
   );
