@@ -1,5 +1,5 @@
 import "./Cart.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import CartCard from "./CartCard";
@@ -47,23 +47,55 @@ Sur data :
      Sinon, on affiche le Total arrondi à 2 chiffres derrière la virgule grace à .toFixed(2)
 
      */
+
+  const [ inputPromoValue, setInputPromoValue ] = useState("");
+
+  const handleChangePromo = (value) => {
+    setInputPromoValue(value);
+  }
+
+  const [ promoActiv, setPromoActiv ] = useState(false)
+
+  const [ promoCodeActiv, setPromoCodeActiv ] = useState("")
+     
   let totalAmount = 0;
+  let promotion = 0;
 
   const getTotalCartAmount = () => {
     Object.keys(cartItems).forEach((itemId) => {
       const product = findProductById(Number(itemId));
       if (cartItems[itemId].quantity > 0) {
         totalAmount += cartItems[itemId].quantity * product.price;
+        promotion = (totalAmount - ((totalAmount / 100) * 20)).toFixed(2)
       }
     });
-    if (totalAmount > 0) {
+    if (totalAmount > 0 && promoActiv) {
+      totalAmount = `Total : ${promotion} €`
+      setFinalTotal(totalAmount);  
+    }
+    else if (totalAmount > 0) {
       totalAmount = `Total : ${totalAmount.toFixed(2)} €`;
       setFinalTotal(totalAmount);
     } else {
       totalAmount = "Votre panier est vide !";
     }
     return totalAmount;
-  };
+  }; 
+
+  // Fonction qui vérifie si l'input de code promo correspont à l'un des codes et change le state de PromoCodeActiv (Code affiché dans le span)
+  // et passe PromoActiv à true
+  const applyPromo = () => {
+    if (inputPromoValue.toUpperCase() === "WCS2024") {
+      setPromoCodeActiv("WCS2024")
+      setPromoActiv(true)
+    } else if (inputPromoValue.toUpperCase() === "FANTINE20") {
+      setPromoCodeActiv("FANTINE20")
+      setPromoActiv(true)
+    } else {
+      setPromoCodeActiv(`${inputPromoValue.toUpperCase()} n'est pas un code promo valide !`)
+      setPromoActiv(false)
+    }
+  }
 
   return (
     <>
@@ -82,6 +114,15 @@ Sur data :
         <div className="totalCart">
           {" "}
           <span className="totalAmount">{getTotalCartAmount()}</span>
+          {promoActiv ? <span id="good-code">-20% appliqué (code : {promoCodeActiv})</span>
+          : <span id="wrong-code">{promoCodeActiv}</span>}
+          <div className="promo-code">
+            <label htmlFor="input-promo">Ajouter un code promo</label>
+            <div className="input-promo-container">
+              <input type="text" id="input-promo" placeholder="facultatif" value={inputPromoValue} onChange={(e) => handleChangePromo(e.target.value)} />
+              <button type="button" id="btn-promo" onClick={applyPromo}>Soumettre</button>
+            </div>
+          </div>
           <div className="buttonsContainerCart">
             {totalAmount !== "Votre panier est vide !" ? (
               <Link to="/livraison" className="cartValidationButton">
