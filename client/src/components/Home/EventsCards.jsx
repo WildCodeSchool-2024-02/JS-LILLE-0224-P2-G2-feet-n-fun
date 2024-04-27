@@ -3,10 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 function EventsCards({ title, img1, img2, img3, link }) {
-  return (<>
-    <img className="home-background"src="../assets/images/backgroundHome.png" alt="backgroudimg"/>
+  return (
     <div className="cardAccueil">
-  
       <div className="ContainerAccueil">
         <div className="imgContainerAccueil">
           <img className="image1Accueil" alt="" src={img1} />
@@ -16,13 +14,14 @@ function EventsCards({ title, img1, img2, img3, link }) {
 
         <div className="eventContent">
           <h4 className="eventTitle">{title}</h4>
-          <Link to ={link}> <button type="button" className="eventButton">
-            Découvrir
-          </button></Link>
+          <Link to={link}>
+            <button type="button" className="eventButton">
+              Découvrir
+            </button>
+          </Link>
         </div>
       </div>
     </div>
-    </>
   );
 }
 
@@ -31,7 +30,7 @@ EventsCards.propTypes = {
   img1: PropTypes.string.isRequired,
   img2: PropTypes.string.isRequired,
   img3: PropTypes.string.isRequired,
-  link : PropTypes.string.isRequired
+  link: PropTypes.string.isRequired,
 };
 
 export default EventsCards;
