@@ -1,0 +1,152 @@
+.img-background-menu-group {
+  background-color: var(--primary-color);
+}
+
+/* images de fond */
+.img-back1,
+.img-back2,
+.img-back3 {
+  width: 100vw;
+  margin-bottom: -12%;
+  object-fit: cover;
+}
+
+.section1-home,
+.section2-home,
+.section3-home {
+  position: relative;
+}
+/* Partie nouveautés */
+.title-new {
+  font-family: var(--titlesfont);
+  color: var(--primary-color);
+  font-size: 5em;
+  position: absolute;
+  top: 3%;
+  left: 20%;
+}
+
+/* Cards */
+/* Pokémon */
+.img-pokemon-collection {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  object-fit: cover;
+  width: 40vw;
+}
+.titre-collec-pokemon {
+  position: absolute;
+  top: 72%;
+  left: 63.5%;
+}
+.bouton-pokemon-collec {
+  position: absolute;
+  top: 77%;
+  left: 66.5%;
+  font-size: 1.1em;
+}
+/* Art */
+.img-arts-collection {
+  position: absolute;
+  top: 26%;
+  left: 15%;
+  object-fit: cover;
+}
+.titre-collec-art {
+  position: absolute;
+  top: 75%;
+  left: 23%;
+}
+.bouton-art-collec {
+  position: absolute;
+  top: 79%;
+  left: 29%;
+  font-size: 1.1em;
+}
+
+/* Both */
+
+.bouton-art-collec,
+.bouton-pokemon-collec {
+  box-shadow: 1px 2px 3px var(--text-color);
+}
+
+.bouton-art-collec:hover,
+.bouton-pokemon-collec:hover {
+  background-color: rgb(255, 123, 0);
+}
+
+.titre-collec-pokemon,
+.titre-collec-art {
+  color: var(--primary-color);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Partie catégories */
+
+.title-categories {
+  font-family: var(--titlesfont);
+  color: var(--background-color);
+  font-size: 4em;
+  position: absolute;
+  top: 3%;
+  left: 10%;
+  text-align: center;
+}
+
+.cat-title {
+  background-color: var(--secondary-color);
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid var(--fourth-color);
+  color: var(--background-color);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  box-shadow: 1px 2px 3px var(--text-color);
+}
+.cat-title:hover {
+  background-color: #aa8cc4;
+}
+.cat-title:active {
+  transform: translateY(0.1em);
+}
+.cat-art-title {
+  position: absolute;
+  top: 54%;
+  left: 10%;
+}
+
+.cat-anime-title {
+  position: absolute;
+  top: 54%;
+  left: 26%;
+}
+.cat-geek-title {
+  position: absolute;
+  top: 54%;
+  left: 45%;
+}
+
+.cat-sport-title {
+  position: absolute;
+  top: 93%;
+  left: 16%;
+}
+
+.cat-festif-title {
+  position: absolute;
+  top: 93%;
+  left: 36%;
+}
+
+@media screen and (max-width: 992px) {
+  .img-background-menu-group {
+    display: none;
+  }
+}

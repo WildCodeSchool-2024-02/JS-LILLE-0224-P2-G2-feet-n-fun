@@ -2,10 +2,10 @@
   /* Couleur*/
   --background-color: #fffdf9;
   --card-background: #fffdf9;
-  --primary-color: #fc8d17;
+  --primary-color: rgb(252, 141, 23);
   --secondary-color: #b79dec;
   --third-color: #e87172;
-  --fourth-color: #f9e2ca;
+  --fourth-color: rgb(249, 226, 202);
   --text-color: #4c4b48;
   --footer-text-color: black;
   --third-color-hover: #7455b0;
