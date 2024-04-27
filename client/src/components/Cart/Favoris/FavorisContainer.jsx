@@ -2,14 +2,12 @@ import "./favoris.css";
 import { useContext } from "react";
 import PropTypes from "prop-types";
 import { ShopContext } from "../../../context/ShopContext";
-import FavoritesCard from "./FavoritesCard"
-
+import FavoritesCard from "./FavoritesCard";
 
 function FavoritesContainer({ data }) {
   const { favItems } = useContext(ShopContext);
 
-
-    /* findProductById sert à faire correspondre l'id du produit de la liste des faovris (favItems) 
+  /* findProductById sert à faire correspondre l'id du produit de la liste des faovris (favItems) 
   à l'id d'un produit de notre API (data), afin qu'on puisse récupérer les informations (img, prix etc. ) 
   
    - productId est l'identifiant du produit de favItems 
@@ -24,14 +22,14 @@ Sur data :
     - si un produit correspond, on lui dit de retourner le produit. 
      */
 
-    const findProductById = (productId) => 
+  const findProductById = (productId) =>
     data
       .flatMap((category) => category.products)
       .find((product) => product.id === productId);
-  
+
   return (
-    <>
-      <h2 className="titleRubrique" >Favoris</h2>
+    <div className="sectionFavoris">
+      <h2 className="titleRubrique">Favoris</h2>
       <div className="cardsContainerFav">
         {Object.entries(favItems).map(([productId, quantity]) => {
           const product = findProductById(Number(productId));
@@ -44,14 +42,13 @@ Sur data :
               />
             );
           }
-          return null;
+          return "Pas encore de chaussettes ici !";
         })}
       </div>
-    </>
+    </div>
   );
 }
-FavoritesContainer
-.propTypes = {
+FavoritesContainer.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -65,6 +62,5 @@ FavoritesContainer
     })
   ).isRequired,
 };
-
 
 export default FavoritesContainer;

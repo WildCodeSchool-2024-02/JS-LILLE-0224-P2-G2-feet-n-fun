@@ -234,7 +234,11 @@ function FilterMenu({ visible, setVisible, dataCategory }) {
           </div>
           <hr className="desktop" />
           <div>
-            <button type="button" onClick={() => filterItem(filter())}>
+            <button
+              type="button"
+              className="primary-button"
+              onClick={() => filterItem(filter())}
+            >
               Voir les résultats
             </button>
           </div>

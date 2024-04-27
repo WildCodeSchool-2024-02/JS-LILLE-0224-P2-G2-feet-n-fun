@@ -105,42 +105,6 @@ body {
   text-align: center;
 }
 
-.deliveryButton,
-.paymentButton {
-  margin-top: 1em;
-  background-color: var(--secondary-color);
-  border-radius: 0.5rem;
-  text-align: center;
-  color: var(--background-color);
-  cursor: pointer;
-  font-family: var(--primaryfont);
-  font-size: 1.1em;
-  font-weight: bolder;
-  width: fit-content;
-  padding: 0.5em;
-}
-
-.deliveryButton:hover,
-.paymentButton:hover {
-  background-color: var(--third-color-hover);
-}
-
-.deliveryButton:focus,
-.paymentButton:hover {
-  box-shadow: none;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.buttonCloseDeliveryPayment {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  box-sizing: border-box;
-  color: var(--third-color);
-  cursor: pointer;
-}
-
 @media screen and (min-width: 992px) {
   .contactContainer {
     display: flex;
@@ -172,9 +136,6 @@ body {
 
   .deliveryForm {
     margin-bottom: 2em;
-  }
-  .buttonCloseDeliveryPayment {
-    display: none;
   }
 
   .deliverySection {

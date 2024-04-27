@@ -84,35 +84,36 @@ Sur data :
           <span className="totalAmount">{getTotalCartAmount()}</span>
           <div className="buttonsContainerCart">
             {totalAmount !== "Votre panier est vide !" ? (
-              <Link to="/livraison" className="cartValidationButton">
+              <Link to="/livraison" className="link-primary-button">
                 <p>Passer à la livraison</p>
               </Link>
             ) : (
               <span />
             )}
 
-            <Link to="/categories/3" className="cartKeepShoppingButton">
+            <Link to="/categories/3" className="link-primary-button">
               <p>Continuer mes achats</p>
             </Link>
           </div>
         </div>
-        {totalAmount !== "Votre panier est vide !" && <div className="cardsContainerCart">
-          {Object.entries(cartItems).map(([productId, item]) => {
-            const product = findProductById(Number(productId));
-            if (product && item.quantity > 0) {
-              return (
-                <CartCard
-                  key={productId}
-                  product={product}
-                  quantity={item.quantity}
-                  size={item.size}
-                />
-              );
-            }
-            return null;
-          })}
-        </div> }
-        
+        {totalAmount !== "Votre panier est vide !" && (
+          <div className="cardsContainerCart">
+            {Object.entries(cartItems).map(([productId, item]) => {
+              const product = findProductById(Number(productId));
+              if (product && item.quantity > 0) {
+                return (
+                  <CartCard
+                    key={productId}
+                    product={product}
+                    quantity={item.quantity}
+                    size={item.size}
+                  />
+                );
+              }
+              return null;
+            })}
+          </div>
+        )}
       </section>
     </>
   );
