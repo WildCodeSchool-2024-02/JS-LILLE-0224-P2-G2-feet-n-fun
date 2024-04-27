@@ -58,6 +58,11 @@
 }
 
 @media screen and (min-width: 992px) {
+  .home-background {
+    position: relative;
+    z-index: -10;
+    width: 100vw;
+  }
   /* sections d'évènement */
   .nouveautésSection {
     display: flex;

@@ -1,117 +1,136 @@
-.About {
-  background-color: var(--background-color);
-  color: var(--text-color);
+.container {
+  max-width: 960px;
+  margin-inline: auto;
+  margin-bottom: 15px;
 }
 
-.Section-histoire,
-.Section-philosophie,
-.Section-équipe {
-  color: var(--text-color);
-  text-align: center;
-  padding-bottom: 2em;
-  margin-bottom: -20px;
+.title {
+  margin-bottom: 50px;
 }
 
-.Section-histoire {
-  background-color: rgb(250, 225, 179);
-}
-.Section-philosophie {
-  background-color: rgb(250, 213, 145);
-}
-.Section-équipe {
-  background-color: rgb(248, 199, 109);
-  margin-bottom: 1em;
-}
-.Img-history {
-  width: 100vw;
+.title span {
+  display: block;
 }
 
-.equipeContent,
-.philoContent,
-.histoireContent {
+.title .primary {
+  font-size: clamp (26px, 5vw, 52px);
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.gallery-wrapper {
   display: flex;
-  margin-top: 1em;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 1vw;
+}
+.gallery-item {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  gap: 2vw;
+  flex: 1;
+  height: 500px;
+  background-color: #fff;
+  padding: 25px;
+  opacity: 1;
+  overflow: hidden;
+  transition:
+    flew 0.1s,
+    opacity 2s;
 }
 
-.Text {
-  text-align: center;
-  padding-top: 0.5em;
-  width: 95vw;
+.gallery-item:hover {
+  opacity: 1;
+  flex: 5;
 }
 
-.History {
-  margin-top: 1em;
-  margin-bottom: 1em;
+.gallery-item:not(:hover) {
+  opacity: 1;
 }
-@media screen and (min-width: 750px) {
-  .About {
-    margin-bottom: 2em;
-  }
-  .Section-histoire,
-  .Section-philosophie,
-  .Section-équipe {
-    display: block;
-    color: var(--text-color);
-    width: fit-content;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    height: 30vh;
-    padding-right: 2em;
-    border-radius: 0px 20px 20px 0px;
-  }
-  .Section-histoire {
-    position: relative;
-    left: 10vw;
-  }
-  .Section-philosophie {
-    position: relative;
-    left: 20vw;
-  }
 
-  .Section-équipe {
-    position: relative;
-    left: 30vw;
-  }
+.item-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  .equipeContent,
-  .histoireContent {
-    display: flex;
-    margin-top: 1em;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 3vw;
-  }
-  .philoContent {
-    display: flex;
-    margin-top: 1em;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 3vw;
-  }
+.item-description {
+  align-self: flex-end;
+  color: var(--text-color);
+}
 
-  .Text {
-    text-align: justify;
-    padding-top: 0.5em;
-    width: 40vw;
+.name {
+  font-size: 37px;
+  text-transform: uppercase;
+  background-color: rgb(0, 0, 0, 0.3);
+  padding-inline: 10px;
+  transform: translateY(-10px);
+  color: var(--background-color);
+}
+
+.role {
+  display: inline-block;
+  background-color: var(--fourth-color);
+  padding: 10px;
+  box-shadow: 0px 1px 10px rgb (0, 0, 0, 0.2);
+  transform: translateY(10px);
+}
+
+.role {
+  opacity: 0;
+  transition:
+    opacity 0s,
+    transform 0s;
+  transition-delay: 0s;
+}
+
+.gallery-item:hover .name,
+.gallery-item:hover .role {
+  opacity: 1;
+  transfom: translateY(0);
+}
+
+.gallery-item:not(:hover) .name,
+.gallery-item:not(:hover).role {
+  transition-delay: 0s;
+}
+
+@media screen and (max-width: 991px) {
+  .item-image {
+    max-width: 100vw;
+    max-height: 100vw;
+    position: initial;
+  }
+  .gallery-wrapper {
+    flex-direction: column;
+  }
+  .gallery-item {
+    position: initial;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 30vh;
+    gap: 0;
+  }
+  .gallery-item:hover {
+    flex-basis: 100%;
   }
 
-  .Img-history {
-    height: 30vh;
-    width: 30vh;
-  }
-
-  .About-h1 {
-    font-size: 3em;
+  .name {
+    background-color: var(--primary-color);
     text-align: center;
-    margin-top: 1em;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    z-index: 9999;
+    font-size: 1em;
+  }
+  .role {
+    background-color: var(--fourth-color);
+    display: block;
+    position: initial;
+    opacity: 1;
+    text-align: center;
+    margin-top: 0;
   }
 }

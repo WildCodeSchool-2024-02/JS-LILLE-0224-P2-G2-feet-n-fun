@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 function EventsCards({ title, img1, img2, img3, link }) {
-  return (
+  return (<>
+    <img className="home-background"src="../assets/images/backgroundHome.png" alt="backgroudimg"/>
     <div className="cardAccueil">
+  
       <div className="ContainerAccueil">
         <div className="imgContainerAccueil">
           <img className="image1Accueil" alt="" src={img1} />
@@ -20,6 +22,7 @@ function EventsCards({ title, img1, img2, img3, link }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

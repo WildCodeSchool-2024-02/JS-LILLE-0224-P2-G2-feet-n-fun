@@ -1,4 +1,4 @@
-import "./AboutGallery.css";
+import "./About.css";
 
 function About() {
   return (
@@ -56,7 +56,7 @@ function About() {
             <h2 className="name">Notre Équipe</h2>
             <p className="role">
               {" "}
-              Derrière chaque paire de chaussettes, il y a une équipe de créateurs, composée de Alexandre, Alexis, Houari, Emilie et Sébastien,
+              Derrière chaque paire de chaussettes, il y a une équipe de créateurs, composée d'Alexandre, Alexis, Emilie, Houari et Sébastien,
                qui travaillent avec
               passion pour vous apporter le meilleur. Nous sommes fiers de notre
               équipe et de la culture d’entreprise que nous avons bâtie
