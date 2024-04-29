@@ -19,7 +19,7 @@ function Popup ({ content }) {
                 />
                 {content} &#128640; 
             </div>
-            <div className="notification__progress" id={showAlertFav && "fav"} />
+            <div className="notification__progress" id={showAlertFav ? "fav" : ""} />
         </div>
     )
 }

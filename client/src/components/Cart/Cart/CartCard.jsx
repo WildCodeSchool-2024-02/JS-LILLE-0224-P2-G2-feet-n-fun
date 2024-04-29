@@ -56,12 +56,10 @@ export default CartCard;
 CartCard.propTypes = {
   quantity: PropTypes.number.isRequired,
   size: PropTypes.string.isRequired,
-  product: PropTypes.arrayOf(
-    PropTypes.shape({
+  product: PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
       src: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  }).isRequired,
 };

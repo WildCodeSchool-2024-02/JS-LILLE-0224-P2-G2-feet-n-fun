@@ -33,13 +33,13 @@ function Navbar() {
         <div className="h1andButtonsContainer">
           <div className="groupeBoutonsNav">
             <div className="searchInNav">
-              <SearchBar/>
+              <SearchBar handleToggle={handleToggle}/>
             </div>
 
             <Link to="/categories/4">
               <img
                 className="buttonsNavBar shopNavBar"
-                src="../public/assets/images/icons/shopicon.svg"
+                src="../public/assets/images/icons/shopicon.svg"  
                 alt="recherche"
               />
             </Link>

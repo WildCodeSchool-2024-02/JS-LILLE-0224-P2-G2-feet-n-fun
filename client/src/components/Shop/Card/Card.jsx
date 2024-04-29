@@ -34,13 +34,7 @@ function Card({ data, openProduct }) {
             className="iconFavCard"
           />
         </button>
-        {data.new && (
-          <img
-            src="/public/assets/images/icons/new.svg"
-            alt="Nouveauté"
-            id="new"
-          />
-        )}
+        {data.new && <img src="/public/assets/images/icons/new.png" alt="Nouveauté" id="new"/>}
       </div>
       <div className="card-content">
         <div
@@ -52,12 +46,8 @@ function Card({ data, openProduct }) {
           <p>{data.name}</p>
         </div>
         <div className="card-footer">
-          <span style={{ color: "black" }}>{data.price} €</span>
-          <button
-            type="button"
-            className="buttonCardCart"
-            onClick={openProduct}
-          >
+          <span style={{ color: "orange" }}>{data.price} €</span>
+          <button type="button" className="buttonCardCart" onClick={openProduct}>
             <img
               src="../assets/images/icons/add-cart.svg"
               alt="Bouton d'ajout au panier"

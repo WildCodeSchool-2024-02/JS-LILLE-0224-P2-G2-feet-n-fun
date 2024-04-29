@@ -7,7 +7,7 @@
   left: 0;
   right: 0;
   padding: 1rem;
-  z-index: 999;
+  z-index: 998;
   overflow-y: scroll;
   transform: translateY(100%);
 }
