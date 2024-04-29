@@ -1,5 +1,6 @@
 import "./favoris.css";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { ShopContext } from "../../../context/ShopContext";
 import FavoritesCard from "./FavoritesCard";
@@ -42,8 +43,14 @@ Sur data :
               />
             );
           }
-          return "Pas encore de chaussettes ici !";
+          return null;
         })}
+
+        <Link to="/categories/4">
+          <button className="primary-button" type="button">
+            Continuer mes achats
+          </button>
+        </Link>
       </div>
     </div>
   );

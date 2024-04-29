@@ -29,23 +29,6 @@
   width: 100%;
   font-weight: bold;
 }
-.btnSend {
-  background-color: var(--secondary-color);
-  cursor: pointer;
-  border: none;
-  margin-top: 0.7rem;
-  color: white;
-  font-weight: bold;
-  margin-bottom: 3rem;
-  padding: 1rem;
-  font-size: large;
-  border-radius: 25px;
-}
-.btnSend:hover {
-  transform: scale(1.15);
-  transition: 0.2s ease-in-out;
-  background-color: var(--third-color-hover);
-}
 
 label {
   display: block;
@@ -61,7 +44,7 @@ label {
   align-items: center;
   gap: 0.5rem;
   border: 1px solid #ccc;
-  padding: 1rem;
+  font-size: 0.8em;
 }
 .champ:hover {
   transform: scale(1.15);
@@ -72,22 +55,22 @@ label {
 
 .icon {
   width: 2rem;
+  padding: 0.3rem;
 }
+
 .separationBar {
-  width: 90%;
   height: 4px;
   margin: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: var(--primary-color);
 }
 .fomulaireSection {
   width: 100%;
   font-weight: bold;
 }
-input[type="text"],
-input[type="email"],
+.input-contact,
 textarea {
   width: 100%;
   padding: 10px;
@@ -101,23 +84,6 @@ textarea {
   gap: 1rem;
   width: 92%;
   font-weight: bold;
-}
-
-textarea {
-  height: 150px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
 }
 
 .formContact {
@@ -135,7 +101,7 @@ button:hover {
   .separationBar {
     width: 4px;
     height: 31rem;
-    background-color: black;
+    background-color: var(--primary-color);
   }
   .Champ {
     border-radius: 5px;
@@ -152,7 +118,6 @@ button:hover {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin: 2rem;
     padding: 20px;
     text-align: left;
     width: 45%;
@@ -161,7 +126,6 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     gap: 1rem;
     width: 75%;
     font-weight: bold;
