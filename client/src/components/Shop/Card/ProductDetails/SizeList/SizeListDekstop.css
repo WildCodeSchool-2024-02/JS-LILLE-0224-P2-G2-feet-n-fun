@@ -1,0 +1,84 @@
+.sizelist-desktop {
+  display: none;
+}
+
+.chooze-sizes .sizelist-desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2em;
+}
+
+.chooze-sizes .sizelist-desktop {
+  font-family: "Montserrat";
+}
+
+.chooze-sizes .sizelist-desktop button {
+  padding: 0.3rem 0.5rem;
+  background-color: var(--secondary-color);
+  border: solid black 1px;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  cursor: pointer;
+}
+.chooze-sizes .sizelist-desktop button#active {
+  background-color: var(--primary-color);
+}
+
+.chooze-sizes .sizelist-desktop button:active {
+  box-shadow: none;
+}
+
+.chooze-sizes .sizelist-desktop button#disabled:active {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.chooze-sizes .price {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 992px) {
+  .sizelist-desktop {
+    display: block;
+    margin-right: 3rem;
+    font-family: "Montserrat";
+  }
+
+  .sizelist-desktop button {
+    margin-left: 1rem;
+    padding: 0.3rem 0.5rem;
+    background-color: var(--secondary-color);
+    border: solid black 1px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+  }
+
+  .sizelist-desktop button#active {
+    background-color: var(--primary-color);
+  }
+
+  .sizelist-desktop button:active {
+    box-shadow: none;
+  }
+
+  .sizelist-desktop button#disabled:active {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
+  .price {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .chooze-sizes .sizelist-desktop {
+    flex-direction: row;
+    margin-right: 0;
+  }
+}
