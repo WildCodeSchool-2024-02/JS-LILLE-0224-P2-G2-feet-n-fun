@@ -5,6 +5,11 @@ import PropTypes from "prop-types";
 export const ShopContext = createContext(null);
 
 export default function ShopContextProvider({ children }) {
+
+  const [showAlertCart, setShowAlertCart] = useState(false)
+
+  const [showAlertFav, setShowAlertFav] = useState(false)
+
   /* Les states qui contiennent les id des éléments du panier et des favoris */
   const [cartItems, setCartItems] = useState({});
   const [favItems, setFavItems] = useState({});
@@ -25,8 +30,8 @@ export default function ShopContextProvider({ children }) {
   Si on rajoute une paire 56, cartItems va conserver son état précédent puis ajouter 1 à cartItems[itemsId] donc à cartItems[56]. 
   On aura donc {56:2}
   */
-
-  const addToCart = (itemId) => {
+ 
+ const addToCart = (itemId) => {
     setCartItems((prev) => {
       if (prev[itemId]) {
         setVisible(false);
@@ -38,7 +43,10 @@ export default function ShopContextProvider({ children }) {
       setVisible(false);
       return { ...prev, [itemId]: { quantity: 1, size: chooseSize } };
     });
-
+    setShowAlertCart(true);
+    setTimeout(() => {
+      setShowAlertCart(false);
+    }, 4000);
     setChooseSize("Votre taille");
     setCountCart(countCart+1)
   };
@@ -87,6 +95,10 @@ export default function ShopContextProvider({ children }) {
       }
       return { ...prev, [itemId]: 1 };
     });
+    setShowAlertFav(true);
+    setTimeout(() => {
+      setShowAlertFav(false);
+    }, 4000);
   };
 
   /* Retrait des fav */
@@ -117,7 +129,9 @@ export default function ShopContextProvider({ children }) {
       visible,
       setVisible,
       incrementCart,
-      decrementCart
+      decrementCart,
+      showAlertCart,
+      showAlertFav
     }),
     [countCart,
       setCountCart,
@@ -134,7 +148,9 @@ export default function ShopContextProvider({ children }) {
       visible,
       setVisible,
       incrementCart,
-      decrementCart
+      decrementCart,
+      showAlertCart,
+      showAlertFav
     ]
   );
 
