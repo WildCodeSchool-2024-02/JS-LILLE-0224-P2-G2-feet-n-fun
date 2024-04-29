@@ -20,7 +20,7 @@ function CardContainerSearch({ data }) {
     setVisible(true);
     setProductSelected(indexOfProduct);
   }; 
-
+  
   return (
     <>
       <CategoryBar/>
@@ -32,7 +32,6 @@ function CardContainerSearch({ data }) {
           <Card
             key={`${product.id}.${product.name}`}
             data={product}
-            colorSection={data.color}
             openProduct={() => openProduct(index)}
             setVisible={setVisible}
           />
@@ -43,21 +42,15 @@ function CardContainerSearch({ data }) {
       {/* Ouvre le composant ProductDetails lors ce que visible est true */}
         {data.length > 0 && <ProductDetails
           data={data[productSelected]}
-          colorSection={data.color}
         />}
     </>
   );
 }
 
 CardContainerSearch.propTypes = {
-  data: PropTypes.shape({
-    length: PropTypes.number.isRequired,
-    map: PropTypes.func.isRequired,
-    color: PropTypes.string.isRequired,
-    products: PropTypes.arrayOf(PropTypes.shape({
+  data: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
-    })).isRequired
-  }).isRequired,
+  })).isRequired,
 };
 export default CardContainerSearch;

@@ -40,11 +40,10 @@ function SizeListMobile({ data }) {
           className={` ${listIsClose} ${listIsOpen}`}
         >
           {data.size.map((size, index) => (
-            <>
+            <div key={size.size}>
               <hr />
               <button
                 type="button"
-                key={size.size}
                 className={
                   size.available ? "size-select available" : "size-select"
                 }
@@ -58,7 +57,7 @@ function SizeListMobile({ data }) {
                   <span className="available-false">indisponible</span>
                 )}
               </button>
-            </>
+            </div>
           ))}
         </div> 
     </div>

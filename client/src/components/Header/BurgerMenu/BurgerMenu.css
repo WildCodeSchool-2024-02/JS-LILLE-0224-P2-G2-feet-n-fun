@@ -114,4 +114,12 @@
   .burgerMenu {
     display: none;
   }
+
+  .burgerMenu.burgerMenu.open {
+    display: none;
+  }
+
+  .burgerMenu.burgerMenu.close {
+    display: none;
+  }
 }

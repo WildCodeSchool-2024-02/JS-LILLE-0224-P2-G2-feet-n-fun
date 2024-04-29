@@ -114,7 +114,7 @@ function Filter() {
     } else if (value.includes("productsFilterNew")) {
       array = categorySelected.filter((product) => product.new);
     }
-
+ 
     // Si le tableau contient des produits je le retourne, sinon je retourne un tableau vide.
     if (value.length > 0) {
       setFilterBy(array);

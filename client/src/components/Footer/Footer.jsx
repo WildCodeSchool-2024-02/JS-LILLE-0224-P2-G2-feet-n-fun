@@ -37,7 +37,7 @@ function Footer() {
       </div>
       <div className=" center copieright">
         <h6>
-          © 2024<span> Feet & Fun </span> Tous droits réservés.
+          © 2024<span> Feet & Fun </span> Wild Code School, créé par Alexandre, Alexis, Emilie, Sébastien & Houari.
         </h6>
       </div>
     </div>

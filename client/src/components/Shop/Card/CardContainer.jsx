@@ -32,7 +32,6 @@ function CardContainer({ data }) {
           <Card
             key={`${product.id}.${product.name}`}
             data={product}
-            colorSection={data.color}
             openProduct={() => openProduct(index)}
             setVisible={setVisible}
           />
@@ -41,7 +40,6 @@ function CardContainer({ data }) {
       {/* Ouvre le composant ProductDetails lors ce que visible est true */}
         <ProductDetails
           data={data.products[productSelected]}
-          colorSection={data.color}
         />
     </>
   );
@@ -51,7 +49,6 @@ CardContainer.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
     products: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,

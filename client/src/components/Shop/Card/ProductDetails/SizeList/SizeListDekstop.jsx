@@ -20,8 +20,8 @@ function SizeListDekstop({ data }) {
           key={size.size}
           onClick={() => changeSize(index)}
           id={
-            (chooseSize === size.size && "active") ||
-            (!size.available && "disabled")
+            (chooseSize === size.size ? "active" : "") ||
+            (!size.available ? "disabled" : "")
           }
           disabled={!size.available}
         >

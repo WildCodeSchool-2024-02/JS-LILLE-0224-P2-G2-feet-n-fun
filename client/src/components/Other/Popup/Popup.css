@@ -69,3 +69,10 @@
     transform: scaleX(1);
   }
 }
+
+@media screen and (max-width: 992px) {
+  .notification {
+    width: 90%;
+    text-align: center;
+  }
+}

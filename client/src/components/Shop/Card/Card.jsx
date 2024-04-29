@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import { ShopContext } from "../../../context/ShopContext";
 
-function Card({ data, openProduct, colorSection }) {
+function Card({ data, openProduct }) {
   const { id } = data;
   const { addToFav } = useContext(ShopContext);
   return (
@@ -21,14 +21,14 @@ function Card({ data, openProduct, colorSection }) {
             className="iconFavCard"
           />
         </button>
-        {data.new && <img src="/public/assets/images/icons/new.svg" alt="Nouveauté" id="new"/>}
+        {data.new && <img src="/public/assets/images/icons/new.png" alt="Nouveauté" id="new"/>}
       </div>
       <div className="card-content">
         <div role='button' tabIndex={0} onClick={openProduct} onKeyDown={openProduct}>
           <p>{data.name}</p>
         </div>
         <div className="card-footer">
-          <span style={{ color: `${colorSection}` }}>{data.price} €</span>
+          <span style={{ color: "orange" }}>{data.price} €</span>
           <button type="button" className="buttonCardCart" onClick={openProduct}>
             <img
               src="../assets/images/icons/add-cart.svg"
@@ -49,7 +49,6 @@ Card.propTypes = {
     price: PropTypes.number.isRequired,
     new: PropTypes.bool.isRequired,
   }).isRequired,
-  colorSection: PropTypes.string.isRequired,
   openProduct: PropTypes.func.isRequired,
 };
 export default Card;
