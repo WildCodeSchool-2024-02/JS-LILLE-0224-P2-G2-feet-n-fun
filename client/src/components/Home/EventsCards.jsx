@@ -15,7 +15,7 @@ function EventsCards({ title, img1, img2, img3, link }) {
         <div className="eventContent">
           <h4 className="eventTitle">{title}</h4>
           <Link to={link}>
-            {" "}
+
             <button type="button" className="secondary-button">
               Découvrir
             </button>
