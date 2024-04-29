@@ -7,6 +7,7 @@ import InformationBar from "./components/Header/InformationBar/InformationBar";
 import ShopContextProvider from "./context/ShopContext";
 
 function App() {
+
   const [data, setData] = useState(null);
 
   useEffect(() => {

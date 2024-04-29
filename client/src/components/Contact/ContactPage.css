@@ -1,0 +1,204 @@
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+.frmContact {
+  display: flex;
+  width: 92%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+}
+.frmName {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  width: 100%;
+  font-weight: bold;
+}
+.btnSend {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  border: none;
+  margin-top: 0.7rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  font-size: large;
+  border-radius: 25px;
+}
+.btnSend:hover {
+  transform: scale(1.15);
+  transition: 0.2s ease-in-out;
+  background-color: var(--third-color-hover);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+.titleContact {
+  padding: 2rem;
+}
+
+.champ {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+.champ:hover {
+  transform: scale(1.15);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.icon {
+  width: 2rem;
+}
+.separationBar {
+  width: 90%;
+  height: 4px;
+  margin: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.fomulaireSection {
+  width: 100%;
+  font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.infoContactSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  width: 92%;
+  font-weight: bold;
+}
+
+textarea {
+  height: 150px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.formContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 992px) {
+  .frm {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .separationBar {
+    width: 4px;
+    height: 31rem;
+    background-color: black;
+  }
+  .Champ {
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 1rem;
+    width: 90%;
+  }
+  .contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem;
+    padding: 20px;
+    text-align: left;
+    width: 45%;
+  }
+  .infoContactSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 1rem;
+    width: 75%;
+    font-weight: bold;
+  }
+  .frmContact {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    text-align: left;
+  }
+  .frmName {
+    width: 75%;
+  }
+  .btnSend {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 0.7rem;
+    color: white;
+
+    font-weight: bold;
+    font-family: var(--primaryfont);
+  }
+  .btnSendB {
+    border: none;
+    padding: 1rem;
+    margin-top: 3rem;
+    color: rgb(5, 4, 4);
+    font-weight: bold;
+  }
+  .contactSection {
+    padding: 2rem;
+  }
+  .titleContact {
+    display: flex;
+    justify-content: center;
+  }
+}
