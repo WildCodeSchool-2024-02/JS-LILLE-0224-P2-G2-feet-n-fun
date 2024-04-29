@@ -41,10 +41,7 @@ function ContactUs() {
       .sendForm("service_2b3kg3s", "template_idjiy8i", form.current, {
         publicKey: "7aPbsdkTmDMMrOxsJ",
       })
-      .then(
-        () => {},
-        () => {}
-      );
+      
     displayConfirmation();
   };
 
