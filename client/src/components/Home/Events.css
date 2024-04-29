@@ -1,8 +1,8 @@
 .cardAccueil {
   position: relative;
   width: 100vw;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
 
 .ContainerAccueil {
@@ -50,10 +50,7 @@
 @media screen and (min-width: 992px) {
   /* sections d'évènement */
   .nouveautésSection {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    display: none;
   }
 
   .eventCard {

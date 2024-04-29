@@ -6,7 +6,7 @@ function MenuHome() {
     <div className="imgMenuHome">
       <div className="menuLink">
         <div className="catalogue">
-          <p className="cataloguetitre">Notre catalogue par catégorie</p>
+          <p className="cataloguetitre">Notre catalogue par thématique</p>
         </div>
       </div>
       <Link to="/categories/4" className="menuLink">
