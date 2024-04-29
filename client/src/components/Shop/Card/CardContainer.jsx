@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import { useState, useContext } from "react";
 import { ShopContext } from "../../../context/ShopContext";
 import Card from "./Card";
-import ProductDetails from "./ProductDetails/ProductDetails"
+import ProductDetails from "./ProductDetails/ProductDetails";
 import FilterButtonContainer from "./FilterButtonContainer/FilterButtonContainer";
 import CategoryBar from "../../Header/CategoryBar/CategoryBar";
 
 function CardContainer({ data }) {
-  const { setVisible} = useContext(ShopContext);
+  const { setVisible } = useContext(ShopContext);
   // State qui stock l'index du produit cliqué
   const [productSelected, setProductSelected] = useState(0);
 
@@ -16,17 +16,19 @@ function CardContainer({ data }) {
   // Qui assigne l'index du produit cliqué à ProductSelected (Pour obtenir les détails du bon produit)
   const openProduct = (indexOfProduct) => {
     setVisible(true);
-    setProductSelected(indexOfProduct);
-  };
-
+    setProductSelected(indexOfProduct); }
 
   return (
     <>
-    <CategoryBar/>
-    <FilterButtonContainer dataCategory={data.id}/>
-      <div
-        className="card-container"
-      >
+      <CategoryBar />
+        <img
+          src={data.banner}
+          alt="bannière catégorie"
+          className="banniere-cat"
+        />
+      <FilterButtonContainer dataCategory={data.id} />
+      <div className="card-container">
+        {" "}
         {/* .map() Pour générer toutes les cards d'une section */}
         {data.products.map((product, index) => (
           <Card
@@ -39,23 +41,27 @@ function CardContainer({ data }) {
         ))}
       </div>
       {/* Ouvre le composant ProductDetails lors ce que visible est true */}
-        <ProductDetails
-          data={data.products[productSelected]}
-          colorSection={data.color}
-        />
+      <ProductDetails
+        data={data.products[productSelected]}
+        colorSection={data.color}
+      />
     </>
   );
 }
 
 CardContainer.propTypes = {
   data: PropTypes.shape({
+    banner:PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
-    products: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-    })).isRequired
+    products: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+      })
+    ).isRequired,
   }).isRequired,
 };
-export default CardContainer;
+
+export default CardContainer
