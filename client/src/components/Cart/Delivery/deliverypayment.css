@@ -104,7 +104,7 @@ body {
   border-radius: 3px;
   text-align: center;
 }
-.choixpaiement {
+.choice {
   text-align: center;
 }
 
@@ -156,7 +156,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-  .choixpaiement {
+  .choice {
     margin: auto;
   }
 }

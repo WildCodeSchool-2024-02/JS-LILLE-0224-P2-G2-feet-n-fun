@@ -154,7 +154,7 @@
   width: 30px;
   height: 30px;
 }
-.banniere-cat {
+.banner-cat {
   display: none;
 }
 @media screen and (min-width: 500px) {
@@ -163,7 +163,7 @@
     min-width: 30%;
     max-width: 30%;
   }
-  .banniere-cat {
+  .banner-cat {
     display: block;
     object-fit: contain;
     width: 100%;

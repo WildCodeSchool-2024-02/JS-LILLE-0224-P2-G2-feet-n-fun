@@ -24,7 +24,7 @@ function CardContainer({ data }) {
         <img
           src={data.banner}
           alt="bannière catégorie"
-          className="banniere-cat"
+          className="banner-cat"
         />
       <FilterButtonContainer dataCategory={data.id} />
       <div className="card-container">
