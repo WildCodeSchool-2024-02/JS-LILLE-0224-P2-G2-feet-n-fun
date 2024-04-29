@@ -8,11 +8,12 @@ function Card({ data, openProduct, colorSection }) {
   const { addToFav } = useContext(ShopContext);
   return (
     <div className="card">
+      
       <div className="card-header">
-      <div className='eye-container' role='button' tabIndex={0} onClick={openProduct} onKeyDown={openProduct}>
-        <img className='eye-img' src="../assets/images/icons/eye-hover.svg" alt="Clique ici pour plus de détails sur le produit"/>
+      <div className={data.new ? "eye-container new" : "eye-container"} role='button' tabIndex={0} onClick={openProduct} onKeyDown={openProduct}>
+        <img className='eye-img' src="../assets/images/icons/eye-hover.svg" alt="Clique ici pour plus de détails sur le produit" />
       </div>
-        <img className="product-img" src={data.src} alt="" />
+      <img className={data.new ? "product-img new" : "product-img"} src={data.src} alt="" />
         <button type="button" onClick={() => addToFav(id)}>
           <img
             src="../assets/images/icons/add-heart.svg"
@@ -20,8 +21,9 @@ function Card({ data, openProduct, colorSection }) {
             className="iconFavCard"
           />
         </button>
-        </div>
-        <div className="card-content">
+        {data.new && <img src="/public/assets/images/icons/new.svg" alt="Nouveauté" id="new"/>}
+      </div>
+      <div className="card-content">
         <div role='button' tabIndex={0} onClick={openProduct} onKeyDown={openProduct}>
           <p>{data.name}</p>
         </div>
@@ -45,6 +47,7 @@ Card.propTypes = {
     src: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
+    new: PropTypes.bool.isRequired,
   }).isRequired,
   colorSection: PropTypes.string.isRequired,
   openProduct: PropTypes.func.isRequired,

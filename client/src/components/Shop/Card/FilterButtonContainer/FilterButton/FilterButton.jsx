@@ -1,20 +1,19 @@
 import PropTypes from "prop-types";
 
 function FilterButton({ setVisible }) {
+  const handleToggle = () => {
+    setVisible(true);
+  };
 
-    const handleToggle = () => {
-        setVisible(true);
-    };
-
-    return (
-        <button type='button' className='filter-btn' onClick={handleToggle}>
-            Filtrer par...
-        </button>
-    )
+  return (
+    <button type="button" className="primary-button" onClick={handleToggle}>
+      Filtrer par...
+    </button>
+  );
 }
 
 FilterButton.propTypes = {
-    setVisible: PropTypes.func.isRequired,
-}
+  setVisible: PropTypes.func.isRequired,
+};
 
 export default FilterButton;

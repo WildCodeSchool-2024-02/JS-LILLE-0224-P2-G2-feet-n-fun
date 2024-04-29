@@ -1,0 +1,48 @@
+.information-bar {
+  padding: 0.2rem 0;
+  background-color: black;
+  position: relative;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.marquee {
+  color: white;
+  position: absolute;
+  white-space: nowrap;
+  display: inline-block; /* modèle de boîte en ligne */
+  padding-right: 4em;
+  padding-left: 100%;
+}
+
+.marquee.one {
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-duration: 40s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
+
+.marquee.two {
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-duration: 40s;
+  animation-delay: 20s;
+  animation-iteration-count: infinite;
+}
+
+.marquee p {
+  margin: 0 40%;
+  display: inline-block;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}

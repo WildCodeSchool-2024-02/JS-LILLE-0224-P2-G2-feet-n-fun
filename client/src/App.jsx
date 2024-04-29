@@ -2,10 +2,12 @@ import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Header/NavBar/Navbar";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer"
+import InformationBar from "./components/Header/InformationBar/InformationBar";
 import ShopContextProvider from "./context/ShopContext";
 
 function App() {
+
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -22,11 +24,11 @@ function App() {
 
   return (
     <ShopContextProvider>
+      <InformationBar />
       <Navbar />
       <main>{data && <Outlet data={data} />}</main>
       <Footer/>
     </ShopContextProvider>
-
   );
 }
 

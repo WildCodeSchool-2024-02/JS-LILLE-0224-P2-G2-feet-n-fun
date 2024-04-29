@@ -44,11 +44,11 @@
     margin: auto;
     height: 4em;
     background-color: var(--card-background);
-    border-bottom: 2px solid var(--text-color);
-    border-top: 2px solid var(--text-color);
+    border-bottom: 2px solid lightgrey;
   }
 
   .ulCategories {
+    border-radius: 20px;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -58,13 +58,18 @@
     background-color: var(--card-background);
   }
 
+  .categories button {
+    font-family: var(--primary-font);
+    font-size: 1.2em;
+    font-weight: bolder;
+  }
   .categories button:hover,
   .end-navigation.navigation-footer:hover,
   .button_accueil:hover {
     transform: scale(1.2);
     transition: transform 0.2s;
-    color: var(--secondary-color);
-    text-shadow: 3px 3px 3px rgb(221, 184, 136);
+    color: var(--primary-color);
+    text-shadow: 1px 2px 3px rgb(221, 184, 136);
     background-color: var(--card-background);
     cursor: pointer;
   }
@@ -74,16 +79,12 @@
   }
 
   .button_art {
-    font-family: "Nanum Pen Script", cursive;
-    font-size: 2em;
     background-color: var(--card-background);
     border: var(--card-background);
     color: var(--text-color);
   }
 
   .button_sport_active {
-    font-family: "Racing Sans One", sans-serif;
-    font-size: 35px;
     background-color: var(--card-background);
     border: var(--card-background);
     padding: -10px;
@@ -93,8 +94,6 @@
   }
 
   .button_sport {
-    font-family: "Racing Sans One", sans-serif;
-    font-size: 1.5em;
     background-color: var(--card-background);
     border: var(--card-background);
     padding: -10px;
@@ -102,8 +101,6 @@
   }
 
   .button_geek_active {
-    font-family: "Slackey", sans-serif;
-    font-size: 30px;
     background-color: var(--card-background);
     border: var(--card-background);
     padding: -10px;
@@ -113,8 +110,6 @@
   }
 
   .button_geek {
-    font-family: "Slackey", sans-serif;
-    font-size: 1.5em;
     background-color: var(--card-background);
     border: var(--card-background);
     padding: -10px;
@@ -122,19 +117,15 @@
   }
 
   .button_anime_active {
-    font-family: "Marko One", serif;
     font-size: 30px;
     background-color: var(--card-background);
     border: var(--card-background);
-    padding: -10px;
     transform: scale(1.2);
     color: var(--secondary-color);
     text-shadow: 5px 5px 5px black;
   }
 
   .button_anime {
-    font-family: "Marko One", serif;
-    font-size: 1.2em;
     background-color: var(--card-background);
     border: var(--card-background);
     padding: -10px;
@@ -142,8 +133,6 @@
   }
 
   .button_festif_active {
-    font-family: "Vampiro One", system-ui;
-    font-size: 30px;
     background-color: var(--card-background);
     border: var(--card-background);
     padding: -10px;
@@ -154,8 +143,6 @@
   }
 
   .button_festif {
-    font-family: "Vampiro One", system-ui;
-    font-size: 1.3em;
     background-color: var(--card-background);
     border: var(--card-background);
     padding: -10px;

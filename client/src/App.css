@@ -5,10 +5,10 @@
   --primary-color: #fc8d17;
   --secondary-color: #b79dec;
   --third-color: #e87172;
-  --fourth-color: #f9e2ca;
+  --fourth-color: rgb(249, 226, 202);
   --text-color: #4c4b48;
   --footer-text-color: black;
-  --third-color-hover: #7455b0;
+  --third-color-hover: #9b77e3;
 
   /*Police*/
   --h1font: "Shrikhand";
@@ -49,4 +49,69 @@ button:active {
 }
 button:hover {
   cursor: pointer;
+}
+
+.secondary-button {
+  padding: 0.5em;
+  border: 2px solid rgb(250, 238, 207);
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  font-family: var(--primaryfont);
+  color: var(--background-color);
+  cursor: pointer;
+}
+
+.primary-button {
+  margin-top: 1em;
+  background-color: var(--secondary-color);
+  border-radius: 0.5rem;
+  text-align: center;
+  color: var(--background-color);
+  cursor: pointer;
+  font-family: var(--primaryfont);
+  font-size: 1em;
+  font-weight: bolder;
+  width: fit-content;
+  padding: 0.5em;
+  border: 2px solid var(--text-color);
+  box-shadow: 1px 1px 2px var(--text-color);
+}
+
+.primary-button:hover,
+.link-primary-button:hover {
+  background-color: var(--third-color-hover);
+  cursor: pointer;
+}
+
+.primary-button:focus,
+.primary-button:hover,
+.secondary-button:focus,
+.secondary-button:hover,
+.link-primary-button:hover,
+.link-primary-button:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.primary-button:active,
+.link-primary-button:active {
+  transform: translate(0px, 3px);
+  -webkit-transform: translate(0px, 3px);
+}
+
+.link-primary-button {
+  margin-top: 1em;
+  background-color: var(--secondary-color);
+  border-radius: 0.5rem;
+  text-align: center;
+  color: var(--background-color);
+  cursor: pointer;
+  font-family: var(--primaryfont);
+  font-size: 0.5em;
+  font-weight: bolder;
+  width: fit-content;
+  padding: 0.5em;
+  border: 2px solid var(--text-color);
+  box-shadow: 1px 2px 3px var(--text-color);
 }

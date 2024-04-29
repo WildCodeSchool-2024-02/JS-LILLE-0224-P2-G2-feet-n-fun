@@ -11,6 +11,7 @@ body {
   margin: auto;
   width: 90vw;
   padding-bottom: 5vh;
+  min-height: 45vh;
 }
 
 .titleFavoris {
@@ -23,6 +24,47 @@ body {
 .totalCart {
   font-size: 1.5em;
   padding-top: 1em;
+}
+
+.promo-code {
+  margin-top: 1rem;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input-promo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+#input-promo {
+  width: 50%;
+  margin-right: 0.5rem;
+  text-align: center;
+}
+
+#input-promo::placeholder {
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.input-promo-container #btn-promo {
+  width: 35%;
+  margin: 0;
+  margin-bottom: 2px;
+}
+
+#good-code {
+  font-size: 0.8rem;
+}
+
+#wrong-code {
+  color: red;
+  font-size: 0.8rem;
 }
 
 /* ensemble des cards*/
@@ -117,7 +159,8 @@ body {
   font-size: 0.8em;
 }
 .cartValidationButton,
-.cartKeepShoppingButton {
+.cartKeepShoppingButton,
+#btn-promo {
   background-color: var(--secondary-color);
   border-radius: 0.5rem;
   text-align: center;
@@ -194,6 +237,7 @@ body {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     border-radius: 15px;
+    margin: 0;
   }
 
   .cartSection {
@@ -203,22 +247,23 @@ body {
   }
 
   .totalCart {
-    height: 30vh;
-    margin-top: 5vh;
+    /* height: 30vh; */
+    /* margin-top: 5vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     border: 2px solid var(--fourth-color);
-    padding: 4vh;
+    padding: 1rem;
     font-size: 2em;
   }
   .buttonsContainerCart {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 4vh;
+    padding: 0;
+    padding-top: 1rem;
   }
 
   .cartValidationButton,

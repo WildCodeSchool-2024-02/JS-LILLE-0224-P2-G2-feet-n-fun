@@ -51,15 +51,15 @@ function Navbar() {
                 alt="favoris"
               />
             </Link>
-            <Link to="/panier">
+            <Link to="/panier" className="test">
               <img
                 className="buttonsNavBar cartButtons"
                 src="../public/assets/images/icons/cart4.svg"
                 alt="panier"
-              />{" "}
+              />
+                <div className="itemsCountContainer">{countCart}</div>
             </Link>
           </div>
-          <div className="itemsCountContainer">{countCart}</div>
         </div>
       </div>
       <div>
@@ -67,8 +67,8 @@ function Navbar() {
           <h1 className="h1FeetAndFun">
             feet <span className="and">&</span> fun
           </h1>
+          <p className="online-shop">ONLINE SHOP</p>
         </Link>
-        <p className="online-shop">ONLINE SHOP</p>
       </div>
     </nav>
   );

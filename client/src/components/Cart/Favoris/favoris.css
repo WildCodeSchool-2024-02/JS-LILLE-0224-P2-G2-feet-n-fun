@@ -31,6 +31,9 @@ body {
   border-radius: 5px;
 }
 
+.sectionFavoris {
+  min-height: 50vh;
+}
 /* une seule card*/
 .cardContainerFav {
   background-color: var(--background-color);
@@ -105,6 +108,9 @@ body {
   padding-bottom: 1em;
 }
 @media screen and (min-width: 992px) {
+  .sectionFavoris {
+    min-height: 55vh;
+  }
   .cardContainerFav {
     width: 35vw;
     display: flex;
