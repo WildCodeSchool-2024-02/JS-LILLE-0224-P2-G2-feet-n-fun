@@ -47,7 +47,7 @@ function ContactUs() {
 
   return (
     <div className="contactSection">
-      <h3 className="titleContact">Contact</h3>
+      <h3 className="titleRubrique">Contact</h3>
       <form className="frm" ref={form} onSubmit={sendEmail}>
         <div className="contact-container">
           <div className="infoContactSection">
@@ -84,13 +84,14 @@ function ContactUs() {
         <div className="frmContact">
           <div className="frmName">
             <label>
-              Name
+              Votre nom
               <input
                 value={formName}
                 onChange={handleChangeName}
                 required
                 type="text"
                 name="from_name"
+                className="input-contact"
               />
             </label>
           </div>
@@ -103,6 +104,7 @@ function ContactUs() {
                 required
                 type="email"
                 name="from_email"
+                className="input-contact"
               />
             </label>
           </div>
@@ -116,7 +118,7 @@ function ContactUs() {
               />
             </label>
           </div>
-          <input className="btnSend" type="submit" value="Envoyer" />
+          <input className="primary-button" type="submit" value="Envoyer" />
           <div className="centreMsg">
             {showConfirmation && (
               <div className="msgConfirmation">
