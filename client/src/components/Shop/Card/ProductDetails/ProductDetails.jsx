@@ -5,10 +5,10 @@ import { ShopContext } from "../../../../context/ShopContext";
 import SizeListMobile from "./SizeList/SizeListMobile";
 import SizeListDekstop from "./SizeList/SizeListDekstop";
 /* à ajouter pour la dernière version onClick={() => addToFav(id)} avec useContext */
-function ProductDetails({data, colorSection}) {
-
+function ProductDetails({ data, colorSection }) {
   const { id } = data;
-  const { addToCart, visible, setVisible, chooseSize, addToFav } = useContext(ShopContext);
+  const { addToCart, visible, setVisible, chooseSize, addToFav } =
+    useContext(ShopContext);
   // Function qui assigne la taille sélectionnéé au state chooseSize (dans le composant CardContainer) pour transmettre la taille lors de l'ajout au panier.
 
   const [sizeNotValidate, setSizeNotValidate] = useState(false);
@@ -53,28 +53,32 @@ function ProductDetails({data, colorSection}) {
             {data.price}€
           </span>
           {sizeNotValidate && (
-          <p style={{ color: "red", paddingBottom: "0.5rem" }}>
-            Veuillez sélectionner une taille
-          </p>
-        )}
-          <SizeListDekstop
-            data={data}
-          />
+            <p style={{ color: "red", paddingBottom: "0.5rem" }}>
+              Veuillez sélectionner une taille
+            </p>
+          )}
+          <SizeListDekstop data={data} />
         </div>
         <SizeListMobile data={data} />
         <div className="product-footer">
           <button
             type="button"
-            className="add-to-cart"
+            className="add-to-cart primary-button"
             onClick={() => launchAddToCart(id)}
           >
             Ajouter au panier
           </button>
-          <button className="button-addToFav" type="button" onClick={() => addToFav(id)}>
-
-            <img className="icon-addToFav" src="../assets/images/icons/add-heart.svg" alt="ajout aux favoris"/>
+          <button
+            className="button-addToFav"
+            type="button"
+            onClick={() => addToFav(id)}
+          >
+            <img
+              className="icon-addToFav"
+              src="../assets/images/icons/add-heart.svg"
+              alt="ajout aux favoris"
+            />
           </button>
-        
         </div>
       </div>
     </div>

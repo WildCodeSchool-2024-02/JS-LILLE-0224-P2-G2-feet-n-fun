@@ -14,9 +14,12 @@ function EventsCards({ title, img1, img2, img3, link }) {
 
         <div className="eventContent">
           <h4 className="eventTitle">{title}</h4>
-          <Link to ={link}> <button type="button" className="eventButton">
-            Découvrir
-          </button></Link>
+          <Link to={link}>
+            {" "}
+            <button type="button" className="secondary-button">
+              Découvrir
+            </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -28,7 +31,7 @@ EventsCards.propTypes = {
   img1: PropTypes.string.isRequired,
   img2: PropTypes.string.isRequired,
   img3: PropTypes.string.isRequired,
-  link : PropTypes.string.isRequired
+  link: PropTypes.string.isRequired,
 };
 
 export default EventsCards;

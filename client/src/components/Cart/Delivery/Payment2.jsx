@@ -43,7 +43,7 @@ function Payment2({ clientName, clientSurname, clientMail }) {
         </label>
       </form>
       <button
-        className="paymentButton"
+        className="primary-button"
         type="submit"
         onClick={displayConfirmationMessage}
       >

@@ -11,6 +11,7 @@ body {
   margin: auto;
   width: 90vw;
   padding-bottom: 5vh;
+  min-height: 45vh;
 }
 
 .titleFavoris {

@@ -36,10 +36,9 @@ function Delivery() {
       <p className="deliveryDate">Délais de livraison : 3 à 5 jours ouvrés</p>
       <section className="deliverySection">
         <form className="deliveryForm">
-      
-            <h3 className="affichageTotal">
-              {finalTotal !== "Votre panier est vide !" && finalTotal}
-            </h3>
+          <h3 className="affichageTotal">
+            {finalTotal !== "Votre panier est vide !" && finalTotal}
+          </h3>
 
           <div className="deliveryFormContainer">
             <div className="contactContainer">
@@ -154,7 +153,7 @@ function Delivery() {
           </div>
           <button
             onClick={displayPayment}
-            className="deliveryButton"
+            className="primary-button"
             type="submit"
           >
             Passer au paiement

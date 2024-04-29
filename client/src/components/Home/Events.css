@@ -40,16 +40,6 @@
   border-radius: 10px;
 }
 
-.eventButton {
-  padding: 0.5em;
-  border: 2px solid rgb(250, 238, 207);
-  border-radius: 10px;
-  background-color: var(--primary-color);
-  font-family: var(--primaryfont);
-  color: var(--background-color);
-  cursor: pointer;
-}
-
 .eventCard {
   margin-top: 0;
 }
@@ -120,7 +110,7 @@
   .image1Accueil,
   .image2Accueil,
   .image3Accueil,
-  .eventButton {
+  .orange-button {
     transition: all 0.3s ease;
   }
 
