@@ -55,16 +55,14 @@ function FavoritesCard({ product }) {
       {sizeNotValidate && (
         <div className="chooze-sizes">
           <SizeListDekstop data={product} />{" "}
-          <div className="size-button">
           <button
-            label="ajoutePanier"
             type="button"
-            className="add-to-cart"
+            className="add-to-cart primary-button"
             onClick={() => launchAddToCart(id)}
           >
-           Ajouter au panier
+            Ajouter au panier
           </button>
-          </div>
+          
           </div>
       )} 
     </>

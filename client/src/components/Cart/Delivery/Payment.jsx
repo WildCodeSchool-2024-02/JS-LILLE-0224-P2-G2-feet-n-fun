@@ -14,7 +14,7 @@ function Payment({ clientName, clientSurname, clientMail }) {
       <h2 className="titleRubrique">Paiement</h2>
       <section className="paymentSection">
         <div className="paymentForm">
-          <h3 className="choixpaiement">Choisissez une méthode de paiement</h3>
+          <h3 className="choice">Choisissez une méthode de paiement</h3>
           <div className="creditCards">
             <button
               className="buttonFakeCards"

@@ -104,6 +104,9 @@ body {
   border-radius: 3px;
   text-align: center;
 }
+.choice {
+  text-align: center;
+}
 
 @media screen and (min-width: 992px) {
   .contactContainer {
@@ -153,8 +156,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-
-  .choixpaiement {
+  .choice {
     margin: auto;
   }
 }
