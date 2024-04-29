@@ -3,11 +3,11 @@
   flex-direction: row;
   padding: 0 1rem;
 }
-.icon {
+.icon-footer {
   color: #4c4b48;
   margin: 0 1rem;
 }
-.icon:hover {
+.icon-footer:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
 }
