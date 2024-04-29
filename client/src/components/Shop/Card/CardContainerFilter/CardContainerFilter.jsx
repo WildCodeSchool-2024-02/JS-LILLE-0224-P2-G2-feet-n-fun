@@ -26,41 +26,34 @@ function CardContainerFilter({ data, category }) {
   return (
     <>
     <CategoryBar/>
-    <FilterButtonContainer dataCategory={category} />
+    <FilterButtonContainer dataCategory={category} /> 
       <div
         className="card-container"
       >
         {/* .map() Pour générer toutes les cards d'une section */}
-        {/* eslint-disable-next-line react/prop-types */}
         {data.length > 0 ? data.map((product, index) => (
           <Card
             key={`${product.id}.${product.name}`}
             data={product}
-            colorSection={data.color}
             openProduct={() => openProduct(index)}
             setVisible={setVisible}
           />
         )) : <h2>Aucun résultat correspondant</h2>}
       </div>
       {/* Ouvre le composant ProductDetails lors ce que visible est true */}
-      {/* eslint-disable-next-line react/prop-types */}
       {data.length > 0 &&
         <ProductDetails
           data={data[productSelected]}
-          colorSection={data.color}
         />}
     </>
   );
 }
 
 CardContainerFilter.propTypes = {
-  data: PropTypes.shape({
-    color: PropTypes.string.isRequired,
-    products: PropTypes.arrayOf(PropTypes.shape({
+  data: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
-    })).isRequired
-  }).isRequired,
-  category: PropTypes.number.isRequired,
+  })).isRequired,
+  category: PropTypes.number.isRequired,  
 };
 export default CardContainerFilter;

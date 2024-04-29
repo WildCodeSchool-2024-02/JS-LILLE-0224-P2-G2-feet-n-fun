@@ -25,7 +25,7 @@ Sur data :
     data
       .flatMap((category) => category.products)
       .find((product) => product.id === productId);
-
+  
   /* getTotalCartAmount sert à obtenir le total du prix des produits dans le panier. 
     - totalAmount : stocke le prix total du panier 
     - la méthode object.keys : permet de retourner un tableau contenant les clés de l'objet sur lequel il est appelé. 

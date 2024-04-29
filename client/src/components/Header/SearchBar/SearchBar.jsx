@@ -9,7 +9,7 @@ function SearchBar({ handleToggle }) {
   // Fonction qui prend en paramètre la valeur de la recherche pour transmettre la bonne requête dans l'URL. 
   const handleSearch = (searchValue) => {
     navigate(`/recherche?query=${searchValue}`);
-    handleToggle();
+    handleToggle(); 
   };
   // Stocke la valeur de la recherche.
   const [ inputValue, setInputValue ] = useState()
@@ -35,6 +35,6 @@ function SearchBar({ handleToggle }) {
 }
 
 SearchBar.propTypes = {
- handleToggle: PropTypes.func.isRequired, 
+ handleToggle: PropTypes.func.isRequired 
 };
 export default SearchBar;

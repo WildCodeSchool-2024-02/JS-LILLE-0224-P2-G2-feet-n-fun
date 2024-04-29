@@ -2,6 +2,7 @@
   background-image: url("./public/assets/home-banner6.svg");
   background-size: contain;
   background-repeat: no-repeat;
+  width: 100%;
 }
 
 .section-new-desktop {

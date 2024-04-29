@@ -5,7 +5,7 @@ import { ShopContext } from "../../../../context/ShopContext";
 import SizeListMobile from "./SizeList/SizeListMobile";
 import SizeListDekstop from "./SizeList/SizeListDekstop";
 /* à ajouter pour la dernière version onClick={() => addToFav(id)} avec useContext */
-function ProductDetails({ data, colorSection }) {
+function ProductDetails({ data }) {
   const { id } = data;
   const { addToCart, visible, setVisible, chooseSize, addToFav } =
     useContext(ShopContext);
@@ -49,7 +49,7 @@ function ProductDetails({ data, colorSection }) {
           <p>{data.desc}</p>
         </div>
         <div className="price">
-          <span id="price" style={{ color: `${colorSection}` }}>
+          <span id="price" style={{ color: "orange" }}>
             {data.price}€
           </span>
           {sizeNotValidate && (
@@ -100,6 +100,5 @@ ProductDetails.propTypes = {
     desc: PropTypes.string.isRequired,
     color: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
-  colorSection: PropTypes.string.isRequired,
 };
 export default ProductDetails;
