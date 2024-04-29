@@ -21,7 +21,7 @@ function Card({ data, openProduct, colorSection }) {
             className="iconFavCard"
           />
         </button>
-        {data.new && <img src="/public/assets/images/icons/new.png" alt="Nouveauté" id="new"/>}
+        {data.new && <img src="/public/assets/images/icons/new.svg" alt="Nouveauté" id="new"/>}
       </div>
       <div className="card-content">
         <div role='button' tabIndex={0} onClick={openProduct} onKeyDown={openProduct}>

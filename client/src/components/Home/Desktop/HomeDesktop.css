@@ -1,152 +1,80 @@
-.img-background-menu-group {
-  background-color: var(--primary-color);
+.menu-desktop {
+  background-image: url("./public/assets/home-banner.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-/* images de fond */
-.img-back1,
-.img-back2,
-.img-back3 {
-  width: 100vw;
-  margin-bottom: -12%;
-  object-fit: cover;
+.section-new-desktop {
+  margin-top: 50vh;
 }
 
-.section1-home,
-.section2-home,
-.section3-home {
-  position: relative;
-}
-/* Partie nouveautés */
-.title-new {
-  font-family: var(--titlesfont);
+.section-new-desktop h2 {
+  font-family: var(--h1font);
   color: var(--primary-color);
-  font-size: 5em;
-  position: absolute;
-  top: 3%;
-  left: 20%;
+  font-size: 3em;
+  padding-top: 2vh;
+  text-align: center;
+}
+.figure-new {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
+  margin-top: 5vh;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
-/* Cards */
-/* Pokémon */
-.img-pokemon-collection {
-  position: absolute;
-  top: 8%;
-  left: 50%;
-  object-fit: cover;
-  width: 40vw;
-}
-.titre-collec-pokemon {
-  position: absolute;
-  top: 72%;
-  left: 63.5%;
-}
-.bouton-pokemon-collec {
-  position: absolute;
-  top: 77%;
-  left: 66.5%;
-  font-size: 1.1em;
-}
-/* Art */
-.img-arts-collection {
-  position: absolute;
-  top: 26%;
-  left: 15%;
-  object-fit: cover;
-}
-.titre-collec-art {
-  position: absolute;
-  top: 75%;
-  left: 23%;
-}
-.bouton-art-collec {
-  position: absolute;
-  top: 79%;
-  left: 29%;
-  font-size: 1.1em;
+.figure-new:hover {
+  border: 3px solid var(--primary-color);
+  background-color: var(--fourth-color);
+  transform: scale(1.1);
 }
 
-/* Both */
-
-.bouton-art-collec,
-.bouton-pokemon-collec {
-  box-shadow: 1px 2px 3px var(--text-color);
-}
-
-.bouton-art-collec:hover,
-.bouton-pokemon-collec:hover {
-  background-color: rgb(255, 123, 0);
-}
-
-.titre-collec-pokemon,
-.titre-collec-art {
+.figure-new h4 {
   color: var(--primary-color);
+  font-size: 1.3em;
+}
+.figures-container {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+.img-sock-home {
+  max-width: 15vw;
+  max-height: 15vw;
+}
+.img-illu-home {
+  max-width: 30.5vw;
+}
+
+.img-poke-container-home-desktop,
+.img-art-container-home-desktop {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.eventButton {
   font-size: 1.2em;
-  font-weight: bold;
+  opacity: 1;
 }
-
-/* Partie catégories */
-
-.title-categories {
-  font-family: var(--titlesfont);
-  color: var(--background-color);
-  font-size: 4em;
-  position: absolute;
-  top: 3%;
-  left: 10%;
-  text-align: center;
-}
-
-.cat-title {
-  background-color: var(--secondary-color);
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: bold;
-  border-radius: 10px;
-  border: 2px solid var(--fourth-color);
-  color: var(--background-color);
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  box-shadow: 1px 2px 3px var(--text-color);
-}
-.cat-title:hover {
-  background-color: #aa8cc4;
-}
-.cat-title:active {
-  transform: translateY(0.1em);
-}
-.cat-art-title {
-  position: absolute;
-  top: 54%;
-  left: 10%;
-}
-
-.cat-anime-title {
-  position: absolute;
-  top: 54%;
-  left: 26%;
-}
-.cat-geek-title {
-  position: absolute;
-  top: 54%;
-  left: 45%;
-}
-
-.cat-sport-title {
-  position: absolute;
-  top: 93%;
-  left: 16%;
-}
-
-.cat-festif-title {
-  position: absolute;
-  top: 93%;
-  left: 36%;
+.eventButton:hover {
+  background-color: rgb(241, 118, 3);
 }
 
 @media screen and (max-width: 992px) {
-  .img-background-menu-group {
+  .menu-desktop {
     display: none;
   }
 }

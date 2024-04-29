@@ -22,7 +22,7 @@ function CategoryBar({ id }) {
               type="button"
               className={id === 4 ? "button_art_active" : "button_art"}
             >
-              ART
+              Art
             </button>
           </Link>
         </li>
@@ -32,7 +32,7 @@ function CategoryBar({ id }) {
               type="button"
               className={id === 1 ? "button_sport_active" : "button_sport"}
             >
-              SPORTS
+              Sports
             </button>{" "}
           </Link>
         </li>
@@ -42,7 +42,7 @@ function CategoryBar({ id }) {
               type="button"
               className={id === 2 ? "button_geek_active" : "button_geek"}
             >
-              GEEKS
+              Geeks
             </button>
           </Link>
         </li>
@@ -52,7 +52,7 @@ function CategoryBar({ id }) {
               type="button"
               className={id === 3 ? "button_anime_active" : "button_anime"}
             >
-              ANIMÉ
+              Animé
             </button>{" "}
           </Link>
         </li>
@@ -62,7 +62,7 @@ function CategoryBar({ id }) {
               type="button"
               className={id === "5" ? "button_festif_active" : "button_festif"}
             >
-              FESTIF
+              Festif
             </button>
           </Link>
         </li>

@@ -3,29 +3,56 @@ import { Link } from "react-router-dom";
 
 function HomeDesktop() {
   return (
-    <div className="img-background-menu-group">
-      <div className="section1-home">
-        <img
-          src="../public/assets/home1.svg"
-          alt="background with site title"
-          className="img-back1"
-        />
+    <div className="menu-desktop">
+      <div className="fill-menu-desktop">.</div>
+      <div className="section-new-desktop">
+        <h2>Nouveautés</h2>
+        <div className="figures-container">
+          <div className="pokemon-figure figure-new">
+            <h4> Collection 'Pokémon'</h4>
+            <div className="img-poke-container-home-desktop">
+              <img src="./public/assets/images/bulbi.jpeg" className="img-sock-home" alt="" />
+              <img src="./public/assets/images/pika.jpeg"  className="img-sock-home" alt="" />
+              <img src="./public/assets/images/pokemonbannière.webp" className="img-illu-home" alt="" />
+            </div>
+            <Link to="/filtre?query=productsFilterNew-2">
+              {" "}
+              <button
+                type="button"
+                className="eventButton bouton-pokemon-collec"
+              >
+                Découvrir
+              </button>
+            </Link>
+          </div>
+          <div className="art-figure figure-new">
+          <h4> Collection 'Art contemporain'</h4>
+            <div className="img-art-container-home-desktop">
+           
+              <img src="./public/assets/images/mondrian2.jpg" className="img-sock-home" alt="" />
+              <img src="./public/assets/images/pollock1.jpeg" className="img-sock-home" alt="" />
+              <img src="./public/assets/images/art-contempo.jpg" className="img-illu-home" alt="" />
+            </div>
+            <Link to="/filtre?query=productsFilterNew-4">
+              {" "}
+              <button type="button" className="eventButton bouton-art-collec">
+                Découvrir
+              </button>
+            </Link>
+      
+          </div>
+        </div>
       </div>
 
-      <div className="section2-home">
-        <h2 className="title-new">Nouveautés</h2>
+      {/* <section className="section2-home">
+        
         <img
           src="../public/assets/pokemoncollection.svg"
           alt="illustration cat art"
           className="img-pokemon-collection"
         />
         <p className="titre-collec-pokemon">Collection 'Pokémon'</p>
-        <Link to="/filtre?query=productsFilterNew-2">
-          {" "}
-          <button type="button" className="eventButton bouton-pokemon-collec">
-            Découvrir
-          </button>
-        </Link>
+       
         <img
           src="../public/assets/artcollection.svg"
           alt="illustration cat art"
@@ -37,14 +64,9 @@ function HomeDesktop() {
           className="img-back2"
         />
         <p className="titre-collec-art">Collection 'Art contemporain'</p>
-        <Link to="/filtre?query=productsFilterNew-4">
-          {" "}
-          <button type="button" className="eventButton bouton-art-collec">
-            Découvrir
-          </button>
-        </Link>
-      </div>
-      {/* <div className="section3-home">
+      
+      </section>
+       <section className="section3-home">
         <h2 className="title-categories">
           Découvrez nos chaussettes <br /> par thématique !
         </h2>
@@ -69,9 +91,8 @@ function HomeDesktop() {
           alt="background"
           className="img-back3"
         /> 
-      </div> */}
+      </section> */}
     </div>
-    
   );
 }
 

@@ -70,7 +70,7 @@
     align-items: center;
     gap: 2vh;
     margin: 0;
-    background-color: var(--fourth-color);
+    background-color: var(--background-color);
     position: inherit;
   }
 
@@ -121,12 +121,13 @@
   .catalogue {
     width: 18vw;
     height: 30vh;
-    background-color: var(--fourth-color);
+    background-color: var(--background-color);
     margin-right: 14vw;
   }
   .cataloguetitre {
     font-size: 1.5em;
     font-weight: bold;
     margin-left: -8vw;
+    color: var(--primary-color);
   }
 }
