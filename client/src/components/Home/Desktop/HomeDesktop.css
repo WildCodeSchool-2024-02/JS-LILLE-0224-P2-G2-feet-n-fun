@@ -1,11 +1,11 @@
 .menu-desktop {
-  background-image: url("./public/assets/home-banner.svg");
+  background-image: url("./public/assets/home-banner6.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .section-new-desktop {
-  margin-top: 28%;
+  margin-top: 25%;
 }
 
 .section-new-desktop h2 {
