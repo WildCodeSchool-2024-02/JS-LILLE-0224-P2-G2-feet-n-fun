@@ -83,7 +83,7 @@
   position: fixed;
   top: 30px;
   left: 0px;
-  z-index: 998;
+  z-index: 999;
 }
 .bouton_menu_burger:active {
   transform: none;
